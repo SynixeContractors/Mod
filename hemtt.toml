@@ -1,0 +1,8 @@
+name = "Synixe Contractors"
+prefix = "synixe_contractors"
+author = "SynixeBrett"
+files = ["mod.cpp", "synixe_logo_transparent_ca.paa", "synixe_x64.dll"]
+include = ["./include"]
+folder_optionals = true
+
+releasebuild = ["@zip {{modname}}", "@zip {{key_name}}"]
