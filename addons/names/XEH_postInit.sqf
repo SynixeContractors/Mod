@@ -1,30 +1,29 @@
 #include "script_component.hpp"
 
-if (isServer) then {
-	if !(pmc_main_enabled) exitWith {};
-
-	[QGVAR(first)] call pmc_db_fnc_variable_track;
-	[QGVAR(last)] call pmc_db_fnc_variable_track;
-	[QGVAR(role)] call pmc_db_fnc_variable_track;
-};
-
 if !(hasInterface) exitWith {};
 
 GVAR(setName) = {
 	[{
-		private _fullName = [player] call FUNC(getFullname);
+		private _discordid = player getVariable [QEGVAR(common,discordid), ""];
+		private _fullname = if (_discordid isEqualTo "") then {
+			format ["Unregistered: %1", name player]
+		} else {
+			EGVAR(common,members) get _discordid
+		};
 		player setVariable ["ACE_nameraw", _fullName, true];  
 		player setVariable ["ACE_name", _fullName, true];  
 	}, [], 1] call CBA_fnc_waitAndExecute;
 };
 
+call GVAR(setName);
+
 player addEventHandler ["Respawn", {
-  call GVAR(setName);
+	call GVAR(setName);
 }];
 
 ["pmc_db_set_variable", {
 	params ["_key", "_val"];
-	if (_key in [QGVAR(first), QGVAR(last)]) then {
+	if (_key in [QEGVAR(common,discordid)]) then {
 		call GVAR(setName);
 	};
 }] call CBA_fnc_addEventHandler;
@@ -40,42 +39,31 @@ addMissionEventHandler ["Map", {
 	}] call CBA_fnc_execNextFrame;
 }];
 
-["Synixe Contractors", "Register Name", {
+["Synixe Contractors", "Link Member", {
 	params ["", "_object"];
 	if (_object isEqualTo objNull || {!(isPlayer _object)}) exitWith {};
+	private _keys = keys EGVAR(common,members);
+	private _playerCurrentID = _object getVariable [QEGVAR(common,discordid), ""];
+	private _index = -1;
+	if !(_playerCurrentID isEqualTo "") then {
+		_index = _keys findIf { _x isEqualTo _playerCurrentID };
+	};
+	_index = _index + 1;
 	[
         format ["Register Name - %1", getPlayerUID _object],
         [
-			["EDIT","First Name", [_object getVariable [QGVAR(first), ""]]],
-			["EDIT","Last Name", [_object getVariable [QGVAR(last), ""]]]
+			["COMBO","Discord Member", [
+				["Unlinked"] + _keys,
+				[""] + ((keys EGVAR(common,members)) apply {EGVAR(common,members) get _x}),
+				_index
+			], true]
 		],
         {
             params ["_values", "_args"];
-            _values params ["_first", "_last"];
+            _values params ["_value"];
             _args params ["_object"];
-			_object setVariable [QGVAR(first), _first, true];
-			_object setVariable [QGVAR(last), _last, true];
+			_object setVariable [QEGVAR(common,discordid), _value, true];
+			call GVAR(setName);
         },{},[_object]
     ] call zen_dialog_fnc_create;
 }] call zen_custom_modules_fnc_register;
-
-["Synixe Contractors", "Set Role", {
-	params ["", "_object"];
-	if (_object isEqualTo objNull || {!(isPlayer _object)}) exitWith {};
-	[
-        format ["Set Role - %1", getPlayerUID _object],
-        [
-			["LIST","Role", [
-				[0,1,2,3,4], GVAR(roles), _object getVariable [QGVAR(role), 0]
-			]]
-		],
-        {
-            params ["_values", "_args"];
-            _values params ["_role"];
-            _args params ["_object"];
-			_object setVariable [QGVAR(role), _role, true];
-        },{},[_object]
-    ] call zen_dialog_fnc_create;
-}] call zen_custom_modules_fnc_register;
-
-call GVAR(setName);

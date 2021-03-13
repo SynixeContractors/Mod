@@ -1,8 +1,20 @@
 name = "Synixe Contractors"
 prefix = "synixe_contractors"
 author = "SynixeBrett"
-files = ["mod.cpp", "synixe_logo_transparent_ca.paa", "synixe_x64.dll"]
 include = ["./include"]
 folder_optionals = true
 
+files = ["mod.cpp", "synixe_contractors_x64.dll"]
+
+postbuild = ["!extension"]
 releasebuild = ["@zip {{modname}}", "@zip {{key_name}}"]
+
+[scripts.extension]
+show_output = true
+steps_windows = [
+    "cd extension && cargo build --release",
+    "copy extension\\target\\release\\synixe_contractors.dll synixe_contractors_x64.dll"
+]
+steps_linux = [
+    "echo \"Unable to build extension on Linux\""
+]

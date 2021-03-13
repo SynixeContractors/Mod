@@ -12,6 +12,8 @@ if (isServer) then {
         // CBA events do not support client Id
         missionNamespace setVariable [QGVAR(clientId), _clientIdStr, _ownerId];
     }];
+
+    GVAR(members) = createHashMap;
 };
 
 if (hasInterface) then {

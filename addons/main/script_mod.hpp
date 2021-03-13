@@ -4,6 +4,8 @@
 #define PREFIX synixe_contractors
 #define SUBPREFIX addons
 
+#define EXT "synixe_contractors"
+
 #include "script_version.hpp"
 
 // MINIMAL required version for the Mod. Components can specify others..
