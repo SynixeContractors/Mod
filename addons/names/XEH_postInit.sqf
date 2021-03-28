@@ -2,29 +2,30 @@
 
 if !(hasInterface) exitWith {};
 
-GVAR(setName) = {
-	[{
-		private _discordid = player getVariable [QEGVAR(common,discordid), ""];
-		private _fullname = if (_discordid isEqualTo "") then {
-			format ["Unregistered: %1", name player]
-		} else {
-			EGVAR(common,members) get _discordid
-		};
-		player setVariable ["ACE_nameraw", _fullName, true];  
-		player setVariable ["ACE_name", _fullName, true];  
-	}, [], 1] call CBA_fnc_waitAndExecute;
-};
+[QGVAR(setName), {
+	private _discordid = player getVariable [QEGVAR(common,discordid), ""];
+	private _fullname = if (_discordid isEqualTo "") then {
+		format ["Unregistered: %1", name player]
+	} else {
+		EGVAR(common,members) get _discordid
+	};
+	player setVariable ["ACE_nameraw", _fullName, true];  
+	player setVariable ["ACE_name", _fullName, true];  
+	
+}] call CBA_fnc_addEventHandler;
 
-call GVAR(setName);
+[{
+	[QGVAR(setName)] call CBA_fnc_localEvent;		
+}, [], 1] call CBA_fnc_waitAndExecute;
 
 player addEventHandler ["Respawn", {
-	call GVAR(setName);
+	[QGVAR(setName)] call CBA_fnc_localEvent;
 }];
 
 ["pmc_db_set_variable", {
 	params ["_key", "_val"];
 	if (_key in [QEGVAR(common,discordid)]) then {
-		call GVAR(setName);
+		[QGVAR(setName)] call CBA_fnc_localEvent;
 	};
 }] call CBA_fnc_addEventHandler;
 
@@ -63,7 +64,7 @@ addMissionEventHandler ["Map", {
             _values params ["_value"];
             _args params ["_object"];
 			_object setVariable [QEGVAR(common,discordid), _value, true];
-			call GVAR(setName);
+			[QGVAR(setName)] call CBA_fnc_globalEvent;
         },{},[_object]
     ] call zen_dialog_fnc_create;
 }] call zen_custom_modules_fnc_register;
