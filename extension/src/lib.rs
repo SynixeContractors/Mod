@@ -9,6 +9,7 @@ use serde::Deserialize;
 struct Member {
     pub nick: Option<String>,
     pub user: User,
+    pub roles: Vec<u64>,
 }
 
 #[derive(Deserialize)]
@@ -37,7 +38,8 @@ fn get_members() {
                         } else {
                             m.user.name.clone()
                         },
-                        m.user.id.clone()
+                        m.user.id.clone(),
+                        (m.roles.contains(&826657899589664779) || m.roles.contains(&826657899589664800)).to_string()
                     )
                 }
             });

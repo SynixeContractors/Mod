@@ -5,18 +5,18 @@ if !(hasInterface) exitWith {};
 [QGVAR(setName), {
 	private _discordid = player getVariable [QEGVAR(common,discordid), ""];
 	private _fullname = if (_discordid isEqualTo "") then {
-		format ["Unregistered: %1", name player]
+		format ["U: %1", name player]
 	} else {
 		EGVAR(common,members) get _discordid
 	};
-	player setVariable ["ACE_nameraw", _fullName, true];  
-	player setVariable ["ACE_name", _fullName, true];  
-	
+	player setVariable ["ACE_nameraw", _fullName, true];
+	player setVariable ["ACE_name", _fullName, true];
+
 }] call CBA_fnc_addEventHandler;
 
 [{
-	[QGVAR(setName)] call CBA_fnc_localEvent;		
-}, [], 1] call CBA_fnc_waitAndExecute;
+	[QGVAR(setName)] call CBA_fnc_localEvent;
+}, [], 5] call CBA_fnc_waitAndExecute;
 
 player addEventHandler ["Respawn", {
 	[QGVAR(setName)] call CBA_fnc_localEvent;
