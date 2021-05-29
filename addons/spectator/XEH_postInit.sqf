@@ -5,10 +5,13 @@ if !(hasInterface) exitWith {};
 // Spectator
 [QGVAR(prohibit), {
     [false] call ace_spectator_fnc_setSpectator;
-}, player] call CBA_fnc_addEventHandlerArgs;
+}] call CBA_fnc_addEventHandlerArgs;
 
 // Admin chat command to toggle spectator availability
 ["spec", {
+    if (GVAR(screens) isEqualTo []) exitWith {
+        systemChat "No spectator screens";
+    };
     if (missionNamespace getVariable [QGVAR(allowed), false]) then {
         [GVAR(prohibit), nil, call CBA_fnc_players] call CBA_fnc_targetEvent;
         missionNamespace setVariable [QGVAR(allowed), false, true];

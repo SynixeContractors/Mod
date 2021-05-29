@@ -11,12 +11,11 @@ if !(hasInterface) exitWith {};
 	};
 	player setVariable ["ACE_nameraw", _fullName, true];
 	player setVariable ["ACE_name", _fullName, true];
-
 }] call CBA_fnc_addEventHandler;
 
 [{
 	[QGVAR(setName)] call CBA_fnc_localEvent;
-}, [], 5] call CBA_fnc_waitAndExecute;
+}, [], 15] call CBA_fnc_waitAndExecute;
 
 player addEventHandler ["Respawn", {
 	[QGVAR(setName)] call CBA_fnc_localEvent;

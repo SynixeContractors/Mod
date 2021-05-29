@@ -10,7 +10,7 @@ addMissionEventHandler ["ExtensionCallback", {
 		case "member": {
 			(parseSimpleArray _data) params ["_name", "_id", "_instructor"];
 			GVAR(members) set [format ["D%1", _id], _name];
-			if (_instructor) then {
+			if (_instructor isEqualTo "true") then {
 				GVAR(instructors) pushBack [_id];
 			};
 		};
