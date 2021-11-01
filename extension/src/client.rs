@@ -9,8 +9,13 @@ struct Handlers;
 impl EventHandlers for Handlers {
     fn ready(user: DiscordUser) {
         thread::spawn(move || {
-            thread::sleep(std::time::Duration::from_secs(2));   
-            rv_callback!("synixe", "discord_user_ready", format!("D{}", user.user_id), user.username);
+            thread::sleep(std::time::Duration::from_secs(2));
+            rv_callback!(
+                "synixe",
+                "discord_user_ready",
+                format!("D{}", user.user_id),
+                user.username
+            );
         });
     }
 }

@@ -1,7 +1,7 @@
 use serde::Deserialize;
 
-use arma_rs::rv_callback;
 use crate::rv_send_callback;
+use arma_rs::rv_callback;
 
 #[derive(Deserialize)]
 struct Member {
@@ -36,16 +36,14 @@ pub fn get_members() {
                             m.user.name.clone()
                         },
                         m.user.id.clone(),
-                        (m.roles.contains(&826657899589664779) || m.roles.contains(&826657899589664800)).to_string()
+                        (m.roles.contains(&826657899589664779)
+                            || m.roles.contains(&826657899589664800))
+                        .to_string()
                     )
                 }
             });
-            rv_callback!(
-                "synixe",
-                "member_publish",
-                ""
-            );
-        },
+            rv_callback!("synixe", "member_publish", "");
+        }
         Err(e) => error!("Error fetching loadout: {}", e),
     }
 }
