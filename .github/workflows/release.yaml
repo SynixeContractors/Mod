@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         arrays: [
-          os: { tag: "ubuntu-latest", lib: "libsynixe.so", target: "i686-unknown-linux-gnu" },
+          # os: { tag: "ubuntu-latest", lib: "libsynixe.so", target: "i686-unknown-linux-gnu" },
           os: { tag: "ubuntu-latest", lib: "libsynixe.so", target: "x86_64-unknown-linux-gnu" },
           # os: { tag: "windows-latest", lib: "synixe.dll", target: "i686-pc-windows-msvc" },
           os: { tag: "windows-latest", lib: "synixe.dll", target: "x86_64-pc-windows-msvc" },
@@ -42,10 +42,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       
-      - uses: actions/download-artifact@v2
-        with:
-          name: i686-unknown-linux-gnu
-      - run: mv libsynixe.so synixe.so
+      # - uses: actions/download-artifact@v2
+      #   with:
+      #     name: i686-unknown-linux-gnu
+      # - run: mv libsynixe.so synixe.so
       - uses: actions/download-artifact@v2
         with:
           name: x86_64-unknown-linux-gnu
