@@ -21,7 +21,7 @@ ace_nametags_show_playernames = 0;
 	[_ace, _radar, _indicators, _stamina, _staminaBar, _nametags] spawn {
 		params ["_ace", "_radar", "_indicators", "_stamina", "_staminaBar", "_nametags"];
 		sleep 0.3;
-		"synixe" callExtension "screenshot";
+		EXT callExtension "screenshot";
 		sleep 0.3;
 		// Restore UI
 		["hideHud", _ace] call ace_common_fnc_showHud;

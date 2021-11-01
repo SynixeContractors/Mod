@@ -10,3 +10,10 @@
 	[_x, "synixe", 6, "label", "INTEL"] call acre_api_fnc_setPresetChannelField;
     [_x, "synixe"] call acre_api_fnc_setPreset;
 } forEach ["ACRE_PRC152", "ACRE_PRC117F"];
+
+addMissionEventHandler ["ExtensionCallback", {
+    params ["_name", "_function", "_data"];
+
+    if !((tolower _name) isEqualTo "synixe_log") exitWith {};
+	LOG_SYS(_function,_data);
+}];

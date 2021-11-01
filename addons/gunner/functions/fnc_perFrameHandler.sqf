@@ -23,7 +23,7 @@ if (count (_vehicle isVehicleSensorEnabled "LaserSensorComponent") > 0) then {
 		if (_target in _targets) then {
 			drawIcon3D ["", [1,1,1,1], ASLToAGL getPosASLVisual _target, 0, -0.5, 0, format ["%1", _source getVariable ["ace_laser_code", 1111]], 1, 0.035, GUNNER_FONT];
 		};
-	} forEach (ace_laser_laserEmitters select 2);
+	} forEach (values ace_laser_laserEmitters);
 };
 
 if (count (_vehicle isVehicleSensorEnabled "VisualSensorComponent") > 0) then {

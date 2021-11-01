@@ -15,7 +15,7 @@ GVAR(cameraChangedEH) = ["cameraView", {
 
 ["Synixe ISR", "SynixeISRCompass", ["Compass", "Show a 3D compass in the ISR"], {
     GVAR(compassEnabled) = !GVAR(compassEnabled);
-}, {}, [DIK_K, [false, false, false]]] call CBA_fnc_;
+}, {}, [DIK_K, [false, false, false]]] call CBA_fnc_addKeybind;
 ["Synixe ISR", "SynixeISRCompassIncreaseSpread", ["Compass - Increase Spread", "Increase the compass spread"], {
     GVAR(compassSpread) = GVAR(compassSpread) + 1;
 	if (GVAR(compassSpread) > 12) then {

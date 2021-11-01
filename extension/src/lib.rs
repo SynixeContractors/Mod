@@ -40,7 +40,6 @@ unsafe fn discord_setup(_steam_id: String, profile_name: String) {
 
 #[cfg(windows)]
 #[rv(thread = true)]
-#[allow(unused_must_use)]
 unsafe fn discord_update(details: String, state: String, image: String, text: String) {
     client::update(details, state, image, text);
 }

@@ -28,7 +28,7 @@ call FUNC(initModules);
 }] call CBA_fnc_addEventHandler;
 
 [{player isNotEqualTo objNull}, {
-	"synixe" callExtension ["discord_setup", [getPlayerUID player, profileName]];
+	EXT callExtension ["discord_setup", [getPlayerUID player, profileName]];
 
 	[{
 		private _role = "https://synixe.contractors";
@@ -45,7 +45,7 @@ call FUNC(initModules);
 			};
 		};
 
-		"synixe" callExtension [
+		EXT callExtension [
 			"discord_update",
 			[
 				_mission,

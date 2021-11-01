@@ -2,4 +2,4 @@
 
 params [["_url", ""]];
 
-"synixe" callExtension ["browser", [_url]];
+EXT callExtension ["browser", [_url]];
