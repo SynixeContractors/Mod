@@ -1,3 +1,5 @@
+use std::{sync::Mutex, thread, time::SystemTime};
+
 use arma_rs::rv_callback;
 use discord_rpc_sdk::{DiscordUser, EventHandlers, RichPresence, RPC};
 
@@ -21,12 +23,12 @@ lazy_static::lazy_static! {
 static mut TIMESTAMP: Option<SystemTime> = None;
 static mut PROFILE_NAME: String = String::new();
 
-unsafe fn setup(_steam_id: String, profile_name: String) {
+pub unsafe fn setup(_steam_id: String, profile_name: String) {
     TIMESTAMP = Some(SystemTime::now());
     PROFILE_NAME = profile_name;
 }
 
-unsafe fn update(details: String, state: String, image: String, text: String) {
+pub unsafe fn update(details: String, state: String, image: String, text: String) {
     let presence = RichPresence {
         details: Some(details),
         state: Some(state),
