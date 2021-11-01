@@ -13,8 +13,10 @@ fn get_members() {
 }
 
 // Client
+#[cfg(windows)]
 mod client;
 
+#[cfg(windows)]
 #[rv]
 #[allow(unused_must_use)]
 fn browser(url: String) -> String {
@@ -22,16 +24,19 @@ fn browser(url: String) -> String {
     url
 }
 
+#[cfg(windows)]
 #[rv]
 fn screenshot() {
     Enigo::new().key_click(Key::F12);
 }
 
+#[cfg(windows)]
 #[rv]
 unsafe fn discord_setup(_steam_id: String, profile_name: String) {
     client::setup(_steam_id, profile_name);
 }
 
+#[cfg(windows)]
 #[rv(thread = true)]
 #[allow(unused_must_use)]
 unsafe fn discord_update(details: String, state: String, image: String, text: String) {

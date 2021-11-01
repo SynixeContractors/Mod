@@ -11,8 +11,10 @@ jobs:
     strategy:
       matrix:
         arrays: [
-          os: { tag: "windows-latest", lib: "synixe.dll", target: "i686-pc-windows-msvc" },
+          # os: { tag: "windows-latest", lib: "synixe.dll", target: "i686-pc-windows-msvc" },
           os: { tag: "windows-latest", lib: "synixe.dll", target: "x86_64-pc-windows-msvc" },
+          os: { tag: "ubuntu-latest", lib: "libsynixe.so", target: "i686-unknown-linux-gnu" },
+          os: { tag: "ubuntu-latest", lib: "libsynixe.so", target: "x86_64-unknown-linux-gnu" },
         ]
     runs-on: ${{ matrix.arrays.os.tag }}
     steps:
@@ -40,11 +42,20 @@ jobs:
       
       - uses: actions/download-artifact@v2
         with:
-          name: x86_64-pc-windows-msvc
-      - run: mv synixe.dll synixe_x64.dll
+          name: i686-unknown-linux-gnu
+      - run: mv libsynixe.so synixe.so
       - uses: actions/download-artifact@v2
         with:
-          name: i686-pc-windows-msvc
+          name: x86_64-unknown-linux-gnu
+      - run: mv libsynixe.so synixe_x64.so
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: x86_64-pc-windows-msvc
+      - run: mv synixe.dll synixe_x64.dll
+      # - uses: actions/download-artifact@v2
+      #   with:
+      #     name: i686-pc-windows-msvc
 
       - name: Set VERSION env
         run: echo VERSION=${GITHUB_REF:11} >> $GITHUB_ENV

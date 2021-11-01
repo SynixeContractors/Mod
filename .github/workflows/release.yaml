@@ -10,7 +10,9 @@ jobs:
     strategy:
       matrix:
         arrays: [
-          os: { tag: "windows-latest", lib: "synixe.dll", target: "i686-pc-windows-msvc" },
+          os: { tag: "ubuntu-latest", lib: "libsynixe.so", target: "i686-unknown-linux-gnu" },
+          os: { tag: "ubuntu-latest", lib: "libsynixe.so", target: "x86_64-unknown-linux-gnu" },
+          # os: { tag: "windows-latest", lib: "synixe.dll", target: "i686-pc-windows-msvc" },
           os: { tag: "windows-latest", lib: "synixe.dll", target: "x86_64-pc-windows-msvc" },
         ]
     runs-on: ${{ matrix.arrays.os.tag }}
@@ -22,6 +24,9 @@ jobs:
         with:
           target: ${{ matrix.arrays.os.target }}
           toolchain: stable
+      - name: Install 32bit packages
+        run: sudo apt-get install gcc-multilib
+        if: ${{ matrix.arrays.os.target == 'i686-unknown-linux-gnu' }}
       - name: Cargo Build
         run: cd extension && cargo build --release --target ${{ matrix.arrays.os.target }}
       - name: Upload
@@ -39,11 +44,19 @@ jobs:
       
       - uses: actions/download-artifact@v2
         with:
-          name: x86_64-pc-windows-msvc
-      - run: mv synixe.dll synixe_x64.dll
+          name: i686-unknown-linux-gnu
+      - run: mv libsynixe.so synixe.so
       - uses: actions/download-artifact@v2
         with:
-          name: i686-pc-windows-msvc
+          name: x86_64-unknown-linux-gnu
+      - run: mv libsynixe.so synixe_x64.so
+      - uses: actions/download-artifact@v2
+        with:
+          name: x86_64-pc-windows-msvc
+      - run: mv synixe.dll synixe_x64.dll
+      # - uses: actions/download-artifact@v2
+      #   with:
+      #     name: i686-pc-windows-msvc
 
       - name: Set VERSION env
         run: echo VERSION=${GITHUB_REF:11} >> $GITHUB_ENV
@@ -53,12 +66,21 @@ jobs:
           command: 'build --release'
       - uses: actions/upload-artifact@v2
         with:
-          name: synixe.zip
-          path: 'releases/synixe.zip'
+          name: armapmc.zip
+          path: 'releases/pmc.zip'
       # Upload to GitHub
       - uses: softprops/action-gh-release@v1
         with:
-          files: 'releases/synixe.zip'
+          files: 'releases/pmc.zip'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+      # Upload to Steam Workshop
+      - run: unzip releases/pmc.zip -d ./unzipped
+      - uses: arma-actions/workshop-upload@v1
+        with:
+          itemId: '2347071898' # Id of item to update
+          contentPath: 'unzipped'
+          changelog: 'https://github.com/Dynulo/ArmaPMC/releases/tag/v${{ env.VERSION }}'
+        env:
+          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
+          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
