@@ -1,4 +1,6 @@
 use arma_rs::{rv, rv_callback, rv_handler};
+
+#[cfg(windows)]
 use enigo::{Enigo, Key, KeyboardControllable};
 
 #[macro_use]
