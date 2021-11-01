@@ -1,0 +1,23 @@
+[package]
+name = "synixe"
+version = "0.1.0"
+authors = ["Brett Mayson <brett@mayson.io>"]
+edition = "2018"
+
+[lib]
+name = "synixe"
+crate-type = ["cdylib"]
+
+[dependencies]
+arma-rs = { git = "https://github.com/synixebrett/arma-rs", branch = "expirement" }
+lazy_static = "1.4"
+log = "0.4"
+
+# Server
+reqwest = { version = "0.10", features = ["json", "blocking", "rustls-tls"], default-features = false }
+serde = { version = "1.0", features = ["derive"] }
+
+# Client
+discord-rpc-sdk = { git = "https://github.com/synixebrett/rust-discord-rpc", branch = "master" }
+enigo = "0.0.14"
+webbrowser = "0.5"
