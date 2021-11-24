@@ -1,5 +1,5 @@
 class CfgGroups {
-	class Empty {
+	class Indep {
 		class SynixeContractors {
 			name = "Synixe Contractors";
 			class BaseComponents {

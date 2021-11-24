@@ -17,7 +17,7 @@ if (_case isEqualTo "") exitWith {};
 			deleteVehicle _drone;
 
 			private _gwh = [getPos _drone, 0, 'GroundWeaponHolder', side _unit] call BIS_fnc_spawnVehicle; 
-			(_gwh select 0) addMagazineCargo [_case, 1];
+			(_gwh select 0) addMagazineCargoGlobal [_case, 1];
 		};
 	}, 
 	{}, 

@@ -1,33 +1,36 @@
 class CfgUnitInsignia {
     class Synixe_PAC_P {
-		displayName = "PaC";
-		author = "Some random website idk";
+		displayName = "Avingon Pac";
+		author = "Avingon Pac";
 		texture = QPATHTOF(textures\pac.paa);
 	};
 
     // BEAST
     class Synixe_GoingToDie_P {
         displayName = "We're all going to die";
-        author = "Some website, who knows.";
+        author = "Nathanial Greene";
         texture = QPATHTOF(textures\goingtodie.paa);
     };
 
     class Synixe_Arsey_P {
-        displayName = "Arsey";
-        author = "Arsey";
+        displayName = "Arsey Johnson";
+        author = "Arsey Johnson";
         texture = QPATHTOF(textures\arsey.paa);
     };
 
     class Synixe_Gabe_P {
         displayName = "Thick Thighs Save Lives";
-        author = "Gabe";
+        author = "Gabriel Penteado";
         texture = QPATHTOF(textures\gabe.paa);
     };
-
+    class Synixe_Jacob_P {
+        displayName = "Jacob McDowall";
+        author = "Jacob McDowall";
+    };
 
 	class Synixe_Medic_P {
 		displayName = "Medical";
-		author = "SynixeBrett";
+		author = "Synixe Contractors";
 		texture = QPATHTOF(textures\medic.paa);
 	};
 	class Synixe_Medic_Black_P {

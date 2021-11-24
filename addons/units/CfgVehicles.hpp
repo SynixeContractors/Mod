@@ -61,4 +61,6 @@ class CfgVehicles {
 	};
 
 	#include "CfgVehicles_GroundItems.hpp"
+
+	#include "vehicles/air/heli_light_01.hpp"
 };
