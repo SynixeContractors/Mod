@@ -45,6 +45,14 @@ class CfgAmmo {
     };
 };
 
+// Disable GPS minimap
+class Extended_DisplayLoad_EventHandlers {
+    class RscCustomInfoMiniMap {
+        GVAR(nogps) = "params ['_display']; { if ((vehicle ace_player) isEqualTo ace_player) then { _x ctrlShow false; } } forEach allControls _display;";
+    };
+};
+
+
 // Admin Settings
 
 cba_settings_whitelist[] = {

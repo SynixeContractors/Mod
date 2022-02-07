@@ -60,3 +60,12 @@
 	false,
 	true
 ] call CBA_fnc_addSetting;
+
+[
+	QGVAR(requireRadio),
+	"CHECKBOX",
+	"Radio",
+	["Synixe Arsenal", "Required Equipment"],
+	false,
+	true
+] call CBA_fnc_addSetting;

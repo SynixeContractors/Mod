@@ -49,6 +49,10 @@ if (GVAR(requireHandgun)) then {
 	};
 };
 
+if (GVAR(requireRadio)) then {
+	[["ACRE_PRC152"], 1, "AN/PRC-152", _missing] call FUNC(countItem);
+};
+
 [["ACE_fieldDressing", "ACE_elasticBandage", "ACE_packingBandage", "ACE_quikclot"],
 							10, "Bandages", _missing] call FUNC(countItem);
 [["ACE_bodyBag"], 			1, "Bodybag", _missing] call FUNC(countItem);
@@ -58,6 +62,7 @@ if (GVAR(requireHandgun)) then {
 // [[QITEM(txa)], 				1, "TXA", _missing] call FUNC(countItem);
 [["ACE_tourniquet"], 		2, "Tourniquets", _missing] call FUNC(countItem);
 [["ACE_SpraypaintGreen"], 	1, "Spray Paint (Green)", _missing] call FUNC(countItem);
+[["SmokeShell"], 			2, "Smoke Grenade (White)", _missing] call FUNC(countItem);
 
 if (_new#9#0 isEqualTo "") then {
 	_missing pushBack "A Map";

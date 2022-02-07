@@ -35,6 +35,7 @@ private _missing = [];
 			[[QITEM(axe)], 				1, "Axe", _missing] call FUNC(countItem);
 			[["ToolKit"], 				1, "Toolkit", _missing] call FUNC(countItem);
 			[["DemoCharge_Remote_Mag"], 2, "M112 Demo Block", _missing] call FUNC(countItem);
+			[["ACE_rope3","ACE_rope6"], 2, "Rope", _missing] call FUNC(countItem);
 		};
 		case "eod": {
 			[["ACE_Clacker", "ACE_M26_Clacker"], 	1, "Clacker", _missing] call FUNC(countItem);
@@ -55,6 +56,10 @@ private _missing = [];
 			[["ACE_HandFlare_Yellow"], 		4, "Hand Flare (Yellow)", _missing] call FUNC(countItem);
 			[["SmokeShellOrange"], 			2, "Smoke Shell (Orange)", _missing] call FUNC(countItem);
 		};
+		case "ol":
+		case "el": {
+			[["ACRE_PRC152", "ACRE_PRC117F"], 2, "Secondary Radio", _missing] call FUNC(countItem);
+		}
 		default { };
 	};
 } forEach _roles;
