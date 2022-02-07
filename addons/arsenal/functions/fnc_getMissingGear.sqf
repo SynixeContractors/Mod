@@ -68,7 +68,7 @@ if (_new#9#1 isEqualTo "") then {
 };
 
 if (_new#9#3 isEqualTo "") then {
-	_missing pushBack "A Compas";
+	_missing pushBack "A Compass";
 };
 
 if (_new#9#4 isEqualTo "") then {

@@ -15,6 +15,7 @@ class CfgWeapons {
             mass = 1;
         };
     };
+
     class ITEM(txa): ACE_ItemCore {
         scope = 2;
         author = "Synixe Contractors";

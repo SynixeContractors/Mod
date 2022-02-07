@@ -26,6 +26,7 @@ class CfgUnitInsignia {
     class Synixe_Jacob_P {
         displayName = "Jacob McDowall";
         author = "Jacob McDowall";
+        texture = QPATHTOF(textures\jacob_ca.paa);
     };
 
 	class Synixe_Medic_P {

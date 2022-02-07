@@ -7,12 +7,12 @@ private _roles = [_unit] call EFUNC(common,findRoles);
 private _missing = [];
 
 {
-	switch (_x) do {
-		case "Medic": {
+	switch (tolower _x) do {
+		case "medic": {
 			[["ACE_bodyBag"], 			3, "Bodybags", _missing] call FUNC(countItem);
 			[["ACE_adenosine"], 		2, "Adenosine", _missing] call FUNC(countItem);
 			[["ACE_epinephrine"], 		2, "Epinephrine", _missing] call FUNC(countItem);
-			[[QITEM(txa)], 				4, "TXA", _missing] call FUNC(countItem);
+			// [[QITEM(txa)], 				4, "TXA", _missing] call FUNC(countItem);
 			[["ACE_morphine"], 			2, "Morphine", _missing] call FUNC(countItem);
 			[[QITEM(painkillers)], 		10, "Painkillers", _missing] call FUNC(countItem);
 			[["ACE_elasticBandage"], 	30, "Bandages (Elastic)", _missing] call FUNC(countItem);
@@ -29,14 +29,14 @@ private _missing = [];
 			[["kat_larynx"], 			2, "KingLT", _missing] call FUNC(countItem);
 			[["kat_Pulseoximeter"], 	2, "Pulse Oximeter", _missing] call FUNC(countItem);
 		};
-		case "Engineer": {
+		case "engineer": {
 			[["ACE_wirecutter"], 		1, "Wirecutter", _missing] call FUNC(countItem);
 			[["ACE_EntrenchingTool"], 	1, "Entrenching Tool", _missing] call FUNC(countItem);
 			[[QITEM(axe)], 				1, "Axe", _missing] call FUNC(countItem);
 			[["ToolKit"], 				1, "Toolkit", _missing] call FUNC(countItem);
 			[["DemoCharge_Remote_Mag"], 2, "M112 Demo Block", _missing] call FUNC(countItem);
 		};
-		case "EOD": {
+		case "eod": {
 			[["ACE_Clacker", "ACE_M26_Clacker"], 	1, "Clacker", _missing] call FUNC(countItem);
 			[["ACE_DefusalKit"], 					1, "Defusal Kit", _missing] call FUNC(countItem);
 			[["ACE_wirecutter"], 					1, "Wirecutter", _missing] call FUNC(countItem);
@@ -46,7 +46,7 @@ private _missing = [];
 				_missing pushBackUnique "GPR";
 			};
 		};
-		case "Signaller": {
+		case "signaller": {
 			[["ACE_Chemlight_HiRed"], 		3, "Chemlight (Hi Red)", _missing] call FUNC(countItem);
 			[["ACE_Chemlight_HiGreen"], 	3, "Chemlight (Hi Green)", _missing] call FUNC(countItem);
 			[["ACE_Chemlight_HiYellow"], 	6, "Chemlight (Hi Yellow)", _missing] call FUNC(countItem);

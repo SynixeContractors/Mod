@@ -7,12 +7,6 @@ GVAR(arsenalDisplay) = [_display];
 
 [ACE_player, getUnitLoadout ACE_player, getUnitLoadout ACE_player] call FUNC(handleLoadout);
 
-private _ctrlPanel = _display displayCtrl IDC_requiredGearBox;
-
-_ctrlPanel ctrlShow true;
-_ctrlPanel ctrlSetFade 0;
-_ctrlPanel ctrlCommit 0;
-
 // Disable Face & Voice
 
 [{

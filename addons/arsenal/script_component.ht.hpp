@@ -40,3 +40,5 @@
 #define IDC_specialGearBox 25835
 #define IDC_specialGearTitle 25836
 #define IDC_specialGearText 25837
+
+#define CUSTOM_BOXES [IDC_requiredGearBox, IDC_requiredGearTitle, IDC_specialGearBox, IDC_specialGearTitle]

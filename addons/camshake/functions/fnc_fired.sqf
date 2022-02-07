@@ -21,7 +21,7 @@ if (_intensity >= 1) exitWith {};
 _intensity = 1 - _intensity;
 
 // Calculate the intensity based on the caliber
-private _force = (0.4 + (_caliber / 23)) * _intensity;
+private _force = (0.4 + (_caliber / 20)) * _intensity;
 private _length = (0.2 + (_caliber / 45));
 private _frequency = (35 + (_caliber / 6)) * _intensity;
 
@@ -31,8 +31,8 @@ if (_frequency < 0) then {_frequency = 0;};
 
 addCamShake [_force, _length, _frequency];
 
-if (_caliber > 2.1) then {
+if (_caliber > 1.5) then {
 	if (_intensity > 0.6) then {
-		GVAR(blurStrength) = GVAR(blurStrength) + ((0.45 + (_caliber * 0.03)) * _intensity);
+		GVAR(blurStrength) = GVAR(blurStrength) + ((0.45 + (_caliber * 0.02)) * _intensity);
 	};
 };

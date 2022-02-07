@@ -4,12 +4,12 @@ params ["_unit", "_new", "_old"];
 
 GVAR(itemCache) = (items _unit) + (magazines _unit);
 
-if !(GVAR(enabled)) then {
+if !(GVAR(enabled)) exitWith {
 	{
 		private _ctrl = GVAR(arsenalDisplay)#0 displayCtrl _x;
 		_ctrl ctrlShow false;
 		_ctrl ctrlCommit 0.15;
-	} forEach [IDC_requiredGearBox, IDC_requiredGearTitle];
+	} forEach CUSTOM_BOXES;
 };
 
 private _missingRequired = [_unit] call FUNC(getMissingGear);

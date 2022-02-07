@@ -28,5 +28,6 @@
     "kat_bloodIV_A", "kat_bloodIV_A_500", "kat_bloodIV_A_250",\
     "kat_bloodIV_B", "kat_bloodIV_B_500", "kat_bloodIV_B_250",\
     "kat_bloodIV_AB", "kat_bloodIV_AB_500", "kat_bloodIV_AB_250",\
-    QITEM(txa)\
+    QITEM(txa), "kat_stethoscope", "KAT_Empty_bloodIV_250",\
+    "KAT_Empty_bloodIV_500"\
 ]
