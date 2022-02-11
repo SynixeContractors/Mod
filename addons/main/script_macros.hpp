@@ -41,3 +41,6 @@
 // Other Macros
 #define ITEM(name) synixe_##name
 #define QITEM(name) QUOTE(ITEM(name))
+
+// Regex
+#define PERSON_MARKER_REGEX "%1 \(([^,]+)(?:,\s*([^,\)]+))*\)"

@@ -28,6 +28,7 @@ private _missing = [];
 			[["kat_guedel"], 			6, "Guedel Tubes", _missing] call FUNC(countItem);
 			[["kat_larynx"], 			2, "KingLT", _missing] call FUNC(countItem);
 			[["kat_Pulseoximeter"], 	2, "Pulse Oximeter", _missing] call FUNC(countItem);
+			[["kat_stethoscope"],		1, "Stethoscope", _missing] call FUNC(countItem);
 		};
 		case "engineer": {
 			[["ACE_wirecutter"], 		1, "Wirecutter", _missing] call FUNC(countItem);
@@ -56,10 +57,10 @@ private _missing = [];
 			[["ACE_HandFlare_Yellow"], 		4, "Hand Flare (Yellow)", _missing] call FUNC(countItem);
 			[["SmokeShellOrange"], 			2, "Smoke Shell (Orange)", _missing] call FUNC(countItem);
 		};
-		case "ol":
+		case "ol";
 		case "el": {
 			[["ACRE_PRC152", "ACRE_PRC117F"], 2, "Secondary Radio", _missing] call FUNC(countItem);
-		}
+		};
 		default { };
 	};
 } forEach _roles;

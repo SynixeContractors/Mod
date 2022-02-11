@@ -21,7 +21,7 @@
     "SLIDER",
     "Primary Ammunition",
     ["Synixe Arsenal", "Required Equipment"],
-    [0, 150, 120, 0, false],
+    [0, 180, 120, 0, false],
     true
 ] call CBA_fnc_addSetting;
 
@@ -66,6 +66,6 @@
 	"CHECKBOX",
 	"Radio",
 	["Synixe Arsenal", "Required Equipment"],
-	false,
+	true,
 	true
 ] call CBA_fnc_addSetting;

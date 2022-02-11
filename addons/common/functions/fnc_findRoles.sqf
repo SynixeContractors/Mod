@@ -6,7 +6,7 @@ private _ret = [];
 
 {
 	private _text = markerText _x;
-	private _match = _text regexFind [format ["%1 \(([^,]+)(?:,\s*([^,\)]+))*\)", name _unit]];
+	private _match = _text regexFind [format [PERSON_MARKER_REGEX, name _unit]];
 	if (_match isNotEqualTo []) then {
 		_ret = [];
 		{

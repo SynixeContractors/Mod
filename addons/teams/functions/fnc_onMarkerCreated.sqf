@@ -1,0 +1,27 @@
+#include "script_component.hpp"
+
+params ["_marker"];
+
+private _text = markerText _marker;
+if (
+	_text isEqualTo (name player) ||
+	{(_text regexFind [format [PERSON_MARKER_REGEX, name player]]) isNotEqualTo []}
+) then {
+	switch (markerColor _marker) do {
+		case "ColorRed": {
+			player assignTeam "RED";
+		};
+		case "ColorBlue": {
+			player assignTeam "BLUE";
+		};
+		case "ColorGreen": {
+			player assignTeam "GREEN";
+		};
+		case "ColorYellow": {
+			player assignTeam "YELLOW";
+		};
+		default {
+			player assignTeam "MAIN";
+		};
+	};
+};
