@@ -16,9 +16,6 @@
 // Vanilla AI
 #define CT_STRUCTURED_TEXT 13
 
-#define ST_LEFT 0
-#define ST_CENTER 02
-
 // ACE
 
 #define pixelScale  0.25

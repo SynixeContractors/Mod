@@ -2,17 +2,14 @@
 
 class CfgPatches {
     class ADDON {
-        name = COMPONENT_NAME;
+        name = QUOTE(COMPONENT);
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {
-            "{{project.prefix}}_main"
-        };
-        author = "SynixeBrett";
+        requiredAddons[] = {};
+        author = "AUTHOR";
         VERSION_CONFIG;
     };
 };
 
 #include "CfgEventHandlers.hpp"
-#include "ui\RscModal.hpp"

@@ -1,6 +1,9 @@
 // #include "\x\cba\addons\main\script_macros_common.hpp" // Included in ACE3's "script_macros.hpp"
 #include "\z\ace\addons\main\script_macros.hpp"
 
+#include "\a3\ui_f\hpp\defineDIKCodes.inc"
+#include "\a3\ui_f\hpp\defineCommonGrids.inc"
+
 #define DFUNC(var1) TRIPLES(ADDON,fnc,var1)
 
 #ifdef DISABLE_COMPILE_CACHE
@@ -10,6 +13,14 @@
     #undef PREP
     #define PREP(fncName) [QPATHTOF(functions\DOUBLES(fnc,fncName).sqf), QFUNC(fncName)] call CBA_fnc_compileFunction
 #endif
+
+// GUI
+#define ST_LEFT           0
+#define ST_RIGHT          1
+#define ST_CENTER         2
+
+#define IDC_OK            1
+#define IDC_CANCEL        2
 
 // Class
 #define CLASS(var1) DOUBLES(PREFIX,var1)
