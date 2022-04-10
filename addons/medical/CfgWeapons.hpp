@@ -15,18 +15,4 @@ class CfgWeapons {
             mass = 1;
         };
     };
-
-    class ITEM(txa): ACE_ItemCore {
-        scope = 2;
-        author = "Synixe Contractors";
-        model = "a3\Props_F_Orange\Humanitarian\Garbage\MedicalGarbage_01_Injector_F.p3d";
-        picture = QPATHTOF(ui\txa_inventory_ca.paa);
-        displayName = CSTRING(TXA_Name);
-        descriptionShort = CSTRING(TXA_Desc_Short);
-        descriptionUse = CSTRING(TXA_Desc_Use);
-
-        class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 1;
-        };
-    };
 };

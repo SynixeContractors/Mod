@@ -2,7 +2,7 @@
 
 // Always holster when leaving the arsenal
 ["ace_arsenal_displayClosed", {
-	if (missionName isNotEqualTo "Arsenal") then {
+	if !(missionName in ["Arsenal", "pmc_training"]) then {
 		[{
 			if ((currentWeapon ACE_player) != "") then {
 				if (ACE_player isEqualTo player) then {

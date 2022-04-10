@@ -6,7 +6,8 @@ class CfgPatches {
         units[] = {
             QCLASS(Item_Uniform_Combat_LS_Synixe_BP_BB),
             QCLASS(Item_Uniform_Combat_RS_Synixe_BP_BB),
-            QCLASS(Item_Uniform_Contractor_Shirt)
+            QCLASS(Item_Uniform_Contractor_Shirt),
+            QCLASS(Heli_Light_01_F)
         };
         weapons[] = {
             QCLASS(Uniform_Combat_LS_Synixe_BP_BB),

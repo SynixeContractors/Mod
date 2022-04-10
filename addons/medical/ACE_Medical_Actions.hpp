@@ -9,15 +9,6 @@ class ace_medical_treatment_actions {
         condition = "";
         callbackSuccess = QUOTE(call ACEFUNC(medical_treatment,medication));
     };
-    class ITEM(txa): Morphine {
-        displayName = CSTRING(TXAAction);
-        displayNameProgress = CSTRING(TXAProgress);
-        items[] = {QITEM(txa)};
-        icon = "z\ace\addons\medical_gui\ui\auto_injector.paa";
-        condition = "";
-        callbackSuccess = QUOTE(call ACEFUNC(medical_treatment,medication));
-        litter[] = {{QITEM(txa_litter)}};
-    };
 };
 
 class ace_medical_treatment {
@@ -31,12 +22,6 @@ class ace_medical_treatment {
             maxDose = 6;
             inCompatableMedication[] = {};
             viscosityChange = 5;
-        };
-        class ITEM(txa) {
-            painReduce = 0;
-            timeInSystem = 420; // 7 Minutes
-            maxDose = 4;
-            viscosityChange = 15;
         };
     };
 };

@@ -12,7 +12,6 @@ private _missing = [];
 			[["ACE_bodyBag"], 			3, "Bodybags", _missing] call FUNC(countItem);
 			[["ACE_adenosine"], 		2, "Adenosine", _missing] call FUNC(countItem);
 			[["ACE_epinephrine"], 		2, "Epinephrine", _missing] call FUNC(countItem);
-			// [[QITEM(txa)], 				4, "TXA", _missing] call FUNC(countItem);
 			[["ACE_morphine"], 			2, "Morphine", _missing] call FUNC(countItem);
 			[[QITEM(painkillers)], 		10, "Painkillers", _missing] call FUNC(countItem);
 			[["ACE_elasticBandage"], 	30, "Bandages (Elastic)", _missing] call FUNC(countItem);

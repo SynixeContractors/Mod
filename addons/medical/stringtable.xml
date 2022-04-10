@@ -22,22 +22,5 @@
             <English>Administering painkillers...</English>
             <German>Schmerzmittel verwalten</German>
         </Key>
-
-        <Key ID="STR_Synixe_Medical_TXA_Name">
-            <English>TXA</English>
-            <German>TXA</German>
-        </Key>
-        <Key ID="STR_Synixe_Medical_TXA_Desc_Short">
-            <English>Used to encourage blood clotting</English>
-            <German>Die Bildung von Blutgerinnseln zu fördern</German>
-        </Key>
-        <Key ID="STR_Synixe_Medical_TXAAction">
-            <English>Inject TXA</English>
-            <German>TXA injizieren</German>
-        </Key>
-        <Key ID="STR_Synixe_Medical_TXAProgress">
-            <English>Injecting TXA...</English>
-            <German>TXA injizieren</German>
-        </Key>
     </Package>
 </Project>
