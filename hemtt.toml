@@ -3,7 +3,7 @@ prefix = "synixe"
 author = "Synixe Contractors"
 template = "cba"
 files = ["mod.cpp", "synixe_x64.dll", "synixe.so", "synixe_x64.so"]
-version = "0.1.9"
+version = "0.1.10"
 
 postbuild = ["!extension"]
 releasebuild = ["@zip {{modname}}", "@zip {{key_name}}"]

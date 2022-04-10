@@ -38,7 +38,7 @@ setCurrentChannel 0;            //Change to Global
 			if (_mission == "tempMissionSP") then {
 				_mission = "Editing Missions";
 			} else {
-				_mission = briefingName;
+				_mission = getMissionConfigValue ["onLoadName", briefingName];
 			};
 		};
 
@@ -48,8 +48,16 @@ setCurrentChannel 0;            //Change to Global
 				_mission,
 				_role,
 				toLower(worldName),
-				getText (configfile >> "CfgWorlds" >> worldname >> "description")
+				getText (configfile >> "CfgWorlds" >> worldName >> "description")
 			]
 		];
 	}, 20] call CBA_fnc_addPerFrameHandler;
 }] call CBA_fnc_waitUntilAndExecute;
+
+// Disable GPS minimap
+
+["vehicle", {
+	params ["_unit"];
+	_unit enableInfoPanelComponent ["left", "MinimapDisplayComponent", false];
+	_unit enableInfoPanelComponent ["right", "MinimapDisplayComponent", false];
+}, true] call CBA_fnc_addPlayerEventHandler;
