@@ -3,18 +3,20 @@
 GVAR(cameraChangedEH) = ["cameraView", {
 	params ["", "_new", "_old"];
 	if (_old isEqualTo "GUNNER") then {
+		GVAR(inISR) = true;
 		if !(isNil QGVAR(pfh)) then {
 			[GVAR(pfh)] call CBA_fnc_removePerFrameHandler;
 			GVAR(pfh) = nil;
 		};
 	};
-	if (_new isEqualTo "GUNNER") then {
+	if (_new isEqualTo "GUNNER" && call FUNC(isISR)) then {
+		GVAR(inISR) = true;
 		GVAR(pfh) = [FUNC(perFrameHandler)] call CBA_fnc_addPerFrameHandler;
 	};
-}] call CBA_fnc_addPlayerEventHandler;
+}, true] call CBA_fnc_addPlayerEventHandler;
 
 ["Synixe ISR", "SynixeISRCompass", ["Compass", "Show a 3D compass in the ISR"], {
-	if ((vehicle ace_player) isNotEqualTo ace_player) then {
+	if (GVAR(inISR) && {(vehicle ace_player) isNotEqualTo ace_player}) then {
 		GVAR(compassEnabled) = !GVAR(compassEnabled);
 	};
 }, {}, [DIK_K, [false, false, false]]] call CBA_fnc_addKeybind;

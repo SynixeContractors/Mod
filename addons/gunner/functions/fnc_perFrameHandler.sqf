@@ -30,23 +30,25 @@ if (count (_vehicle isVehicleSensorEnabled "LaserSensorComponent") > 0) then {
 if (count (_vehicle isVehicleSensorEnabled "VisualSensorComponent") > 0) then {
 	// Markers
 	{
-		if (markerShape _x isEqualTo "ICON" && {worldToScreen (markerPos [_x, true]) isNotEqualTo []}) then {
-			private _type = markerType _x;
-			private _icon = GVAR(iconCache) getOrDefault [_type, "-"];
-			if (_icon isEqualTo "-") then {
-				_icon = getText (configFile >> "CfgMarkers" >> _type >> "icon");
-				GVAR(iconCache) set [_type, _icon];
-			};
-			private _colorType = markerColor _x;
-			private _color = GVAR(colorCache) getOrDefault [_colorType, []];
-			if (_color isEqualTo []) then {
-				private _color = getArray (configFile >> "CfgMarkerColors" >> _colorType >> "color");
-				GVAR(colorCache) set [_colorType, _color];
-			};
-			_color set [3, markerAlpha _x];
-			private _pos = markerPos [_x, true];
-			drawIcon3D [_icon, _color, _pos, 1, 1, 0, format ["%1 (%2)", markerText _x, round (_vehicle distance _pos)], 1, 0.035, GUNNER_FONT];
+		if (markerShape _x != "ICON") then { continue };
+		if (worldToScreen (markerPos [_x, true]) isEqualTo []) then { continue };
+		if (markerShape _x == "Empty") then { continue };
+
+		private _type = markerType _x;
+		private _icon = GVAR(iconCache) getOrDefault [_type, "-"];
+		if (_icon isEqualTo "-") then {
+			_icon = getText (configFile >> "CfgMarkers" >> _type >> "icon");
+			GVAR(iconCache) set [_type, _icon];
 		};
+		private _colorType = markerColor _x;
+		private _color = GVAR(colorCache) getOrDefault [_colorType, []];
+		if (_color isEqualTo []) then {
+			private _color = getArray (configFile >> "CfgMarkerColors" >> _colorType >> "color");
+			GVAR(colorCache) set [_colorType, _color];
+		};
+		_color set [3, markerAlpha _x];
+		private _pos = markerPos [_x, true];
+		drawIcon3D [_icon, _color, _pos, 1, 1, 0, format ["%1 (%2)", markerText _x, round (_vehicle distance _pos)], 1, 0.035, GUNNER_FONT];
 	} forEach allMapMarkers;
 };
 

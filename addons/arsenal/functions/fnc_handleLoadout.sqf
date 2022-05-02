@@ -2,7 +2,14 @@
 
 params ["_unit", "_new", "_old"];
 
-GVAR(itemCache) = (items _unit) + (magazines _unit);
+GVAR(itemCache) = [];
+{
+	if ([_x] call acre_api_fnc_isRadio) then {
+		GVAR(itemCache) pushBack ([_x] call acre_api_fnc_getBaseRadio);
+	} else {
+		GVAR(itemCache) pushBack _x;
+	};
+} forEach (items _unit) + (magazines _unit);
 
 if !(GVAR(enabled)) exitWith {
 	{

@@ -12,8 +12,6 @@ class CfgPatches {
     };
 };
 
-#include "CfgFactionClasses.hpp"
-
 // Editor Categories
 
 class CfgEditorCategories {
@@ -31,6 +29,21 @@ class CfgAmmo {
     class G_40mm_Smoke: SmokeShell {
         simulation = "shotSmoke";
         deflectionSlowDown = 0.1;
+    };
+};
+
+class CfgWorlds {
+    class CAWorld;
+    class Malden: CAWorld {
+        class Names {
+            class Malden_L_militarybase {
+                name = "Synixe Training Facility";
+                type = "NameVillage";
+            };
+            class Malden_L_Guran {
+                name = "Synixe Staff Resort";
+            };
+        };
     };
 };
 

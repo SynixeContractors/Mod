@@ -6,6 +6,12 @@
 	};
 }] call CBA_fnc_waitUntilAndExecute;
 
+// `vehicle _unit` in the disconnect handler was always the player
+["vehicle", {
+    params ["_unit", "_newVehicle", "_oldVehicle"];
+    _unit setVariable [QGVAR(currentVehicle), _newVehicle, true];
+}, true] call CBA_fnc_addPlayerEventHandler;
+
 [QGVAR(teleportResponse), {
 	params ["_position", "_vehicleInfo"];
 	player setPos _position;

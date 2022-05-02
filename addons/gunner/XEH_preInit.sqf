@@ -5,6 +5,8 @@ ADDON = false;
 GVAR(iconCache) = createHashMap;
 GVAR(colorCache) = createHashMap;
 
+GVAR(inISR) = false;
+
 GVAR(compassEnabled) = false;
 GVAR(compassSpread) = 4;
 

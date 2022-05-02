@@ -7,7 +7,7 @@ addMissionEventHandler ["HandleDisconnect", {
 	if (_unit isKindOf "HeadlessClient_F") exitWith {};
 	if (!alive _unit) exitWith {};
 	private _vehicleInfo = [];
-	private _vehicle = vehicle _unit;
+	private _vehicle = _unit getVariable [QGVAR(currentVehicle), vehicle _unit];
 	if (_vehicle isNotEqualTo _unit) then {
 		_vehicleInfo = [
 			_vehicle,

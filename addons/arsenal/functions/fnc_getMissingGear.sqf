@@ -62,6 +62,7 @@ if (GVAR(requireRadio)) then {
 [["ACE_tourniquet"], 		2, "Tourniquets", _missing] call FUNC(countItem);
 [["ACE_SpraypaintGreen"], 	1, "Spray Paint (Green)", _missing] call FUNC(countItem);
 [["SmokeShell"], 			2, "Smoke Grenade (White)", _missing] call FUNC(countItem);
+[["ACE_cableTie"],          2, "Cable Tie", _missing] call FUNC(countItem);
 
 if (_new#9#0 isEqualTo "") then {
 	_missing pushBack "A Map";
