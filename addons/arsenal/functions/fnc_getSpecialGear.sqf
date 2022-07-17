@@ -42,6 +42,8 @@ private _missing = [];
 			[["ACE_DefusalKit"], 					1, "Defusal Kit", _missing] call FUNC(countItem);
 			[["ACE_wirecutter"], 					1, "Wirecutter", _missing] call FUNC(countItem);
 			[["DemoCharge_Remote_Mag"], 			2, "M112 Demo Block", _missing] call FUNC(countItem);
+			[["ace_marker_flags_green"], 			5, "Marker Flag (Green)", _missing]  call FUNC(countItem);
+			[["ace_marker_flags_red"],   			5, "Marker Flag (Red)", _missing]   call FUNC(countItem);
 
 			if !(handgunWeapon _unit in ["ACE_VMH3", "ACE_VMM3"]) then {
 				_missing pushBackUnique "GPR";

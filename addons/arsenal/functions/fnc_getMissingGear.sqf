@@ -54,7 +54,7 @@ if (GVAR(requireRadio)) then {
 };
 
 [["ACE_fieldDressing", "ACE_elasticBandage", "ACE_packingBandage", "ACE_quikclot"],
-							10, "Bandages", _missing] call FUNC(countItem);
+							15, "Bandages", _missing] call FUNC(countItem);
 [["ACE_bodyBag"], 			1, "Bodybag", _missing] call FUNC(countItem);
 [["kat_guedel"], 			1, "Guedel Tube", _missing] call FUNC(countItem);
 [["ACE_splint"], 			1, "Splint", _missing] call FUNC(countItem);
@@ -62,7 +62,7 @@ if (GVAR(requireRadio)) then {
 [["ACE_tourniquet"], 		2, "Tourniquets", _missing] call FUNC(countItem);
 [["ACE_SpraypaintGreen"], 	1, "Spray Paint (Green)", _missing] call FUNC(countItem);
 [["SmokeShell"], 			2, "Smoke Grenade (White)", _missing] call FUNC(countItem);
-[["ACE_cableTie"],          2, "Cable Tie", _missing] call FUNC(countItem);
+[["ACE_CableTie"],          2, "Cable Tie", _missing] call FUNC(countItem);
 
 if (_new#9#0 isEqualTo "") then {
 	_missing pushBack "A Map";
