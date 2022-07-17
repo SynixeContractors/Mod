@@ -1,10 +1,4 @@
 class CfgUnitInsignia {
-    class Synixe_PAC_P {
-		displayName = "Avingon Pac";
-		author = "Avingon Pac";
-		texture = QPATHTOF(textures\pac.paa);
-	};
-
     // BEAST
     class Synixe_GoingToDie_P {
         displayName = "We're all going to die";
@@ -27,6 +21,31 @@ class CfgUnitInsignia {
         displayName = "Jacob McDowall";
         author = "Jacob McDowall";
         texture = QPATHTOF(textures\jacob_ca.paa);
+    };
+    class Synixe_Carson_P {
+        displayName = "Carson Sering";
+        author = "Carson Sering";
+        texture = QPATHTOF(textures\carson.paa);
+    };
+    class Synixe_Matias_P {
+        displayName = "Matías Jackson";
+        author = "Matías Jackson";
+        texture = QPATHTOF(textures\matias.paa);
+    };
+    class Synixe_Yurik_P {
+        displayName = "Yurik Stehlik";
+        author = "Yurik Stehlik";
+        texture = QPATHTOF(textures\yurik.paa);
+    };
+    class Synixe_Jay_P {
+        displayName = "Jay Sweeb";
+        author = "Jay Sweeb";
+        texture = QPATHTOF(textures\jay.paa);
+    };
+    class Synixe_Miller_P {
+        displayName = "Jonathan Miller";
+        author = "Jonathan Miller";
+        texture = QPATHTOF(textures\miller.paa);
     };
 
 	class Synixe_Medic_P {

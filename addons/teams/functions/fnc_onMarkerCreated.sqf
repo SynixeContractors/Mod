@@ -24,4 +24,9 @@ if (
 			player assignTeam "MAIN";
 		};
 	};
+	private _roles = [player] call synixe_common_fnc_findRoles;
+	if (count _roles == 0) then {
+		_roles = [""];
+	};
+	player setVariable ["diwako_dui_nametags_customGroup", _roles select 0, true];
 };
