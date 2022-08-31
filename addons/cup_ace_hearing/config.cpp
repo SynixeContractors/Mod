@@ -17,6 +17,7 @@ class CfgPatches {
             "CUP_Creatures_Military_USMC"
         };
         author = "AUTHOR";
+        authors[] = {"MikeMF"};
         VERSION_CONFIG;
     };
 };
