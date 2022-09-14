@@ -3,19 +3,4 @@ prefix = "synixe"
 author = "Synixe Contractors"
 template = "cba"
 files = ["mod.cpp", "synixe_x64.dll", "synixe.so", "synixe_x64.so"]
-version = "0.2.2"
-
-postbuild = ["!extension"]
-releasebuild = ["@zip {{modname}}", "@zip {{key_name}}"]
-
-[scripts.extension]
-show_output = true
-steps_windows = [
-    "rustup target add i686-pc-windows-msvc",
-    "cd extension && cargo build --release && cargo build --release --target=i686-pc-windows-msvc",
-    "copy extension\\target\\release\\synixe_cdylib.dll synixe_x64.dll",
-    "copy extension\\target\\i686-pc-windows-msvc\\release\\synixe_cdylib.dll synixe.dll",
-]
-steps_linux = [
-    "echo \"Unable to build extension on Linux\""
-]
+version = "0.3.1"

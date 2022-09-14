@@ -5,3 +5,4 @@ PREP(browser);
 PREP(modal);
 PREP(onModalClose);
 PREP(onModalOpen);
+PREP(screenshotMode);

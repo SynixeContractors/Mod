@@ -7,16 +7,13 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "{{project.prefix}}_main",
-            "ace_medical_engine",
-            "ace_medical_treatment"
+            "milgp_headgear_cfg",
+            "ace_common"
         };
         author = "AUTHOR";
         VERSION_CONFIG;
     };
 };
 
-#include "CfgEventHandlers.hpp"
-#include "CfgVehicles.hpp"
 #include "CfgWeapons.hpp"
-#include "ACE_Medical_Actions.hpp"
+#include "CfgVehicles.hpp"

@@ -905,7 +905,6 @@ dependencies = [
  "discord-rpc-sdk",
  "enigo",
  "lazy_static",
- "log",
  "reqwest",
  "serde",
  "webbrowser",

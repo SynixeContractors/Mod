@@ -25,7 +25,7 @@ setCurrentChannel 0;            //Change to Global
 
 // Setup discord extension
 [{player isNotEqualTo objNull}, {
-	EXT callExtension ["discord_setup", [getPlayerUID player, profileName]];
+	EXT callExtension ["discord:setup", [getPlayerUID player, profileName]];
 
 	[{
 		private _role = "https://synixe.contractors";
@@ -43,7 +43,7 @@ setCurrentChannel 0;            //Change to Global
 		};
 
 		EXT callExtension [
-			"discord_update",
+			"discord:update",
 			[
 				_mission,
 				_role,

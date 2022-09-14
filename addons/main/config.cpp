@@ -45,6 +45,15 @@ class CfgWorlds {
             };
         };
     };
+    class hellanmaaw: CAWorld {
+        description = "Hellanmaa (Winter)";
+    };
+    class tem_ihantalawa: CAWorld {
+        description = "Ihantala (Winter)";
+    };
+    class tem_summawcup: CAWorld {
+        description = "Summa (Winter)";
+    };
 };
 
 // Admin Settings

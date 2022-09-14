@@ -17,6 +17,7 @@ private _missing = [];
 			[["ACE_elasticBandage"], 	30, "Bandages (Elastic)", _missing] call FUNC(countItem);
 			[["ACE_packingBandage"], 	20, "Bandages (Packing)", _missing] call FUNC(countItem);
 			[["ACE_quikclot"], 			20, "Bandages (Quikclot)", _missing] call FUNC(countItem);
+			[["ACE_suture"],			20, "Sutures", _missing] call FUNC(countItem);
 			[["ACE_salineIV"], 	        3, "Saline IV (1000ml)", _missing] call FUNC(countItem);
 			[["ACE_salineIV_500"], 		6, "Saline IV (500ml)", _missing] call FUNC(countItem);
 			[["ACE_salineIV_250"], 		4, "Saline IV (250ml)", _missing] call FUNC(countItem);
@@ -59,7 +60,8 @@ private _missing = [];
 			[["SmokeShellOrange"], 			2, "Smoke Shell (Orange)", _missing] call FUNC(countItem);
 		};
 		case "ol";
-		case "el": {
+		case "el";
+		case "ftl": {
 			[["ACRE_PRC152", "ACRE_PRC117F"], 2, "Secondary Radio", _missing] call FUNC(countItem);
 		};
 		default { };

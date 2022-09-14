@@ -12,8 +12,6 @@ if (isServer) then {
         // CBA events do not support client Id
         missionNamespace setVariable [QGVAR(clientId), _clientIdStr, _ownerId];
     }];
-
-    GVAR(members) = createHashMap;
 };
 
 [
@@ -22,6 +20,15 @@ if (isServer) then {
     "HUD Free Screenshot",
     { call FUNC(screenshot); },
     "", [DIK_F11, [false, false, false]]
+] call CBA_fnc_addKeybind;
+
+GVAR(screenshotMode) = false;
+[
+    "Synixe Utilities",
+    QGVAR(screenshotToggle),
+    "Toggle Screenshot Mode",
+    { call FUNC(screenshotMode); },
+    "", [DIK_F10, [false, false, false]]
 ] call CBA_fnc_addKeybind;
 
 [
