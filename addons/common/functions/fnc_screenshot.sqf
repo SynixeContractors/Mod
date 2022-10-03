@@ -11,7 +11,7 @@ if (_state == false) then {
 	_this spawn {
 		_this params ["_state"];
 		sleep 0.3;
-		EXT callExtension "screenshot";
+		EXT callExtension ["screenshot", []];
 		sleep 0.3;
 		if (_state == false) then {
 			call FUNC(screenshotMode);

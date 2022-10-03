@@ -14,5 +14,6 @@ lazy_static = "1.4"
 
 [target.'cfg(windows)'.dependencies]
 discord-rpc-sdk = { git = "https://github.com/synixebrett/rust-discord-rpc", branch = "master" }
-enigo = "0.0.14"
-webbrowser = "0.7.1"
+# enigo = "0.0.14"
+enigo = { git = "https://github.com/NaokiM03/enigo" }
+webbrowser = "0.8.0"

@@ -5,10 +5,10 @@ use enigo::{Enigo, Key, KeyboardControllable};
 
 mod discord;
 
-#[allow(unused_must_use)]
-fn browser(url: String) -> String {
-    webbrowser::open(&url);
-    url
+fn browser(url: String) {
+    if let Err(e) = webbrowser::open(&url) {
+        println!("Failed to open browser: {}", e);
+    }
 }
 
 fn screenshot() {
@@ -18,7 +18,6 @@ fn screenshot() {
 #[arma]
 fn init() -> Extension {
     Extension::build()
-        .allow_no_args()
         .group("discord", discord::group())
         .command("browser", browser)
         .command("screenshot", screenshot)
