@@ -11,7 +11,7 @@
  * None
  *
  * Example:
- * [killed, bodybag] call tac_bodybag_fnc_moveInventory
+ * [killed, bodybag] call synixe_bodybag_fnc_moveInventory
  *
  * Public: No
  */
