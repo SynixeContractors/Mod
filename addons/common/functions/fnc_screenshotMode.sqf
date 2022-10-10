@@ -2,7 +2,7 @@
 
 if (GVAR(screenshotMode)) then {
 	// Load State
-	GVAR(screenshotModeOldState) params ["_ace", "_dui", "_indicators", "_staminaBar", "_stamina", "_nametags"]
+	GVAR(screenshotModeOldState) params ["_ace", "_dui", "_indicators", "_staminaBar", "_stamina", "_nametags"];
 	
 	// Restore UI
 	["hideHud", _ace] call ace_common_fnc_showHud;
