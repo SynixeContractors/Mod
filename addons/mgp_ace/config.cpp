@@ -11,6 +11,7 @@ class CfgPatches {
             "ace_common"
         };
         author = "AUTHOR";
+        authors[] = {"Alganthe"};
         VERSION_CONFIG;
     };
 };

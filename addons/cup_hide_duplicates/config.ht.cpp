@@ -15,6 +15,7 @@ class CfgPatches {
             "CUP_Weapons_ACE_compat"
         };
         author = "AUTHOR";
+        authors[] = {"MikeMF"};
         VERSION_CONFIG;
     };
 };

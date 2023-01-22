@@ -10,6 +10,7 @@ class CfgPatches {
             "{{project.prefix}}_main"
         };
         author = "AUTHOR";
+        authors[] = {"Jonpas"};
         VERSION_CONFIG;
     };
 };
