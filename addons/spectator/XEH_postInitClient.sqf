@@ -19,5 +19,5 @@ call FUNC(initModules);
 }, "admin"] call CBA_fnc_registerChatCommand;
 
 [QGVAR(toggleSpectator), {
-	[!ace_spectator_isSet] call ace_spectator_fnc_setSpectator;
+    [!ace_spectator_isSet] call ace_spectator_fnc_setSpectator;
 }] call CBA_fnc_addEventHandler;

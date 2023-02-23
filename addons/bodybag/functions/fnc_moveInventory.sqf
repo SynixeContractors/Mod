@@ -81,3 +81,11 @@ TRACE_1("Near Holders",_nearHolders);
         deleteVehicle _x;
     };
 } forEach _nearHolders;
+
+if !(isNil "GRAD_slingHelmet_fnc_weaponHolder") then {
+    private _slungWH = [_unit] call GRAD_slingHelmet_fnc_weaponHolder;
+    if (_slungWH != objNull) then {
+        _bodybag addItemCargoGlobal [(itemCargo _slungWH) select 0, 1];
+        deleteVehicle _slungWH;
+    };
+};

@@ -2,18 +2,18 @@
 name = "synixe"
 version = "0.1.0"
 authors = ["Brett Mayson <brett@mayson.io>"]
-edition = "2018"
+edition = "2021"
 
 [lib]
 name = "synixe"
 crate-type = ["cdylib"]
 
 [dependencies]
-arma-rs = "1.8.0"
-lazy_static = "1.4"
+arma-rs = "1.9.3"
+lazy_static = "1.4.0"
 
 [target.'cfg(windows)'.dependencies]
 discord-rpc-sdk = { git = "https://github.com/synixebrett/rust-discord-rpc", branch = "master" }
 # enigo = "0.0.14"
 enigo = { git = "https://github.com/NaokiM03/enigo" }
-webbrowser = "0.8.0"
+webbrowser = "0.8.7"

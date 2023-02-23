@@ -3,8 +3,8 @@ class RscText;
 class ctrlStaticBackground;
 
 class ace_arsenal_display {
-	class controls {
-		class requiredGearBox: RscControlsGroupNoScrollbars {
+    class controls {
+        class requiredGearBox: RscControlsGroupNoScrollbars {
             idc = IDC_requiredGearBox;
             fade = 0;
             x = QUOTE(safezoneX + safezoneW - (94 + 48) * GRID_W);
@@ -28,10 +28,10 @@ class ace_arsenal_display {
                     h = QUOTE(5 * GRID_H);
                     colorBackground[]={0.1,0.1,0.1,0.8};
                 };
-				class requiredGearText: RscText {
+                class requiredGearText: RscText {
                     idc = IDC_requiredGearText;
-					type = CT_STRUCTURED_TEXT;
-					style = ST_LEFT;
+                    type = CT_STRUCTURED_TEXT;
+                    style = ST_LEFT;
                     fade = 0;
                     x = QUOTE(0 * GRID_W);
                     y = QUOTE(5 * GRID_H);
@@ -41,11 +41,11 @@ class ace_arsenal_display {
                     colorText[]={0.7,0.7,0.7,1};
                     sizeEx = QUOTE(4 * GRID_H);
                     text = "";
-					size = QUOTE(4 * GRID_H);
+                    size = QUOTE(4 * GRID_H);
                 };
             };
         };
-		class requiredGearTitle: RscText {
+        class requiredGearTitle: RscText {
             idc = IDC_requiredGearTitle;
             style = ST_CENTER;
             x = QUOTE(safezoneX + safezoneW - (94 + 47) * GRID_W);
@@ -81,10 +81,10 @@ class ace_arsenal_display {
                     h = QUOTE(5 * GRID_H);
                     colorBackground[]={0.1,0.1,0.1,0.8};
                 };
-				class specialGearText: RscText {
+                class specialGearText: RscText {
                     idc = IDC_specialGearText;
-					type = CT_STRUCTURED_TEXT;
-					style = ST_LEFT;
+                    type = CT_STRUCTURED_TEXT;
+                    style = ST_LEFT;
                     fade = 0;
                     x = QUOTE(0 * GRID_W);
                     y = QUOTE(5 * GRID_H);
@@ -94,11 +94,11 @@ class ace_arsenal_display {
                     colorText[]={0.7,0.7,0.7,1};
                     sizeEx = QUOTE(4 * GRID_H);
                     text = "";
-					size = QUOTE(4 * GRID_H);
+                    size = QUOTE(4 * GRID_H);
                 };
             };
         };
-		class specialGearTitle: RscText {
+        class specialGearTitle: RscText {
             idc = IDC_specialGearTitle;
             style = ST_CENTER;
             x = QUOTE(safezoneX + safezoneW - (94 + 47) * GRID_W);
@@ -110,6 +110,6 @@ class ace_arsenal_display {
             sizeEx = QUOTE(5 * GRID_H);
             text = "Missing Specialized Gear";
         };
-	};
+    };
 };
 

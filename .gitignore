@@ -1,4 +1,5 @@
 release/
+releases/
 target/
 *.pbo
 *.exe

@@ -48,12 +48,12 @@ class CfgUnitInsignia {
         texture = QPATHTOF(textures\miller.paa);
     };
 
-	class Synixe_Medic_P {
-		displayName = "Medical";
-		author = "Synixe Contractors";
-		texture = QPATHTOF(textures\medic.paa);
-	};
-	class Synixe_Medic_Black_P {
+    class Synixe_Medic_P {
+        displayName = "Medical";
+        author = "Synixe Contractors";
+        texture = QPATHTOF(textures\medic.paa);
+    };
+    class Synixe_Medic_Black_P {
         author = "GilleeDoo, JoramD";
         displayName = "Medical (Black)";
         texture = QPATHTOF(textures\medicsimple_black.paa);

@@ -2,7 +2,7 @@ class CfgVehicles {
     class ACE_Module;
     class GVAR(Module): ACE_Module {
         author = ECSTRING(main,Author);
-        category = "Synixe";
+        category = QUOTE(ADDON);
         displayName = CSTRING(Range);
         function = QFUNC(moduleInit);
         scope = 2;

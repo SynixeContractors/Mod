@@ -1,7 +1,7 @@
 use std::{sync::Mutex, time::SystemTime};
 
 use arma_rs::Group;
-use discord_rpc_sdk::{RichPresence, RPC, EventHandlers};
+use discord_rpc_sdk::{EventHandlers, RichPresence, RPC};
 
 pub fn group() -> Group {
     Group::new()
@@ -10,19 +10,7 @@ pub fn group() -> Group {
 }
 
 struct Handlers;
-impl EventHandlers for Handlers {
-//     fn ready(user: DiscordUser) {
-//         thread::spawn(move || {
-//             thread::sleep(std::time::Duration::from_secs(2));
-//             rv_callback!(
-//                 "synixe",
-//                 "discord_user_ready",
-//                 format!("D{}", user.user_id),
-//                 user.username
-//             );
-//         });
-//     }
-}
+impl EventHandlers for Handlers {}
 
 lazy_static::lazy_static! {
     static ref RPCM: Mutex<RPC> =
@@ -41,7 +29,7 @@ pub fn setup(_steam_id: String, profile_name: String) {
 
 pub fn update(details: String, state: String, image: String, text: String) {
     unsafe {
-            let presence = RichPresence {
+        let presence = RichPresence {
             details: Some(details),
             state: Some(state),
             start_time: TIMESTAMP,

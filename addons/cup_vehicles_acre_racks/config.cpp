@@ -9,7 +9,6 @@ class CfgPatches {
             "CUP_Wheeled_SUV",
             "acre_sys_rack"
         };
-        author = "AUTHOR";
         authors[] = {"JoramD"};
         VERSION_CONFIG;
     };

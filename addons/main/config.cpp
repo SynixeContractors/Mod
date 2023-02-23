@@ -6,8 +6,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3_Data_F_Enoch_Loadorder", "A3_Data_F_Mod_Loadorder", "cba_main", "cba_jr", "cba_events", "ace_common", "ace_grenades", "CUP_Weapons_Ammunition", "CUP_Weapons_Flaregun"};
-        author = "AUTHOR";
+        requiredAddons[] = {"A3_Data_F_Enoch_Loadorder", "A3_Data_F_Mod_Loadorder", "cba_main", "cba_jr", "cba_events", "ace_common", "ace_grenades", "CUP_Weapons_Ammunition", "CUP_Weapons_Flaregun", "tem_ihantalaw"};
         VERSION_CONFIG;
     };
 };
@@ -15,11 +14,11 @@ class CfgPatches {
 // Editor Categories
 
 class CfgEditorCategories {
-	class SynixeContractors {
+    class SynixeContractors {
         scope = 2;
         curatorScope = 2;
-		displayName = "Synixe Contractors";
-	};
+        displayName = "Synixe Contractors";
+    };
 };
 
 // GL Bounce
@@ -53,6 +52,15 @@ class CfgWorlds {
     };
     class tem_summawcup: CAWorld {
         description = "Summa (Winter)";
+    };
+    class abramia: CAWorld {
+        description = "Abramia";
+    };
+    class pja307: CAWorld {
+        description = "Dariyah";
+    };
+    class pja308: CAWorld {
+        description = "Gunkizli";
     };
 };
 

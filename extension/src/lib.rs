@@ -1,4 +1,4 @@
-use arma_rs::{Extension, arma};
+use arma_rs::{arma, Extension};
 
 #[cfg(windows)]
 use enigo::{Enigo, Key, KeyboardControllable};

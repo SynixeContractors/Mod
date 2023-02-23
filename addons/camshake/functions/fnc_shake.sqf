@@ -7,7 +7,7 @@ if (_dist > 1000) exitWith {};
 
 // If you pass 0 in _dist (vehicle blows up with you in it) you get a zero divisor error
 if (_dist isEqualTo 0) then {
-	_dist = 50;
+    _dist = 50;
 };
 
 private _force = (1000 / _dist) min 20;

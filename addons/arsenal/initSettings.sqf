@@ -26,46 +26,46 @@
 ] call CBA_fnc_addSetting;
 
 [
-	QGVAR(requireHandgun),
-	"CHECKBOX",
-	"Handgun Weapon",
-	["Synixe - Arsenal", "Required Equipment"],
-	false,
-	true
+    QGVAR(requireHandgun),
+    "CHECKBOX",
+    "Handgun Weapon",
+    ["Synixe - Arsenal", "Required Equipment"],
+    false,
+    true
 ] call CBA_fnc_addSetting;
 
 [
-	QGVAR(requireHandgunAmmo),
-	"SLIDER",
-	"Handgun Ammunition",
-	["Synixe - Arsenal", "Required Equipment"],
-	[0, 150, 0, 0, false],
-	true
+    QGVAR(requireHandgunAmmo),
+    "SLIDER",
+    "Handgun Ammunition",
+    ["Synixe - Arsenal", "Required Equipment"],
+    [0, 150, 0, 0, false],
+    true
 ] call CBA_fnc_addSetting;
 
 [
-	QGVAR(requireVest),
-	"CHECKBOX",
-	"Vest",
-	["Synixe - Arsenal", "Required Equipment"],
-	true,
-	true
+    QGVAR(requireVest),
+    "CHECKBOX",
+    "Vest",
+    ["Synixe - Arsenal", "Required Equipment"],
+    true,
+    true
 ] call CBA_fnc_addSetting;
 
 [
-	QGVAR(requireNVG),
-	"CHECKBOX",
-	"NVG",
-	["Synixe - Arsenal", "Required Equipment"],
-	false,
-	true
+    QGVAR(requireNVG),
+    "CHECKBOX",
+    "NVG",
+    ["Synixe - Arsenal", "Required Equipment"],
+    false,
+    true
 ] call CBA_fnc_addSetting;
 
 [
-	QGVAR(requireRadio),
-	"CHECKBOX",
-	"Radio",
-	["Synixe - Arsenal", "Required Equipment"],
-	true,
-	true
+    QGVAR(requireRadio),
+    "CHECKBOX",
+    "Radio",
+    ["Synixe - Arsenal", "Required Equipment"],
+    true,
+    true
 ] call CBA_fnc_addSetting;

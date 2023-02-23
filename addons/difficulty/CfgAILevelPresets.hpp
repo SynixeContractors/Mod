@@ -1,7 +1,7 @@
 class CfgAILevelPresets {
     class Custom;
     class GVAR(Synixe): Custom {
-        displayName = "Theseus";
+        displayName = "Synixe";
         precisionAI = 0.4;
         skillAI = 0.8;
     };

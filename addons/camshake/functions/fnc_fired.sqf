@@ -32,7 +32,7 @@ if (_frequency < 0) then {_frequency = 0;};
 addCamShake [_force, _length, _frequency];
 
 if (_caliber > 1.5) then {
-	if (_intensity > 0.6) then {
-		GVAR(blurStrength) = GVAR(blurStrength) + ((0.45 + (_caliber * 0.02)) * _intensity);
-	};
+    if (_intensity > 0.6) then {
+        GVAR(blurStrength) = GVAR(blurStrength) + ((0.45 + (_caliber * 0.02)) * _intensity);
+    };
 };

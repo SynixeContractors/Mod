@@ -10,6 +10,6 @@ ace_arsenal_enableIdentityTabs = false;
 ["CBA_SettingChanged", {
     params ["_setting", "_value"];
     if !(isNil QGVAR(loadoutEH)) then {
-		[ACE_player, getUnitLoadout ACE_player, getUnitLoadout ACE_player] call FUNC(handleLoadout);
-	};
+        [ACE_player, getUnitLoadout ACE_player, getUnitLoadout ACE_player] call FUNC(handleLoadout);
+    };
 }] call CBA_fnc_addEventHandler;

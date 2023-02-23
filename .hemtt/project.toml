@@ -1,0 +1,8 @@
+name = "Synixe"
+prefix = "synixe"
+author = "Synixe Contractors"
+
+[files]
+include = [
+    "synixe_x64.dll",
+]
