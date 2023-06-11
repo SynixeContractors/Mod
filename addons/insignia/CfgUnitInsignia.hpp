@@ -12,6 +12,12 @@ class CfgUnitInsignia {
         texture = QPATHTOF(textures\arsey.paa);
     };
 
+    class Synixe_Chaplain_P {
+        displayName = "Chaplain Yi";
+        author = "Chaplain Yi";
+        texture = QPATHTOF(textures\chaplain.paa);
+    };
+
     class Synixe_Gabe_P {
         displayName = "Thick Thighs Save Lives";
         author = "Gabriel Penteado";
@@ -42,11 +48,11 @@ class CfgUnitInsignia {
         author = "Jay Sweeb";
         texture = QPATHTOF(textures\jay.paa);
     };
-    class Synixe_Miller_P {
-        displayName = "Jonathan Miller";
-        author = "Jonathan Miller";
-        texture = QPATHTOF(textures\miller.paa);
-    };
+    // class Synixe_Miller_P {
+    //     displayName = "Jonathan Miller";
+    //     author = "Jonathan Miller";
+    //     texture = QPATHTOF(textures\miller.paa);
+    // };
 
     class Synixe_Medic_P {
         displayName = "Medical";

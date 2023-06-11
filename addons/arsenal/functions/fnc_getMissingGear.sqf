@@ -2,6 +2,8 @@
 
 params ["_unit"];
 
+private _roles = [_unit] call EFUNC(common,findRoles);
+
 private _missing = [];
 
 private _items = items _unit;
@@ -49,8 +51,8 @@ if (GVAR(requireHandgun)) then {
     };
 };
 
-if (GVAR(requireRadio)) then {
-    [["ACRE_PRC152"], 1, "AN/PRC-152", _missing] call FUNC(countItem);
+if (GVAR(requireRadio) && {!("sl" in _roles)}) then {
+    [["ACRE_BF888S"], 1, "Baofeng 888S", _missing] call FUNC(countItem);
 };
 
 [["ACE_fieldDressing", "ACE_elasticBandage", "ACE_packingBandage", "ACE_quikclot"],

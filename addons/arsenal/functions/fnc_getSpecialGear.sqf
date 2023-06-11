@@ -62,7 +62,10 @@ private _missing = [];
         case "ol";
         case "el";
         case "ftl": {
-            [["ACRE_PRC152", "ACRE_PRC117F"], 2, "Secondary Radio", _missing] call FUNC(countItem);
+            [["ACRE_PRC152", "ACRE_PRC117F"], 1, "AN/PRC-152", _missing] call FUNC(countItem);
+        };
+        case "sl": {
+            [["ACRE_PRC152", "ACRE_PRC117F"], 2, "AN/PRC-152", _missing] call FUNC(countItem);
         };
         default { };
     };

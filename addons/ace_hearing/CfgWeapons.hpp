@@ -14,6 +14,5 @@ class CfgWeapons {
     class ItemCore;
 
     #include "weapons\cup.hpp"
-    #include "weapons\milgp.hpp"
     #include "weapons\ws.hpp"
 };

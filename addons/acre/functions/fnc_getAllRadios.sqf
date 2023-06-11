@@ -21,4 +21,4 @@ if (isNil "_radios") then {
     uiNamespace setVariable [QGVAR(allRadios), _radios];
 };
 
-_radios // return
+_radios

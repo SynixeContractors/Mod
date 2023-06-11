@@ -16,4 +16,4 @@ lazy_static = "1.4.0"
 discord-rpc-sdk = { git = "https://github.com/synixebrett/rust-discord-rpc", branch = "master" }
 # enigo = "0.0.14"
 enigo = { git = "https://github.com/NaokiM03/enigo" }
-webbrowser = "0.8.7"
+webbrowser = "0.8.10"

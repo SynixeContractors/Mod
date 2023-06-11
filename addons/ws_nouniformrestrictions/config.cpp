@@ -6,13 +6,14 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "synixe_main"
+            "tac_main",
+            "data_f_lxWS_Loadorder"
         };
         author = ECSTRING(main,Author);
-        authors[] = {"Mike", "Brett"};
+        authors[] = {"Mike"};
         url = ECSTRING(main,URL);
         VERSION_CONFIG;
     };
 };
 
-#include "CfgWeapons.hpp"
+#include "CfgVehicles.hpp"
