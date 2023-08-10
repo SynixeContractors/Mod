@@ -6,7 +6,6 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "tac_main",
             "data_f_lxWS_Loadorder"
         };
         author = ECSTRING(main,Author);

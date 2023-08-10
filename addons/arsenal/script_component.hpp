@@ -18,9 +18,9 @@
 
 // ACE
 
-#define pixelScale  0.25
-#define GRID_W (pixelW * pixelGridNoUIScale * pixelScale)
-#define GRID_H (pixelH * pixelGridNoUIScale * pixelScale)
+#define PIXEL_SCALE  0.25
+#define GRID_W (pixelW * pixelGridNoUIScale * PIXEL_SCALE)
+#define GRID_H (pixelH * pixelGridNoUIScale * PIXEL_SCALE)
 
 #define IDC_iconBackgroundFace 2032
 #define IDC_buttonFace 2033

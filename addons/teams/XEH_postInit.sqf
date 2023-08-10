@@ -9,6 +9,11 @@
     };
 }] call CBA_fnc_addEventHandler;
 
+player addEventHandler ["Respawn", {
+    params ["_unit"];
+    [FUNC(onTeamChanged)] call CBA_fnc_execNextFrame;
+}];
+
 [{
     {
         [_x] call FUNC(onMarkerCreated);

@@ -60,7 +60,7 @@ class CfgVehicles {
                 class GVAR(pack) {
                     displayName = "Pack";
                     distance = 4;
-                    condition = QUOTE(isAlive _target);
+                    condition = QUOTE(alive _target);
                     statement = QUOTE([ARR_2(_player,_target)] call FUNC(pack));
                 };
                 // class GVAR(swapBattery) {

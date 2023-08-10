@@ -38,21 +38,11 @@ class CfgUnitInsignia {
         author = "Matías Jackson";
         texture = QPATHTOF(textures\matias.paa);
     };
-    class Synixe_Yurik_P {
-        displayName = "Yurik Stehlik";
-        author = "Yurik Stehlik";
-        texture = QPATHTOF(textures\yurik.paa);
-    };
     class Synixe_Jay_P {
         displayName = "Jay Sweeb";
         author = "Jay Sweeb";
         texture = QPATHTOF(textures\jay.paa);
     };
-    // class Synixe_Miller_P {
-    //     displayName = "Jonathan Miller";
-    //     author = "Jonathan Miller";
-    //     texture = QPATHTOF(textures\miller.paa);
-    // };
 
     class Synixe_Medic_P {
         displayName = "Medical";

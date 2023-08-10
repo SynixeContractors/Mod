@@ -1,6 +1,8 @@
 class CfgVehicles {
     class Land_TripodSCreen_01_large_F;
     class GVAR(screen): Land_TripodSCreen_01_large_F {
+        scope = 2;
+        scopeCurator = 2;
         displayName = "Spectator Screen";
         editorCategory = "SynixeContractors";
         hiddenSelectionsTextures[] = {
@@ -29,5 +31,13 @@ class CfgVehicles {
                 };
             };
         };
+    };
+
+    class VR_3DSelector_01_default_F;
+    class GVAR(respawn): VR_3DSelector_01_default_F {
+        scope = 2;
+        scopeCurator = 0;
+        displayName = "Respawn";
+        editorCategory = "SynixeContractors";
     };
 };

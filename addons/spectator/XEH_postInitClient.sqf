@@ -3,6 +3,7 @@
 if !(hasInterface) exitWith {};
 
 call FUNC(initModules);
+call FUNC(initRespawn);
 
 // Spectator
 [QGVAR(prohibit), {

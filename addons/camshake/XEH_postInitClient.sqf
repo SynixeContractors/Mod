@@ -20,5 +20,5 @@ GVAR(blurDampening) = 1.5;
 
 enableCamShake true;
 {
-    [_x, "Killed", {call FUNC(shake)}] call CBA_fnc_addClassEventHandler
+    [_x, "Killed", {call FUNC(shake)}] call CBA_fnc_addClassEventHandler;
 } forEach ["Car", "Tank"];

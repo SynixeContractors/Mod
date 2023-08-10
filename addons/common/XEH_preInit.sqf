@@ -31,18 +31,6 @@ GVAR(screenshotMode) = false;
     "", [DIK_F10, [false, false, false]]
 ] call CBA_fnc_addKeybind;
 
-[
-    QGVAR(mission_start_time),
-    "SLIDER",
-    "UTC Mission Start Time",
-    "Synixe - Missions",
-    [0, 23, 2, 0, false],
-    2,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-
 if (hasInterface) then {
     GVAR(playerMarkerIdx) = 0;
     GVAR(clientId) = "";

@@ -7,10 +7,20 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "synixe_main"
+            "synixe_main",
+            "A3_Sounds_F_Enoch"
         };
         author = "SynixeBrett";
         VERSION_CONFIG;
+    };
+};
+
+class CfgSoundShaders {
+    class Wind_Tent_Large_SoundShader {
+        volume = 0;
+    };
+    class Wind_Tent_Small_SoundShader {
+        volume = 0;
     };
 };
 
