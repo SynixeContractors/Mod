@@ -26,6 +26,7 @@ _droppedItems append (primaryWeaponMagazine _unit);
 _droppedWeapons pushBack (secondaryWeapon _unit);
 _droppedItems append (secondaryWeaponItems _unit);
 _droppedItems append (secondaryWeaponMagazine _unit);
+_droppedItems pushBack (headgear _unit); // possible work-around for lossing headgear on death
 
 // Handgun only gets dropped if it's currently selected
 if (currentWeapon _unit == handgunWeapon _unit) then {
