@@ -1,69 +1,33 @@
-name: Arma
+name: arma
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  build_extension:
-    strategy:
-      matrix:
-        arrays: [
-          # os: { tag: "windows-latest", lib: "synixe.dll", target: "i686-pc-windows-msvc" },
-          os: { tag: "windows-latest", lib: "synixe.dll", target: "x86_64-pc-windows-msvc" },
-          # os: { tag: "ubuntu-latest", lib: "libsynixe.so", target: "i686-unknown-linux-gnu" },
-          os: { tag: "ubuntu-latest", lib: "libsynixe.so", target: "x86_64-unknown-linux-gnu" },
-        ]
-    runs-on: ${{ matrix.arrays.os.tag }}
+  build:
+    runs-on: windows-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-      - name: Install latest
-        uses: actions-rs/toolchain@v1
+      - uses: actions/checkout@v2
+      - name: Setup HEMTT
+        uses: arma-actions/hemtt@v1
+
+      - uses: Swatinem/rust-cache@v1
         with:
-          target: ${{ matrix.arrays.os.target }}
-          toolchain: stable
-      - name: Cargo Build
-        run: cd extension && cargo build --release --target ${{ matrix.arrays.os.target }}
+          key: arma
+
+      - name: Build Extension
+        run: |
+          cargo build --release
+          cp target/release/synixe.dll synixe_x64.dll
+
+      - name: Build Mod
+        run: hemtt release
+
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ matrix.arrays.os.target }}
-          path: extension/target/${{ matrix.arrays.os.target }}/release/${{ matrix.arrays.os.lib }}
-          if-no-files-found: error
-          retention-days: 30
-  package:
-    needs: build_extension
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      
-      # - uses: actions/download-artifact@v2
-      #   with:
-      #     name: i686-unknown-linux-gnu
-      # - run: mv libsynixe.so synixe.so
-      - uses: actions/download-artifact@v2
-        with:
-          name: x86_64-unknown-linux-gnu
-      - run: mv libsynixe.so synixe_x64.so
-
-      - uses: actions/download-artifact@v2
-        with:
-          name: x86_64-pc-windows-msvc
-      - run: mv synixe.dll synixe_x64.dll
-      # - uses: actions/download-artifact@v2
-      #   with:
-      #     name: i686-pc-windows-msvc
-
-      - name: Set VERSION env
-        run: echo VERSION=${GITHUB_REF:11} >> $GITHUB_ENV
-      - name: Build addon with HEMTT
-        uses: arma-actions/hemtt@master
-        with:
-          command: 'build --release'
-      - uses: actions/upload-artifact@v2
-        with:
           name: synixe.zip
-          path: 'releases/synixe.zip'
+          path: releases/synixe-latest.zip

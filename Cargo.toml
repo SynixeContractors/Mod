@@ -1,4 +1,16 @@
-[workspace]
-members = [
-    "extension",
-]
+[package]
+name = "synixe"
+version = "0.1.0"
+authors = ["Brett Mayson <brett@mayson.io>"]
+edition = "2021"
+
+[lib]
+name = "synixe"
+crate-type = ["cdylib"]
+
+[dependencies]
+arma-rs = "1.9.3"
+discord-rpc-sdk = { git = "https://github.com/synixebrett/rust-discord-rpc", branch = "master" }
+enigo = { git = "https://github.com/NaokiM03/enigo" }
+lazy_static = "1.4.0"
+webbrowser = "0.8.11"
