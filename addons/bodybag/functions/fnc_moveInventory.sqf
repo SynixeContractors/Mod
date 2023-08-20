@@ -22,7 +22,6 @@ private _items = [];
 private _weapons = [];
 
 _items pushBack (headgear _unit);
-_items pushBack (goggles _unit);
 _items pushBack (uniform _unit);
 _items append (uniformItems _unit);
 _items pushBack (vest _unit);
@@ -42,6 +41,11 @@ _items append (_unit getVariable [QGVAR(droppedItems), []]);
 _items append (assignedItems _unit);
 //_weapons pushBack (binocular _unit); // dropped into inventory on death
 _items pushBack (_unit call CBA_fnc_binocularMagazine);
+// If someone has the same goggles in their inventory as on their head, it will lose one
+// but that is super rare and not worth the effort to fix
+if !((goggles _unit ) in (_unit getVariable [QGVAR(droppedItems), []]) then {
+    _items pushBack (goggles _unit);
+};
 
 // Clear empty names and destroy items with a random chance
 _items = _items select {_x != "" && {random 100 > GVAR(destroyChance)} };
