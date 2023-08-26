@@ -43,7 +43,7 @@ _items append (assignedItems _unit);
 _items pushBack (_unit call CBA_fnc_binocularMagazine);
 // If someone has the same goggles in their inventory as on their head, it will lose one
 // but that is super rare and not worth the effort to fix
-if !((goggles _unit ) in (_unit getVariable [QGVAR(droppedItems), []]) then {
+if !((goggles _unit ) in (_unit getVariable [QGVAR(droppedItems), []])) then {
     _items pushBack (goggles _unit);
 };
 
