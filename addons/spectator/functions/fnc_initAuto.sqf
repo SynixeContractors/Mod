@@ -19,10 +19,10 @@ GVAR(autoEnabled) = true;
         count (nearestObjects [getPos _x, [QGVAR(screen)], GVAR(autoRange)]) == 0
     } == -1;
     if (_allNear) then {
-        if (GVAR(allowed)) exitWith {};
+        if !(GVAR(allowed)) exitWith {};
         [QGVAR(disable)] call CBA_fnc_serverEvent;
     } else {
-        if (!GVAR(allowed)) exitWith {};
+        if (GVAR(allowed)) exitWith {};
         [QGVAR(enable)] call CBA_fnc_serverEvent;
     };
 }, 6] call CBA_fnc_addPerFrameHandler;
