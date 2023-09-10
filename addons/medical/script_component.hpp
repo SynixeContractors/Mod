@@ -1,8 +1,5 @@
 #define COMPONENT medical
-#include "\x\synixe\addons\main\script_mod.hpp"
-
-// #define DEBUG_MODE_FULL
-// #define DISABLE_COMPILE_CACHE
+#include "..\main\script_mod.hpp"
 
 #ifdef DEBUG_ENABLED_MEDICAL
     #define DEBUG_MODE_FULL
@@ -11,7 +8,7 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_MEDICAL
 #endif
 
-#include "\x\synixe\addons\main\script_macros.hpp"
+#include "..\main\script_macros.hpp"
 
 #define ALL_MEDICAL_ITEMS [\
     "ACE_fieldDressing", "ACE_packingBandage", "ACE_elasticBandage", "ACE_quikclot",\

@@ -1,8 +1,5 @@
 #define COMPONENT acre
-#include "\x\synixe\addons\main\script_mod.hpp"
-
-// #define DEBUG_MODE_FULL
-// #define DISABLE_COMPILE_CACHE
+#include "..\main\script_mod.hpp"
 
 #ifdef DEBUG_ENABLED_ACRE
     #define DEBUG_MODE_FULL
@@ -11,4 +8,4 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_ACRE
 #endif
 
-#include "\x\synixe\addons\main\script_macros.hpp"
+#include "..\main\script_macros.hpp"

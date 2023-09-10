@@ -1,10 +1,6 @@
 #define COMPONENT shootingrange
 #define COMPONENT_BEAUTIFIED Shooting Range
-#include "\x\synixe\addons\main\script_mod.hpp"
-
-#define DEBUG_MODE_FULL
-// #define DISABLE_COMPILE_CACHE
-// #define ENABLE_PERFORMANCE_COUNTERS
+#include "..\main\script_mod.hpp"
 
 #ifdef DEBUG_ENABLED_SHOOTINGRANGE
     #define DEBUG_MODE_FULL
@@ -14,8 +10,7 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_SHOOTINGRANGE
 #endif
 
-#include "\x\synixe\addons\main\script_macros.hpp"
-
+#include "..\main\script_macros.hpp"
 
 #define MODE_DEFAULT 1
 

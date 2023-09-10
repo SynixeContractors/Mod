@@ -1,9 +1,6 @@
 #define COMPONENT cup_hide_duplicates
 #define COMPONENT_BEAUTIFIED CUP Hide Duplicates
-#include "\x\synixe\addons\main\script_mod.hpp"
-
-// #define DEBUG_MODE_FULL
-// #define DISABLE_COMPILE_CACHE
+#include "..\main\script_mod.hpp"
 
 #ifdef DEBUG_ENABLED_CUP_HIDE_DUPLICATES
     #define DEBUG_MODE_FULL
@@ -12,4 +9,4 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_CUP_HIDE_DUPLICATES
 #endif
 
-#include "\x\synixe\addons\main\script_macros.hpp"
+#include "..\main\script_macros.hpp"

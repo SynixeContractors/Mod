@@ -1,6 +1,6 @@
 #define COMPONENT common
 #define COMPONENT_BEAUTIFIED Common
-#include "\x\synixe\addons\main\script_mod.hpp"
+#include "..\main\script_mod.hpp"
 
 #ifdef DEBUG_ENABLED_COMMON
     #define DEBUG_MODE_FULL
@@ -9,7 +9,7 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_COMMON
 #endif
 
-#include "\x\synixe\addons\main\script_macros.hpp"
+#include "..\main\script_macros.hpp"
 
 #define POS_X(N) ((N) * GUI_GRID_W + GUI_GRID_CENTER_X)
 #define POS_Y(N) ((N) * GUI_GRID_H + GUI_GRID_CENTER_Y)
