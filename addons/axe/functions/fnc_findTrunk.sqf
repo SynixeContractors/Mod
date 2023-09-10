@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 
 /*  Returns actual position of trunk 1.2m above ground in format PosASL
 *

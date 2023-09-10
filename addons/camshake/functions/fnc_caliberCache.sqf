@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 
 params [["_config", configNull, [configNull, []]], ["_varName", "", [""]], ["_default", ""]];
 

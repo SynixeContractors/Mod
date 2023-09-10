@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 
 private _vehicle = if (getConnectedUAV ace_player isNotEqualTo objNull) then {
     // need to fix with https://community.bistudio.com/wiki/UAVControl

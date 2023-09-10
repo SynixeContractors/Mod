@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 
 /*
 *   Original function from ace_logistics_wirecutter by gpgpgpgp, edited by commy2, PabstMirror

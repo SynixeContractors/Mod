@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 
 private _currentVehicle = vehicle ACE_player;
 if (_currentVehicle isEqualTo ACE_player) exitWith {false};

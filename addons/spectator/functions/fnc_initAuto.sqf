@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 
 if !(isServer) exitWith {};
 if (getNumber (missionConfigFile >> "synixe_template") < 3) exitWith {};

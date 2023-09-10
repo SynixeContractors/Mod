@@ -1,4 +1,4 @@
-#include "script_component.hpp"
+#include "..\script_component.hpp"
 
 ["Synixe Contractors", "Toggle Spectator", {
     params ["", "_object"];
