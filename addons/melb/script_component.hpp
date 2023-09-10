@@ -1,6 +1,6 @@
 #define COMPONENT melb
 #define COMPONENT_BEAUTIFIED MELB
-#include "\x\tac\addons\main\script_mod.hpp"
+#include "..\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
 // #define DISABLE_COMPILE_CACHE
@@ -14,7 +14,7 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_MELB
 #endif
 
-#include "\x\tac\addons\main\script_macros.hpp"
+#include "..\main\script_macros.hpp"
 
 #define MODE_DEFAULT [0, 0]
 #define ZOOM_DEFAULT 0.8
