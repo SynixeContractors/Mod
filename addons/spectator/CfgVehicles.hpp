@@ -6,7 +6,7 @@ class CfgVehicles {
         displayName = "Spectator Screen";
         editorCategory = "SynixeContractors";
         hiddenSelectionsTextures[] = {
-            QPATHTOF(ui\screen_co.paa),
+            QPATHTOF(ui\screen_disabled_co.paa),
             "#(argb,8,8,3)color(0,0,0,0.0,co)",
             "#(argb,8,8,3)color(0,0,0,0.0,co)",
             "#(argb,8,8,3)color(0,0,0,0.0,co)",

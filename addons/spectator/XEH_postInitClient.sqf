@@ -5,9 +5,25 @@ if !(hasInterface) exitWith {};
 call FUNC(initModules);
 call FUNC(initRespawn);
 
+FUNC(switchScreen) = {
+    params ["_texture"];
+    {
+        _x setObjectTexture [0, _texture];
+    } forEach allMissionObjects QGVAR(screen);
+};
+
 // Spectator
+[QGVAR(allow), {
+    missionNamespace setVariable [QGVAR(allowed), true];
+    systemChat "Spectator Allowed";
+    [QPATHTOF(ui\screen_enabled_co.paa)] call FUNC(switchScreen);
+}] call CBA_fnc_addEventHandler;
+
 [QGVAR(prohibit), {
+    missionNamespace setVariable [QGVAR(allowed), false];
+    systemChat "Spectator Prohibited";
     [false] call ace_spectator_fnc_setSpectator;
+    [QPATHTOF(ui\screen_disabled_co.paa)] call FUNC(switchScreen);
 }] call CBA_fnc_addEventHandler;
 
 // Admin chat command to toggle spectator availability
