@@ -40,7 +40,7 @@ FUNC(switchScreen) = {
     if (getNumber (missionConfigFile >> "synixe_spectator_range") == 0) exitWith {
         systemChat "Auto spectator is disabled by the mission";
     };
-    systemChat format ["Auto spectator %1", ["disabled", "enabled"] select (missionNamespace getVariable [QGVAR(autoEnabled), true])];
+    systemChat format ["Auto spectator %1", ["enabled", "disabled"] select (missionNamespace getVariable [QGVAR(autoEnabled), true])];
     [QGVAR(autoToggle)] call CBA_fnc_serverEvent;
 }, "admin"] call CBA_fnc_registerChatCommand;
 
