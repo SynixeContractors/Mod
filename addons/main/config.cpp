@@ -11,6 +11,15 @@ class CfgPatches {
     };
 };
 
+class ACE_Tags {
+    class GVAR(logo) {
+        displayName = "Synixe Logo";
+        requiredItem = "ACE_SpraypaintYellow";
+        textures[] = {QPATHTO_F(ui\synixe_ca.paa)};
+        icon = QPATHTO_F(ui\synixe_ca.paa);
+    };
+};
+
 // Editor Categories
 
 class CfgEditorCategories {
@@ -33,17 +42,6 @@ class CfgAmmo {
 
 class CfgWorlds {
     class CAWorld;
-    class Malden: CAWorld {
-        class Names {
-            class Malden_L_militarybase {
-                name = "Synixe Training Facility";
-                type = "NameVillage";
-            };
-            class Malden_L_Guran {
-                name = "Synixe Staff Resort";
-            };
-        };
-    };
     class hellanmaaw: CAWorld {
         description = "Hellanmaa (Winter)";
     };

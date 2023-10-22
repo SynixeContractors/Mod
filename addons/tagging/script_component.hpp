@@ -12,5 +12,5 @@
 
 #include "..\main\script_macros.hpp"
 
-#define MARKER_COLORS   ["ColorRed", "ColorGreen", "ColorBlue", "ColorBlack"]
-#define TEXTURE_COLORS  ["red", "green", "blue", "black"]
+#define MARKER_COLORS   ["ColorRed", "ColorGreen", "ColorBlue", "ColorBlack", "ColorYellow", "ColorWhite""]
+#define TEXTURE_COLORS  ["red", "green", "blue", "black", "yellow", "white"]
