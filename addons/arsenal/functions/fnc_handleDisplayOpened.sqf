@@ -2,6 +2,8 @@
 
 params ["_display"];
 
+if (is3DEN) exitWith {};
+
 GVAR(loadoutEH) = ["loadout", FUNC(handleLoadout), true] call CBA_fnc_addPlayerEventHandler;
 GVAR(arsenalDisplay) = [_display];
 

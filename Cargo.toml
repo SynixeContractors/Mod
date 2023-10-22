@@ -14,3 +14,4 @@ discord-rpc-sdk = { git = "https://github.com/synixebrett/rust-discord-rpc", bra
 enigo = { git = "https://github.com/NaokiM03/enigo" }
 lazy_static = "1.4.0"
 webbrowser = "0.8.11"
+sapi-lite = "0.1.1"

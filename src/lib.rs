@@ -3,6 +3,7 @@ use arma_rs::{arma, Extension};
 use enigo::{Enigo, Key, KeyboardControllable};
 
 mod discord;
+// mod speech;
 
 fn browser(url: String) {
     if let Err(e) = webbrowser::open(&url) {
