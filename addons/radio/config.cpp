@@ -11,7 +11,7 @@ class CfgPatches {
     };
 };
 
-class CfgRadioStations {\
+class CfgRadioStations {
     class synixe_radio1 {
         name = "Synixe Radio 1 - It's the #1!";
         url = "https://radio.synixe.contractors/listen/radio1/radio.mp3";
