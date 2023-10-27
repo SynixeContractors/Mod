@@ -15,8 +15,8 @@ class ACE_Tags {
     class GVAR(logo) {
         displayName = "Synixe Logo";
         requiredItem = "ACE_SpraypaintYellow";
-        textures[] = {QPATHTO_F(ui\synixe_ca.paa)};
-        icon = QPATHTO_F(ui\synixe_ca.paa);
+        textures[] = {QPATHTOF(ui\synixe_ca.paa)};
+        icon = QPATHTOF(ui\synixe_ca.paa);
     };
 };
 
