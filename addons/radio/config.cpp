@@ -24,4 +24,9 @@ class CfgRadioStations {
         name = "Synixe Radio 3 - Spanish Pop";
         url = "https://radio.synixe.contractors/listen/radio3/radio.mp3";
     };
+    class synixe_radio4 {
+        name = "Synixe Radio 4 - El Mejor Rock";
+        url = "https://radio.synixe.contractors/listen/radio4/radio.mp3";
+    };
+    
 };
