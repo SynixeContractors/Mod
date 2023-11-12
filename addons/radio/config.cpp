@@ -6,12 +6,15 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {};
+        requiredAddons[] = {"live_radio_interface"};
         VERSION_CONFIG;
     };
 };
 
 class CfgRadioStations {
+    delete ClassicRock109;
+    delete PulseEDM;
+    delete LifeIreland;
     //class synixe_radio1 {
         //name = "Synixe Radio 1 - It's the #1!";
         //url = "https://radio.synixe.contractors/listen/radio1/radio.mp3";
@@ -28,13 +31,12 @@ class CfgRadioStations {
         name = "Synixe Radio 4 - El Mejor Rock";
         url = "https://radio.synixe.contractors/listen/radio4/radio.mp3";
     };
-        class synixe_radio5 {
+    class synixe_radio5 {
         name = "Synixe Radio 5 - Los Mas Chorros Del Condado";
         url = "https://radio.synixe.contractors/listen/radio5/radio.mp3";
     };
-            class synixe_radio6 {
+    class synixe_radio6 {
         name = "Synixe Radio 6 - Ritmo Pa Tu Cuerpo";
         url = "https://radio.synixe.contractors/listen/radio6/radio.mp3";
     };
-    
 };
