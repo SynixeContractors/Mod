@@ -1,2 +1,0 @@
-PREP(moveInventory);
-PREP(saveDroppedWeapons);
