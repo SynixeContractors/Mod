@@ -6,8 +6,8 @@ class ace_medical_treatment_actions {
         allowedSelections[] = {"head"};
         items[] = {QITEM(painkillers)};
         icon = QPATHTOF(ui\painkillers_icon_ca.paa);
-        condition = "";
-        callbackSuccess = QUOTE(call ACEFUNC(medical_treatment,medication));
+        treatmentTime = 2.25;
+        litter[] = {{"Land_PainKillers_F"}};
     };
 };
 
