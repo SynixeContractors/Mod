@@ -9,9 +9,8 @@ name = "synixe"
 crate-type = ["cdylib"]
 
 [dependencies]
-arma-rs = "1.9.3"
-discord-rpc-sdk = { git = "https://github.com/synixebrett/rust-discord-rpc", branch = "master" }
+arma-rs = "1.10.5"
+discord-rpc-sdk = { git = "https://github.com/brettmayson/rust-discord-rpc", branch = "master" }
 enigo = { git = "https://github.com/NaokiM03/enigo" }
 lazy_static = "1.4.0"
-webbrowser = "0.8.11"
-sapi-lite = "0.1.1"
+webbrowser = "0.8.12"
