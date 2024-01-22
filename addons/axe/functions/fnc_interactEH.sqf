@@ -37,7 +37,7 @@ if !([ace_player] call FUNC(hasAxe)) exitWith {};
 
                 if (!([_player, _attachedTree, ["isNotSwimming"]] call ace_common_fnc_canInteractWith)) exitWith {false};
 
-                ((!isNull _attachedTree) && {(damage _attachedTree) < 1} && {(QITEM(axe) in (items _player))} && {
+                ((!isNull _attachedTree) && {(damage _attachedTree) < 1} && {[_player] call FUNC(hasAxe)} && {
                     //Custom LOS check for tree
                     private _headPos = ACE_player modelToWorldVisual (ACE_player selectionPosition "pilot");
                     ((!(lineIntersects [AGLtoASL _headPos, AGLtoASL (_helper modelToWorldVisual [0,0,1.25]), _attachedTree, ACE_player])) ||
