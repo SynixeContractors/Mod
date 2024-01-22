@@ -10,9 +10,7 @@ params ["_interactionType"];
 //Ignore self-interaction menu or mounted vehicle interaction
 if ((_interactionType != 0) || {(vehicle ACE_player) != ACE_player}) exitWith {};
 
-//for performance only do stuff it they have an axe item
-//(if they somehow get one durring keydown they'll just have to reopen)
-if (!(QITEM(axe) in (items ace_player))) exitWith {};
+if !([ace_player] call FUNC(hasAxe)) exitWith {};
 
 [{
     params ["_args", "_pfID"];

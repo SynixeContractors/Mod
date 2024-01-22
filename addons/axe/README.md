@@ -2,7 +2,7 @@
 
 Adds an axe to chop down trees and bushes. ACE-Interact with tree or bush while axe is in inventory. Wait for progress bar to finish.
 
-# Credit
+## Credit
 
 Used under GNU General Public License v2.0 from Gruppe Adler
 
