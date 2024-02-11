@@ -52,4 +52,16 @@ class CfgRadioStations {
         name = "Synixe Radio 11 - Beautiful World";
         url = "https://radio.synixe.contractors/listen/radio11/radio.mp3";
     };
+    class synixe_radio12 {
+        name = "Synixe Radio 12 - Western Wind Radio";
+        url = "https://radio.synixe.contractors/listen/radio12/radio.mp3";
+    };
+    class synixe_radio13 {
+        name = "Synixe Radio 13 - Alt Rock Ascent FM";
+        url = "https://radio.synixe.contractors/listen/radio13/radio.mp3";
+    };
+    class synixe_radio14 {
+        name = "Synixe Radio 14 - Iron Anthem FM";
+        url = "https://radio.synixe.contractors/listen/radio14/radio.mp3";
+    };
 };
