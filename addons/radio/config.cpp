@@ -64,4 +64,8 @@ class CfgRadioStations {
         name = "Synixe Radio 14 - Iron Anthem FM";
         url = "https://radio.synixe.contractors/listen/radio14/radio.mp3";
     };
+    class synixe_radio15 {
+        name = "Synixe Radio 15 - Classic Bollywood FM";
+        url = "https://radio.synixe.contractors/listen/radio15/radio.mp3";
+    };
 };
