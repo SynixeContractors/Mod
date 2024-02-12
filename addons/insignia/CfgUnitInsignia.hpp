@@ -29,7 +29,7 @@ class CfgUnitInsignia {
         texture = QPATHTOF(textures\jacob_ca.paa);
     };
     class Synixe_Carson_P {
-        displayName = "Carson Sering";
+        displayName = "Peace was never an option";
         author = "Carson Sering";
         texture = QPATHTOF(textures\carson.paa);
     };
@@ -37,11 +37,6 @@ class CfgUnitInsignia {
         displayName = "Matías Jackson";
         author = "Matías Jackson";
         texture = QPATHTOF(textures\matias.paa);
-    };
-    class Synixe_Jay_P {
-        displayName = "Jay Sweeb";
-        author = "Jay Sweeb";
-        texture = QPATHTOF(textures\jay.paa);
     };
 
     class Synixe_Medic_P {

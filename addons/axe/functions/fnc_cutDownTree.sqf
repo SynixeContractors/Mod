@@ -11,8 +11,8 @@ if (_unit != ACE_player) exitWith {};
 
 private _boundingBoxTree = boundingBox _treeObject;
 private _treeSize = (_boundingBoxTree select 0) distance (_boundingBoxTree select 1);
-private _specialistFactor = [1,0.80] select ([_unit] call ace_common_fnc_isEngineer);
-private _timeToCut = _treeSize * _specialistFactor * (GVAR(timeFactor) min GVAR(maxTime) max 5);
+private _specialistFactor = [1,0.70] select ([_unit] call ace_common_fnc_isEngineer);
+private _timeToCut = _treeSize * _specialistFactor * (GVAR(timeFactor) min GVAR(maxTime) max 5) * 0.20;
 
 if !(_unit call ace_common_fnc_isSwimming) then {
     [_unit, "Acts_Executioner_Forehand", 0] call ace_common_fnc_doAnimation;

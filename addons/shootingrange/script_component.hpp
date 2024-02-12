@@ -2,14 +2,6 @@
 #define COMPONENT_BEAUTIFIED Shooting Range
 #include "..\main\script_mod.hpp"
 
-#ifdef DEBUG_ENABLED_SHOOTINGRANGE
-    #define DEBUG_MODE_FULL
-#endif
-
-#ifdef DEBUG_SETTINGS_SHOOTINGRANGE
-    #define DEBUG_SETTINGS DEBUG_SETTINGS_SHOOTINGRANGE
-#endif
-
 #include "..\main\script_macros.hpp"
 
 #define MODE_DEFAULT 1

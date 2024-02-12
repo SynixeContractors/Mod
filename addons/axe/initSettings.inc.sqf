@@ -12,6 +12,6 @@
     "SLIDER",
     "Max Time",
     ["Synixe - Equipment", "AXE"],
-    [5, 600, 40, 0],
+    [5, 120, 20, 0],
     true
 ] call CBA_fnc_addSetting;
