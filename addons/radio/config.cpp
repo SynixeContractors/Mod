@@ -65,7 +65,7 @@ class CfgRadioStations {
         url = "https://radio.synixe.contractors/listen/radio14/radio.mp3";
     };
     class synixe_radio15 {
-        name = "Synixe Radio 15 - Classic Bollywood FM";
+        name = "Synixe Radio 15 - Dance India";
         url = "https://radio.synixe.contractors/listen/radio15/radio.mp3";
     };
 };
