@@ -6,7 +6,7 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"A3_Data_F_Enoch_Loadorder", "A3_Data_F_Mod_Loadorder", "cba_main", "cba_jr", "cba_events", "ace_common", "ace_grenades", "CUP_Weapons_Ammunition", "CUP_Weapons_Flaregun", "tem_ihantalaw"};
+        requiredAddons[] = {"A3_Data_F_Enoch_Loadorder", "A3_Data_F_Mod_Loadorder", "cba_main", "cba_jr", "cba_events", "ace_common", "ace_grenades"};
         VERSION_CONFIG;
     };
 };
@@ -37,28 +37,6 @@ class CfgAmmo {
     class G_40mm_Smoke: SmokeShell {
         simulation = "shotSmoke";
         deflectionSlowDown = 0.1;
-    };
-};
-
-class CfgWorlds {
-    class CAWorld;
-    class hellanmaaw: CAWorld {
-        description = "Hellanmaa (Winter)";
-    };
-    class tem_ihantalawa: CAWorld {
-        description = "Ihantala (Winter)";
-    };
-    class tem_summawcup: CAWorld {
-        description = "Summa (Winter)";
-    };
-    class abramia: CAWorld {
-        description = "Abramia";
-    };
-    class pja307: CAWorld {
-        description = "Dariyah";
-    };
-    class pja308: CAWorld {
-        description = "Gunkizli";
     };
 };
 

@@ -1,8 +1,19 @@
 name = "Synixe"
 prefix = "synixe"
+mainprefix = "x"
 author = "Synixe Contractors"
 
 [files]
 include = [
     "synixe_x64.dll",
+]
+
+[hemtt.launch]
+workshop = [
+    "450814997", # CBA
+    "463939057", # ACE3
+    "1779063631", # Zeus Enhanced
+]
+dlc = [
+    "ws", # Western Sahara
 ]

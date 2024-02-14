@@ -6,7 +6,10 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {};
+        requiredAddons[] = {
+            "acre_sys_core",
+        };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

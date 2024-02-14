@@ -2,16 +2,20 @@
 
 class CfgPatches {
     class ADDON {
-        name = QUOTE(COMPONENT);
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "synixe_contractors_main",
+            "synixe_main",
+            "ace_hearing",
+            // MilGearPack
+            "milgp_headgear_cfg",
         };
         skipWhenMissingDependencies = 1;
+        author = ECSTRING(main,Author);
+        authors[] = {"Mike", "Brett"};
         VERSION_CONFIG;
     };
 };
 
-#include "CfgGroups.hpp"
+#include "CfgWeapons.hpp"

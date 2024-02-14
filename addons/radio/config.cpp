@@ -6,7 +6,11 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"live_radio_interface"};
+        requiredAddons[] = {
+            "synixe_main",
+            "live_radio_interface"
+        };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

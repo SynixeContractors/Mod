@@ -19,7 +19,7 @@
 ["acre_sys_core_onRevealUnit", {
     params ["", "_unit"];
     [QGVAR(surrenderCheck), [_unit, "speak"]] call CBA_fnc_serverEvent;
-}];
+}] call CBA_fnc_addEventHandler;
 
 {
     if !(_x getVariable [QGVAR(surrenderDisabled), false]) then {
@@ -29,10 +29,27 @@
 
 {
     if !(_x getVariable [QGVAR(alarmEHRemoved), false]) then {
-        [_x, true, true] call FUNC(carAlarm);
+        [_x, false, true] call FUNC(carAlarm);
     };
 } forEach vehicles;
 
 if (isServer) then {
     [QGVAR(surrenderCheck), LINKFUNC(surrenderCheck)] call CBA_fnc_addEventHandler;
 };
+
+["zen_curatorDisplayLoaded", {
+    private _logic = getAssignedCuratorLogic player;
+    if (isNil "_logic") exitWith {
+        WARNING("No curator logic found when opening interface");
+    };
+    if (_logic getVariable [QGVAR(didInit), false]) exitWith {};
+    _logic setVariable [QGVAR(didInit), true];
+    _logic addEventHandler ["CuratorGroupPlaced", {
+        params ["_curator", "_group"];
+        [_group] call FUNC(surrenderInit);
+    }];
+    _logic addEventHandler ["CuratorObjectPlaced", {
+        params ["_curator", "_entity"];
+        [_entity, false, true] call FUNC(carAlarm);
+    }];
+}] call CBA_fnc_addEventHandler;

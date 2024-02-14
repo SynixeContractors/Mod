@@ -7,16 +7,16 @@
  *
  * Arguments:
  * 0: Car <OBJECT>
- * 1: Remove Event After Use <BOOL> (default: true)
+ * 1: Remove Event After Use <BOOL> (default: false)
  *
  * Return Value:
  * None
  *
  * Examples:
- * [My_Car, false] call MFUNC(carAlarm);
+ * [My_Car, true] call MFUNC(carAlarm);
 */
 
-params ["_vehicle", ["_removeAfterFiring", true], ["_auto", false]];
+params ["_vehicle", ["_removeAfterFiring", false], ["_auto", false]];
 
 // Only add to Cars that would have alarms, extra check for wheeled APCs that inherit from Car_F
 if !(_vehicle isKindOf "Car_F") exitWith {
