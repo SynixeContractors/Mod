@@ -6,11 +6,21 @@ GVAR(radioArsenalButton) = [
     "\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\radio_ca.paa"
 ] call ace_arsenal_fnc_addRightPanelButton;
 
-if (!hasInterface) exitWith {};
-
 // Set languages
 ["en", "English"] call acre_api_fnc_babelAddLanguageType;
 ["un", "Unconscious"] call acre_api_fnc_babelAddLanguageType;
+
+{
+    [_x, "default", "synixe"] call acre_api_fnc_copyPreset;
+    [_x, "synixe", 1, "label", "COMMAND"] call acre_api_fnc_setPresetChannelField;
+    [_x, "synixe", 2, "label", "ALPHA"] call acre_api_fnc_setPresetChannelField;
+    [_x, "synixe", 3, "label", "BRAVO"] call acre_api_fnc_setPresetChannelField;
+    [_x, "synixe", 4, "label", "CHARLIE"] call acre_api_fnc_setPresetChannelField;
+    [_x, "synixe", 5, "label", "DELTA"] call acre_api_fnc_setPresetChannelField;
+    [_x, "synixe"] call acre_api_fnc_setPreset;
+} forEach ["ACRE_PRC152", "ACRE_PRC117F"];
+
+if (!hasInterface) exitWith {};
 
 // Set spoken
 ["en"] call acre_api_fnc_babelSetSpokenLanguages;
@@ -51,13 +61,3 @@ if (!hasInterface) exitWith {};
         ["en"] call acre_api_fnc_babelSetSpokenLanguages; 
     }; 
 }, false] call CBA_fnc_addPlayerEventHandler;
-
-{
-    [_x, "default", "synixe"] call acre_api_fnc_copyPreset;
-    [_x, "synixe", 1, "label", "COMMAND"] call acre_api_fnc_setPresetChannelField;
-    [_x, "synixe", 2, "label", "ALPHA"] call acre_api_fnc_setPresetChannelField;
-    [_x, "synixe", 3, "label", "BRAVO"] call acre_api_fnc_setPresetChannelField;
-    [_x, "synixe", 4, "label", "CHARLIE"] call acre_api_fnc_setPresetChannelField;
-    [_x, "synixe", 5, "label", "DELTA"] call acre_api_fnc_setPresetChannelField;
-    [_x, "synixe"] call acre_api_fnc_setPreset;
-} forEach ["ACRE_PRC152", "ACRE_PRC117F"];
