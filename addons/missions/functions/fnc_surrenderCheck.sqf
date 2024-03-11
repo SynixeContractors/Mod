@@ -40,16 +40,16 @@ _base = _base + parseNumber (damage _unit < 0.5);
 
 private _difference = (_state getOrDefault ["fighters", 0]) - (_state getOrDefault ["hostiles", 0]);
 if (_difference > 0) then {
-    _difference = _difference * 2;
+    _difference = _difference * 3;
 };
 _base = _base + _difference;
 
 switch (_reason) do {
     case "stun": {
-        _base = _base - ((missionNamespace getVariable [QGVAR(surrenderInfluenceStun), 10]) * (_group getVariable [QGVAR(surrenderOnStunMultiplier), 0.5]));
+        _base = _base - ((missionNamespace getVariable [QGVAR(surrenderInfluenceStun), 6]) * (_group getVariable [QGVAR(surrenderOnStunMultiplier), 0.5]));
     };
     case "hit": {
-        _base = _base - ((missionNamespace getVariable [QGVAR(surrenderInfluenceHit), 4]) * (_group getVariable [QGVAR(surrenderOnHitMultiplier), 0.5]));
+        _base = _base - ((missionNamespace getVariable [QGVAR(surrenderInfluenceHit), 3]) * (_group getVariable [QGVAR(surrenderOnHitMultiplier), 0.5]));
     };
     case "supressed": {
         _base = _base - ((missionNamespace getVariable [QGVAR(surrenderInfluenceSupressed), 1]) * (_group getVariable [QGVAR(surrenderOnSuppressMultiplier), 0.5]));
