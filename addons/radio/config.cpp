@@ -44,6 +44,10 @@ class CfgRadioStations {
         name = "Synixe Radio 7 - Alternative Waves";
         url = "https://radio.synixe.contractors/listen/radio7/radio.mp3";
     };
+    class synixe_radio8 {
+        name = "Synixe Radio 8 - Drenched in Reverb";
+        url = "https://radio.synixe.contractors/listen/radio8/radio.mp3";
+    };
     class synixe_radio9 {
         name = "Synixe Radio 9 - All Things Math Rock";
         url = "https://radio.synixe.contractors/listen/radio9/radio.mp3";
