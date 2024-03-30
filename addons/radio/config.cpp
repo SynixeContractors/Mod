@@ -72,4 +72,8 @@ class CfgRadioStations {
         name = "Synixe Radio 15 - Dance India";
         url = "https://radio.synixe.contractors/listen/radio15/radio.mp3";
     };
+    class synixe_radio16 {
+        name = "Synixe Radio 16 - This Is War";
+        url = "https://radio.synixe.contractors/listen/radio16/radio.mp3";
+    };
 };
