@@ -2,8 +2,24 @@
 
 params ["_unit"];
 
-(magazines _unit) findIf { _x in [
-    QGVAR(B_UAV_01_CASE),
-    QGVAR(O_UAV_01_CASE),
-    QGVAR(I_UAV_01_CASE)
-] } >= 0
+scopeName "search";
+
+private _canAssemble = false;
+
+{
+    {
+        _x params ["_class", "_count"];
+        private _drone = getText (configFile >> "CfgMagazines" >> _class >> QGVAR(drone));
+        if (_drone == "") exitWith {
+            continue;
+        };
+        _canAssemble = true;
+        breakTo "search";
+    } forEach magazinesAmmoCargo _x;
+} forEach [
+    backpackContainer _unit,
+    uniformContainer _unit,
+    vestContainer _unit
+];
+
+_canAssemble

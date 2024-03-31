@@ -23,16 +23,6 @@ class CfgUnitInsignia {
         author = "Gabriel Penteado";
         texture = QPATHTOF(textures\gabe.paa);
     };
-    class Synixe_Jacob_P {
-        displayName = "Jacob McDowall";
-        author = "Jacob McDowall";
-        texture = QPATHTOF(textures\jacob_ca.paa);
-    };
-    class Synixe_Carson_P {
-        displayName = "Peace was never an option";
-        author = "Carson Sering";
-        texture = QPATHTOF(textures\carson.paa);
-    };
     class Synixe_Matias_P {
         displayName = "Matías Jackson";
         author = "Matías Jackson";

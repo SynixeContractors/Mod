@@ -8,7 +8,7 @@ include = [
     "synixe_x64.dll",
 ]
 
-[hemtt.launch]
+[hemtt.launch.default]
 workshop = [
     "450814997", # CBA
     "463939057", # ACE3

@@ -1,6 +1,10 @@
+PREP(action_assembleInsertChildren);
 PREP(action_canAssemble);
-PREP(action_canSwapBattery);
-PREP(action_insertChildren);
+PREP(action_canInsertBattery);
+PREP(action_canRemoveBattery);
+PREP(action_insertBatteryInsertChildren);
+PREP(action_modifyRemove);
 PREP(assemble);
+PREP(insertBattery);
 PREP(pack);
-PREP(swapBattery);
+PREP(removeBattery);

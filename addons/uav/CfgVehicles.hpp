@@ -36,7 +36,7 @@ class CfgVehicles {
                 class GVAR(assemble) {
                     displayName = "Assemble";
                     condition = QUOTE([_player] call FUNC(action_canAssemble));
-                    insertChildren = QUOTE([_player] call FUNC(action_insertChildren));
+                    insertChildren = QUOTE([_player] call FUNC(action_assembleInsertChildren));
                     statement = "";
                 };
             };
@@ -63,22 +63,33 @@ class CfgVehicles {
                     condition = QUOTE(alive _target);
                     statement = QUOTE([ARR_2(_player,_target)] call FUNC(pack));
                 };
-                // class GVAR(swapBattery) {
-                // 	displayName = "Swap Battery";
-                // 	distance = 4;
-                // 	condition = QUOTE([_player] call FUNC(action_canSwapBattery));
-                // 	statement = QUOTE([ARR_2(_player,_target)] call FUNC(swapBattery));
-                // };
+                class GVAR(removeBattery) {
+                    displayName = "Remove Battery";
+                    distance = 4;
+                    modifierFunction = QUOTE(call FUNC(action_modifyRemove));
+                    condition = QUOTE([ARR_2(_player,_target)] call FUNC(action_canRemoveBattery));
+                    statement = QUOTE([ARR_2(_player,_target)] call FUNC(removeBattery));
+                };
+                class GVAR(insertBattery) {
+                    displayName = "Insert Battery";
+                    distance = 4;
+                    condition = QUOTE([ARR_2(_player,_target)] call FUNC(action_canInsertBattery));
+                    statement = "";
+                    insertChildren = QUOTE([ARR_2(_player,_target)] call FUNC(action_insertBatteryInsertChildren));
+                };
             };
         };
     };
     class B_UAV_01_F: UAV_01_base_F {
         GVAR(case) = QGVAR(B_UAV_01_CASE);
+        delete assembleInfo;
     };
     class I_UAV_01_F: UAV_01_base_F {
         GVAR(case) = QGVAR(I_UAV_01_CASE);
+        delete assembleInfo;
     };
     class O_UAV_01_F: UAV_01_base_F {
         GVAR(case) = QGVAR(O_UAV_01_CASE);
+        delete assembleInfo;
     };
 };
