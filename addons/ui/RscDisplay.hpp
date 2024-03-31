@@ -83,3 +83,18 @@ class RscDisplayClientGetReady : RscDisplayGetReady {
         };
     };
 };
+
+class RscStandardDisplay;
+class RscPictureKeepAspect;
+class RscDisplayStart: RscStandardDisplay {
+    class controls {
+        class LoadingStart: RscControlsGroup {
+            class controls {
+                class Logo: RscPictureKeepAspect {
+                    text = "\x\synixe\addons\main\ui\synixe_ca.paa";
+                    onLoad = "";
+                };
+            };
+        };
+    };
+};
