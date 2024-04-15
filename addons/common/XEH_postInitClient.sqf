@@ -61,3 +61,11 @@ setCurrentChannel 0;            //Change to Global
     _unit enableInfoPanelComponent ["left", "MinimapDisplayComponent", false];
     _unit enableInfoPanelComponent ["right", "MinimapDisplayComponent", false];
 }, true] call CBA_fnc_addPlayerEventHandler;
+
+// Disable map when handcuffed
+[{
+    findDisplay 46 displayAddEventHandler ["KeyDown", {
+        params ["_display", "_key"];
+        _key in (actionKeys "showMap") && (ace_player getVariable ["ace_captives_isHandcuffed", false])
+    }];
+}, [], 60] call CBA_fnc_waitAndExecute;
