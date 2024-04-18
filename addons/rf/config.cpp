@@ -1,4 +1,4 @@
-#define RF_DELETE requiredAddons[] = {"RF_Data"}; skipWhenMissingDependencies = 1
+#define RF_DELETE units[] = {}; weapons[] = {}; requiredAddons[] = {"RF_Data"}; skipWhenMissingDependencies = 1
 
 class CfgPatches {
     class RF_Dubbing {
