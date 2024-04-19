@@ -11,11 +11,11 @@
  * None
  *
  * Example:
- * [_groups] call MFUNC(surrenderEnable)
+ * [_groups] call synixe_surrender_fnc_enable
  */
 
 params ["_groups", ["_state", true]];
 
 {
-    _x setVariable [QGVAR(disableSurrender), !_state, true];
+    _x setVariable [QGVAR(disable), !_state, true];
 } forEach _groups;

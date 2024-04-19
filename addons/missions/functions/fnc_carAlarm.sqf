@@ -13,7 +13,7 @@
  * None
  *
  * Examples:
- * [My_Car, true] call MFUNC(carAlarm);
+ * [My_Car, true] call synixe_missions_fnc_carAlarm;
 */
 
 params ["_vehicle", ["_removeAfterFiring", false], ["_auto", false]];

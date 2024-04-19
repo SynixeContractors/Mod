@@ -17,8 +17,8 @@
  * None
  *
  * Examples:
- * [MyObject] call MFUNC(ping)
- * [MyObject, true, 70, "ColorGrey"] call MFUNC(ping)
+ * [MyObject] call synixe_missions_fnc_ping
+ * [MyObject, true, 70, "ColorGrey"] call synixe_missions_fnc_ping
  */
 
 params ["_location", ["_isGlobal", false], ["_maxSize", 60], ["_colour", "ColorRed"]];
@@ -44,7 +44,7 @@ _marker setMarkerColorLocal _colour;
 
 [{
     params ["_args", "_handle"];
-    _args params ["_location", "_marker", "_isGlobal"];
+    _args params ["_location", "_marker", "_isGlobal", "_maxSize"];
 
     if (isNull _location) exitWith {
         WARNING_1("Ping Location for marker: %1 no longer exists",_markerName);
@@ -65,4 +65,4 @@ _marker setMarkerColorLocal _colour;
     } else {
         _marker setMarkerSizeLocal [_size, _size];
     };
-}, 0.1, [_location, _marker, _isGlobal]] call CBA_fnc_addPerFrameHandler;
+}, 0.1, [_location, _marker, _isGlobal, _maxSize]] call CBA_fnc_addPerFrameHandler;

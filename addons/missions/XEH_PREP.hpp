@@ -1,7 +1,10 @@
+PREP(action);
 PREP(carAlarm);
+PREP(computerUpload);
+PREP(countAlive);
 PREP(markBuildings);
 PREP(ping);
-PREP(surrenderCheck);
-PREP(surrenderEnable);
-PREP(surrenderInit);
-PREP(surrenderNearbyForces);
+PREP(players);
+PREP(speak_internal);
+PREP(speak);
+PREP(toggleLights);

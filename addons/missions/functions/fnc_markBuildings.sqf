@@ -15,8 +15,8 @@
  * None
  *
  * Examples:
- * [[MyObject, MyObject2]] call MFUNC(markBuildings);
- * [(getMissionLayerEntities "Test Layer" select 0)] call MFUNC(markBuildings);
+ * [[MyObject, MyObject2]] call synixe_missions_fnc_markBuildings;
+ * [(getMissionLayerEntities "Test Layer" select 0)] callsynixe_missions_fnc_(markBuildings;
 */
 
 params ["_objectArray", ["_filter", true]];
