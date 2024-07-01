@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * _vehicle call tac_compat_melb_fnc_toggleMFD
+ * _vehicle call synixe_compat_melb_fnc_toggleMFD
  *
  * Public: No
  */

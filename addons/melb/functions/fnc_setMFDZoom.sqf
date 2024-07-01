@@ -10,7 +10,7 @@
  * None
  *
  * Example:
- * [0.3] call tac_compat_melb_fnc_setMFDZoom
+ * [0.3] call synixe_compat_melb_fnc_setMFDZoom
  *
  * Public: No
  */

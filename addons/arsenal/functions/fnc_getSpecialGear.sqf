@@ -14,7 +14,7 @@ private _missing = [];
             [["ACE_adenosine"],         2, "Adenosine", _missing] call FUNC(countItem);
             [["ACE_epinephrine"],       2, "Epinephrine", _missing] call FUNC(countItem);
             [["ACE_morphine"],          2, "Morphine", _missing] call FUNC(countItem);
-            [["ACE_painkillers"],      10, "Painkillers", _missing] call FUNC(countItem);
+            [["ACE_painkillers"],       4, "Painkillers", _missing] call FUNC(countItem);
             [["ACE_elasticBandage"],    30, "Bandages (Elastic)", _missing] call FUNC(countItem);
             [["ACE_packingBandage"],    20, "Bandages (Packing)", _missing] call FUNC(countItem);
             [["ACE_quikclot"],          20, "Bandages (Quikclot)", _missing] call FUNC(countItem);

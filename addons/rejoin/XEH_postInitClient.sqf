@@ -15,6 +15,7 @@
 [QGVAR(teleportResponse), {
     params ["_position", "_vehicleInfo"];
     player setPos _position;
+    diag_log format ["Rejoin: Position %1, VehicleInfo %2", _position, _vehicleInfo];
     if (_vehicleInfo isNotEqualTo []) then {
         _vehicleInfo params ["_vehicle", "_role"];
         if (!alive _vehicle) exitWith {};
