@@ -10,7 +10,7 @@ crate-type = ["cdylib"]
 
 [dependencies]
 arma-rs = "1.10.5"
-discord-rpc-sdk = { git = "https://github.com/brettmayson/rust-discord-rpc", branch = "master" }
+discord-presence = "1.2"
 enigo = { git = "https://github.com/NaokiM03/enigo" }
-lazy_static = "1.4.0"
-webbrowser = "0.8.12"
+lazy_static = "1.5.0"
+webbrowser = "1.0.1"

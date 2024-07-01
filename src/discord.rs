@@ -1,7 +1,7 @@
 use std::{sync::Mutex, time::SystemTime};
 
 use arma_rs::Group;
-use discord_rpc_sdk::{EventHandlers, RichPresence, RPC};
+use discord_presence::Client;
 
 pub fn group() -> Group {
     Group::new()
@@ -9,12 +9,9 @@ pub fn group() -> Group {
         .command("update", update)
 }
 
-struct Handlers;
-impl EventHandlers for Handlers {}
-
 lazy_static::lazy_static! {
-    static ref RPCM: Mutex<RPC> =
-        Mutex::new(RPC::init::<Handlers>("411594868293500938", true, None).unwrap());
+    static ref RPCM: Mutex<Client> =
+        Mutex::new(Client::new(411594868293500938));
 }
 
 static mut TIMESTAMP: Option<SystemTime> = None;
@@ -28,21 +25,20 @@ pub fn setup(_steam_id: String, profile_name: String) {
 }
 
 pub fn update(details: String, state: String, image: String, text: String) {
-    unsafe {
-        let presence = RichPresence {
-            details: Some(details),
-            state: Some(state),
-            start_time: TIMESTAMP,
-            large_image_key: Some(image),
-            large_image_text: Some(text),
-            small_image_key: None,
-            small_image_text: None,
-            party_size: None,
-            party_max: None,
-            spectate_secret: None,
-            join_secret: None,
-            ..Default::default()
-        };
-        RPCM.lock().unwrap().update_presence(presence).unwrap();
+    if let Err(e) = RPCM.lock().unwrap().set_activity(|a| {
+        a.state(state)
+            .details(details)
+            .assets(|a| a.large_image(image).large_text(text))
+            .timestamps(|a| {
+                a.start(unsafe {
+                    TIMESTAMP
+                        .unwrap()
+                        .duration_since(SystemTime::UNIX_EPOCH)
+                        .unwrap()
+                        .as_secs()
+                })
+            })
+    }) {
+        println!("Failed to update Discord presence: {}", e);
     }
 }
