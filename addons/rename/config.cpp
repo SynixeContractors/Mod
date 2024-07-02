@@ -9,6 +9,7 @@ class CfgPatches {
         requiredAddons[] = {
             "CUP_Weapons_LoadOrder",
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };
