@@ -124,7 +124,7 @@ class CfgPatches {
     class map_wsahara_scenes_f_lxWS {
         WS_DELETE;
     };
-    class structures_1_f_lxws {
+    class structures_1_F_lxws {
         WS_DELETE;
     };
     class structures_1_F_lxWS_Cultural {
@@ -139,16 +139,28 @@ class CfgPatches {
     class structures_F_lxWS {
         WS_DELETE;
     };
-    class music_F_lxWS {
+    class music_f_lxWS {
         WS_DELETE;
     };
-    class vegetation_F_lxWS {
+    class music_f_lxWS_music {
         WS_DELETE;
     };
-    class walls_F_lxWS {
+    class music_f_lxWS_music_alchemist {
         WS_DELETE;
     };
-    class rocks_F_lxWS {
+    class music_f_lxWS_music_jukebox {
+        WS_DELETE;
+    };
+    class music_f_lxWS_music_tension {
+        WS_DELETE;
+    };
+    class Vegetation_F_lxWS {
+        WS_DELETE;
+    };
+    class walls_f_lxWS {
+        WS_DELETE;
+    };
+    class Rocks_F_lxWS {
         WS_DELETE;
     };
     class animals_F_lxWS {
