@@ -136,22 +136,22 @@ class CfgPatches {
     class structures_1_F_lxWS_Tent {
         WS_DELETE;
     };
-    class Structures_F_lxWS {
+    class structures_F_lxWS {
         WS_DELETE;
     };
-    class Music_F_lxWS {
+    class music_F_lxWS {
         WS_DELETE;
     };
-    class Vegetation_F_lxWS {
+    class vegetation_F_lxWS {
         WS_DELETE;
     };
-    class Walls_F_lxWS {
+    class walls_F_lxWS {
         WS_DELETE;
     };
-    class Rocks_F_lxWS {
+    class rocks_F_lxWS {
         WS_DELETE;
     };
-    class Animals_F_lxWS {
+    class animals_F_lxWS {
         WS_DELETE;
     };
 };
