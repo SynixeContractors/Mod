@@ -14,3 +14,6 @@ workshop = [
     "463939057", # ACE3
     "1779063631", # Zeus Enhanced
 ]
+dlc = [
+    "ws"
+]

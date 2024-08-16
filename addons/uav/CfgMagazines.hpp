@@ -26,34 +26,58 @@ class CfgMagazines {
         editorPreview = "\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\Land_PlasticCase_01_small_black_F.jpg";
     };
 
-    class GVAR(B_UAV_01_CASE): GVAR(base) {
+    class GVAR(base_darter): GVAR(base) {
+        aid_uav_maxRange = 13000;
+        count = 100;
+        picture = "\A3\Drones_F\Air_F_Gamma\UAV_01\Data\UI\UAV_01_CA.paa";
+    };
+    class GVAR(B_UAV_01_CASE): GVAR(base_darter) {
         scope = 2;
         scopeCurator = 2;
         displayName = "AR-2 (BLUFOR)";
         descriptionShort = "Contains a BLUFOR AR-2 Darter";
-        picture = "\A3\Drones_F\Air_F_Gamma\UAV_01\Data\UI\UAV_01_CA.paa";
-        count = 100;
-
         GVAR(drone) = "B_UAV_01_F";
     };
-    class GVAR(I_UAV_01_CASE): GVAR(base) {
+    class GVAR(I_UAV_01_CASE): GVAR(base_darter) {
         scope = 2;
         scopeCurator = 2;
         displayName = "AR-2 (INDEP)";
         descriptionShort = "Contains an INDEP AR-2 Darter";
-        picture = "\A3\Drones_F\Air_F_Gamma\UAV_01\Data\UI\UAV_01_CA.paa";
-        count = 100;
-
         GVAR(drone) = "I_UAV_01_F";
     };
-    class GVAR(O_UAV_01_CASE): GVAR(base) {
+    class GVAR(O_UAV_01_CASE): GVAR(base_darter) {
         scope = 2;
         scopeCurator = 2;
         displayName = "AR-2 (OPFOR)";
         descriptionShort = "Contains an OPFOR AR-2 Darter";
-        picture = "\A3\Drones_F\Air_F_Gamma\UAV_01\Data\UI\UAV_01_CA.paa";
-        count = 100;
-
         GVAR(drone) = "O_UAV_01_F";
+    };
+
+    class GVAR(base_bustard): GVAR(base) {
+        aid_uav_maxRange = 13000;
+        count = 100;
+        picture = "\lxWS\air_f_lxWS\Data\UI\UAV_02_CA.paa";
+        DLC = "lxWS";
+    };
+    class GVAR(B_UAV_02_lxWS_CASE): GVAR(base_bustard) {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Bustard (BLUFOR)";
+        descriptionShort = "Contains a BLUFOR AP-5 Bustard";
+        GVAR(drone) = "B_UAV_02_lxWS";
+    };
+    class GVAR(I_UAV_02_lxWS_CASE): GVAR(base_bustard) {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Bustard (INDEP)";
+        descriptionShort = "Contains an INDEP AP-5 Bustard";
+        GVAR(drone) = "I_UAV_02_lxWS";
+    };
+    class GVAR(O_UAV_02_lxWS_CASE): GVAR(base_bustard) {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Bustard (OPFOR)";
+        descriptionShort = "Contains an OPFOR AP-5 Bustard";
+        GVAR(drone) = "O_UAV_02_lxWS";
     };
 };
