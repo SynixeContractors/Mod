@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+if !(isPlayer) exitWith {};
+
 FUNC(mapAnimate) = {
     if ("synixe_animate_map" in gestureState ace_player) exitWith {};
     private _rot = [50,170,-90];
