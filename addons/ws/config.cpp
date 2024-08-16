@@ -124,7 +124,7 @@ class CfgPatches {
     class map_wsahara_scenes_f_lxWS {
         WS_DELETE;
     };
-    class structures_1_F_lxws {
+    class structures_1_F_lxWS {
         WS_DELETE;
     };
     class structures_1_F_lxWS_Cultural {
