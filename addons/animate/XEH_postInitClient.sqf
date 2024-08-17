@@ -65,6 +65,18 @@ addUserActionEventHandler ["Watch", "Activate", {
     };
 }] call CBA_fnc_addEventHandler;
 
+ace_huntir_animatePlayer = false;
+GVAR(huntIROpen) = false;
+["ace_huntir_monitorOpened", {
+    GVAR(huntIROpen) = true;
+    private _item = "\z\ace\addons\huntir\data\ace_huntir_monitor.p3d";
+    [ace_player, QGVAR(map_start), QGVAR(map_loop), {!GVAR(huntIROpen)}, QGVAR(map_end), _item, [0.02,0.02,0.01], [70,90,0]] call FUNC(gestureItem);
+}] call CBA_fnc_addEventHandler;
+
+["ace_huntir_monitorClosed", {
+    GVAR(huntIROpen) = false;
+}] call CBA_fnc_addEventHandler;
+
 ["CBA_settingsInitialized", {
     ["visionMode", {
         params ["_unit", "_visionMode"];

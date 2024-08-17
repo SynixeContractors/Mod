@@ -18,6 +18,12 @@ class CfgUnitInsignia {
         texture = QPATHTOF(textures\chaplain.paa);
     };
 
+    class Synixe_Yorkshire_P {
+        displayName = "Yorkshire";
+        author = "Chris Bolland";
+        texture = QPATHTOF(textures\yorkshire_ca.paa);
+    };
+
     class Synixe_Gabe_P {
         displayName = "Thick Thighs Save Lives";
         author = "Gabriel Penteado";
