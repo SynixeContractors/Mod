@@ -1,3 +1,4 @@
+class Components;
 class CfgVehicles {
     class Weapon_Bag_Base;
     class GVAR(uav_bag_base): Weapon_Bag_Base {
@@ -35,8 +36,8 @@ class CfgVehicles {
             class ACE_Equipment {
                 class GVAR(assemble) {
                     displayName = "Assemble";
-                    condition = QUOTE([_player] call FUNC(action_canAssemble));
-                    insertChildren = QUOTE([_player] call FUNC(action_assembleInsertChildren));
+                    condition = QUOTE([_player] call FUNC(generic_assembleCondition));
+                    insertChildren = QUOTE([_player] call FUNC(generic_assembleInsertChildren));
                     statement = "";
                 };
             };
@@ -55,30 +56,33 @@ class CfgVehicles {
         };
     };
 
+#define PACK  class GVAR(pack) { \
+                    displayName = "Pack"; \
+                    distance = 4; \
+                    condition = QUOTE([ARR_2(_player,_target)] call FUNC(generic_packCondition)); \
+                    statement = QUOTE([ARR_2(_player,_target)] call FUNC(generic_pack)); \
+                }
+#define BATTERY class GVAR(removeBattery) { \
+                    displayName = "Remove Battery"; \
+                    distance = 4; \
+                    modifierFunction = QUOTE(call FUNC(generic_removeBatteryModify)); \
+                    condition = QUOTE([ARR_2(_player,_target)] call FUNC(generic_removeBatteryCondition)); \
+                    statement = QUOTE([ARR_2(_player,_target)] call FUNC(generic_removeBattery)); \
+                }; \
+                class GVAR(insertBattery) { \
+                    displayName = "Insert Battery"; \
+                    distance = 4; \
+                    condition = QUOTE([ARR_2(_player,_target)] call FUNC(generic_insertBatteryCondition)); \
+                    statement = ""; \
+                    insertChildren = QUOTE([ARR_2(_player,_target)] call FUNC(generic_insertBatteryInsertChildren)); \
+                }
+
     // Darter
     class UAV_01_base_F: Helicopter_Base_F {
         class ACE_Actions: ACE_Actions {
             class ACE_MainActions: ACE_MainActions {
-                class GVAR(pack) {
-                    displayName = "Pack";
-                    distance = 4;
-                    condition = QUOTE(alive _target);
-                    statement = QUOTE([ARR_2(_player,_target)] call FUNC(pack));
-                };
-                class GVAR(removeBattery) {
-                    displayName = "Remove Battery";
-                    distance = 4;
-                    modifierFunction = QUOTE(call FUNC(action_modifyRemove));
-                    condition = QUOTE([ARR_2(_player,_target)] call FUNC(action_canRemoveBattery));
-                    statement = QUOTE([ARR_2(_player,_target)] call FUNC(removeBattery));
-                };
-                class GVAR(insertBattery) {
-                    displayName = "Insert Battery";
-                    distance = 4;
-                    condition = QUOTE([ARR_2(_player,_target)] call FUNC(action_canInsertBattery));
-                    statement = "";
-                    insertChildren = QUOTE([ARR_2(_player,_target)] call FUNC(action_insertBatteryInsertChildren));
-                };
+                PACK;
+                BATTERY;
             };
         };
     };
@@ -97,55 +101,45 @@ class CfgVehicles {
 
     // Bustard
     class UAV_02_Base_lxWS: Helicopter_Base_F {
+        class EventHandlers;
         class ACE_Actions: ACE_Actions {
             class ACE_MainActions: ACE_MainActions {
                 class GVAR(pack) {
                     displayName = "Pack";
                     distance = 4;
-                    condition = QUOTE(alive _target);
-                    statement = QUOTE([ARR_2(_player,_target)] call FUNC(pack));
+                    condition = QUOTE([ARR_2(_player,_target)] call FUNC(bustard_packCondition));
+                    statement = QUOTE([ARR_2(_player,_target)] call FUNC(generic_pack));
                 };
-                class GVAR(removeBattery) {
-                    displayName = "Remove Battery";
-                    distance = 4;
-                    modifierFunction = QUOTE(call FUNC(action_modifyRemove));
-                    condition = QUOTE([ARR_2(_player,_target)] call FUNC(action_canRemoveBattery));
-                    statement = QUOTE([ARR_2(_player,_target)] call FUNC(removeBattery));
-                };
-                class GVAR(insertBattery) {
-                    displayName = "Insert Battery";
-                    distance = 4;
-                    condition = QUOTE([ARR_2(_player,_target)] call FUNC(action_canInsertBattery));
-                    statement = "";
-                    insertChildren = QUOTE([ARR_2(_player,_target)] call FUNC(action_insertBatteryInsertChildren));
-                };
-                class GVAR(arm) {
-                    displayName = "Arm";
-                    distance = 4;
-                    condition = QUOTE([ARR_2(_player,_target)] call FUNC(bustard_canArm));
-                    statement = QUOTE([ARR_2(_player,_target)] call FUNC(bustard_arm));
-                    modifierFunction = QUOTE(call FUNC(bustard_armModify));
-                };
-                class GVAR(disarm) {
-                    displayName = "Disarm";
-                    distance = 4;
-                    condition = QUOTE([ARR_2(_player,_target)] call FUNC(bustard_canDisarm));
-                    statement = QUOTE([ARR_2(_player,_target)] call FUNC(bustard_disarm));
-                };
+                BATTERY;
                 // class GVAR(reload) {
                 //     displayName = "Reload";
                 //     distance = 4;
-                //     condition = QUOTE([ARR_2(_player,_target)] call FUNC(bustard_canReload));
+                //     condition = QUOTE([ARR_2(_player,_target)] call FUNC(bustard_reloadCondition));
                 //     statement = QUOTE([ARR_2(_player,_target)] call FUNC(bustard_reload));
                 // };
+            };
+            class GVAR(arm) {
+                displayName = "Arm";
+                distance = 4;
+                condition = QUOTE([ARR_2(_player,_target)] call FUNC(bustard_armCondition));
+                statement = QUOTE([ARR_2(_player,_target)] call FUNC(bustard_arm));
+                modifierFunction = QUOTE(call FUNC(bustard_armModify));
+                position = "[1.88926e-006,6.80166e-005,-0.237018]";
+            };
+            class GVAR(disarm) {
+                displayName = "Disarm";
+                distance = 4;
+                condition = QUOTE([ARR_2(_player,_target)] call FUNC(bustard_disarmCondition));
+                statement = QUOTE([ARR_2(_player,_target)] call FUNC(bustard_disarm));
+                modifierFunction = QUOTE(call FUNC(bustard_disarmModify));
+                position = "[1.88926e-006,6.80166e-005,-0.237018]";
             };
         };
     };
     class B_UAV_02_lxWS: UAV_02_Base_lxWS {
         GVAR(case) = QGVAR(B_UAV_02_lxWS_CASE);
         delete assembleInfo;
-        lxws_droneWeapon[] = {"","",""};
-        class EventHandlers {
+        class EventHandlers: EventHandlers {
             init = QUOTE([_this#0] call FUNC(bustard_init));
             killed = "_this call (uinamespace getvariable 'BIS_fnc_effectKilled');";
         };
@@ -153,8 +147,7 @@ class CfgVehicles {
     class I_UAV_02_lxWS: UAV_02_Base_lxWS {
         GVAR(case) = QGVAR(I_UAV_02_lxWS_CASE);
         delete assembleInfo;
-        lxws_droneWeapon[] = {"","",""};
-        class EventHandlers {
+        class EventHandlers: EventHandlers {
             init = QUOTE([_this#0] call FUNC(bustard_init));
             killed = "_this call (uinamespace getvariable 'BIS_fnc_effectKilled');";
         };
@@ -162,9 +155,96 @@ class CfgVehicles {
     class O_UAV_02_lxWS: UAV_02_Base_lxWS {
         GVAR(case) = QGVAR(O_UAV_02_lxWS_CASE);
         delete assembleInfo;
-        lxws_droneWeapon[] = {"","",""};
-        class EventHandlers {
+        class EventHandlers: EventHandlers {
             init = QUOTE([_this#0] call FUNC(bustard_init));
+            killed = "_this call (uinamespace getvariable 'BIS_fnc_effectKilled');";
+        };
+    };
+
+    // IED UAV
+    class UAV_02_IED_Base_lxWS: UAV_02_Base_lxWS {
+        class EventHandlers: EventHandlers;
+        class ACE_Actions: ACE_Actions {
+            class ACE_MainActions: ACE_MainActions {
+                class GVAR(pack): GVAR(pack) {
+                    condition = QUOTE([ARR_2(_player,_target)] call FUNC(ied_packCondition));
+                };
+            };
+            class GVAR(arm) {};
+            class GVAR(disarm) {};
+            #define PYLON_Z -0.28
+            class GVAR(arm1) {
+                displayName = "Arm 1";
+                distance = 4;
+                condition = QUOTE([ARR_3(_player,_target,1)] call FUNC(ied_armCondition));
+                position = QUOTE([ARR_3(0.0351628,0.0354007,PYLON_Z)]);
+                insertChildren = QUOTE([ARR_3(_player,_target,1)] call FUNC(ied_armInsertChildren));
+            };
+            class GVAR(arm2): GVAR(arm1) {
+                displayName = "Arm 2";
+                condition = QUOTE([ARR_3(_player,_target,2)] call FUNC(ied_armCondition));
+                position = QUOTE([ARR_3(-0.0351529,0.0354007,PYLON_Z)]);
+                insertChildren = QUOTE([ARR_3(_player,_target,2)] call FUNC(ied_armInsertChildren));
+            };
+            class GVAR(arm3): GVAR(arm1) {
+                displayName = "Arm 3";
+                condition = QUOTE([ARR_3(_player,_target,3)] call FUNC(ied_armCondition));
+                position = QUOTE([ARR_3(0.0351628,-0.0354006,PYLON_Z)]);
+                insertChildren = QUOTE([ARR_3(_player,_target,3)] call FUNC(ied_armInsertChildren));
+            };
+            class GVAR(arm4): GVAR(arm1) {
+                displayName = "Arm 4";
+                condition = QUOTE([ARR_3(_player,_target,4)] call FUNC(ied_armCondition));
+                position = QUOTE([ARR_3(-0.0351529,-0.0354006,PYLON_Z)]);
+                insertChildren = QUOTE([ARR_3(_player,_target,4)] call FUNC(ied_armInsertChildren));
+            };
+            class GVAR(disarm1): GVAR(arm1) {
+                displayName = "Disarm 1";
+                condition = QUOTE(([ARR_3(_player,_target,1)] call FUNC(ied_disarmCondition)));
+                statement = QUOTE([ARR_3(_player,_target,1)] call FUNC(ied_disarm));
+                insertChildren = "";
+            };
+            class GVAR(disarm2): GVAR(arm2) {
+                displayName = "Disarm 2";
+                condition = QUOTE(([ARR_3(_player,_target,2)] call FUNC(ied_disarmCondition)));
+                statement = QUOTE([ARR_3(_player,_target,2)] call FUNC(ied_disarm));
+                insertChildren = "";
+            };
+            class GVAR(disarm3): GVAR(arm3) {
+                displayName = "Disarm 3";
+                condition = QUOTE(([ARR_3(_player,_target,3)] call FUNC(ied_disarmCondition)));
+                statement = QUOTE([ARR_3(_player,_target,3)] call FUNC(ied_disarm));
+                insertChildren = "";
+            };
+            class GVAR(disarm4): GVAR(arm4) {
+                displayName = "Disarm 4";
+                condition = QUOTE(([ARR_3(_player,_target,4)] call FUNC(ied_disarmCondition)));
+                statement = QUOTE([ARR_3(_player,_target,4)] call FUNC(ied_disarm));
+                insertChildren = "";
+            };
+        };
+    };
+    class B_G_UAV_02_IED_lxWS: UAV_02_IED_Base_lxWS {
+        GVAR(case) = QGVAR(B_UAV_02_IED_lxWS_CASE);
+        delete assembleInfo;
+        class EventHandlers: EventHandlers {
+            init = QUOTE([_this#0] call FUNC(ied_init));
+            killed = "_this call (uinamespace getvariable 'BIS_fnc_effectKilled');";
+        };
+    };
+    class I_G_UAV_02_IED_lxWS: UAV_02_IED_Base_lxWS {
+        GVAR(case) = QGVAR(I_G_UAV_02_IED_lxWS_CASE);
+        delete assembleInfo;
+        class EventHandlers: EventHandlers {
+            init = QUOTE([_this#0] call FUNC(ied_init));
+            killed = "_this call (uinamespace getvariable 'BIS_fnc_effectKilled');";
+        };
+    };
+    class O_G_UAV_02_IED_lxWS: UAV_02_IED_Base_lxWS {
+        GVAR(case) = QGVAR(O_G_UAV_02_IED_lxWS_CASE);
+        delete assembleInfo;
+        class EventHandlers: EventHandlers {
+            init = QUOTE([_this#0] call FUNC(ied_init));
             killed = "_this call (uinamespace getvariable 'BIS_fnc_effectKilled');";
         };
     };

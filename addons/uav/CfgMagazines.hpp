@@ -26,6 +26,7 @@ class CfgMagazines {
         editorPreview = "\A3\EditorPreviews_F_Enoch\Data\CfgVehicles\Land_PlasticCase_01_small_black_F.jpg";
     };
 
+    // Darter
     class GVAR(base_darter): GVAR(base) {
         aid_uav_maxRange = 13000;
         count = 100;
@@ -53,11 +54,13 @@ class CfgMagazines {
         GVAR(drone) = "O_UAV_01_F";
     };
 
+    // Bustard
     class GVAR(base_bustard): GVAR(base) {
         aid_uav_maxRange = 13000;
         count = 100;
         picture = "\lxWS\air_f_lxWS\Data\UI\UAV_02_CA.paa";
         DLC = "lxWS";
+        GVAR(assembled) = QUOTE(_this call FUNC(bustard_assembled));
     };
     class GVAR(B_UAV_02_lxWS_CASE): GVAR(base_bustard) {
         scope = 2;
@@ -79,5 +82,35 @@ class CfgMagazines {
         displayName = "Bustard (OPFOR)";
         descriptionShort = "Contains an OPFOR AP-5 Bustard";
         GVAR(drone) = "O_UAV_02_lxWS";
+    };
+
+    // IED Drone
+    class GVAR(base_ied): GVAR(base) {
+        aid_uav_maxRange = 13000;
+        count = 100;
+        picture = "\lxWS\air_1_f_lxws\Data\UI\UAV_02_IED_CA.paa";
+        DLC = "lxWS";
+        GVAR(assembled) = QUOTE(_this call FUNC(ied_assembled));
+    };
+    class GVAR(B_UAV_02_IED_lxWS_CASE): GVAR(base_ied) {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Bustard IED (BLUFOR)";
+        descriptionShort = "Contains a BLUFOR AP-5 Bustard IED";
+        GVAR(drone) = "B_G_UAV_02_IED_lxWS";
+    };
+    class GVAR(I_G_UAV_02_IED_lxWS_CASE): GVAR(base_ied) {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Bustard IED (INDEP)";
+        descriptionShort = "Contains an INDEP AP-5 Bustard IED";
+        GVAR(drone) = "I_G_UAV_02_IED_lxWS";
+    };
+    class GVAR(O_G_UAV_02_IED_lxWS_CASE): GVAR(base_ied) {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Bustard IED (OPFOR)";
+        descriptionShort = "Contains an OPFOR AP-5 Bustard IED";
+        GVAR(drone) = "O_G_UAV_02_IED_lxWS";
     };
 };

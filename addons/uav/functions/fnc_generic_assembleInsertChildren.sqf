@@ -18,7 +18,7 @@ private _children = [];
                 format ["drone_%1", _forEachIndex],
                 format ["%1 (%2%3)", getText (_droneCfg >> "displayName"), _count, "%"],
                 getText (_droneCfg >> "picture"),
-                { [_this select 0, _this select 2] call FUNC(assemble) },
+                { [_this select 0, _this select 2] call FUNC(generic_assemble) },
                 { true },
                 {},
                 [_container,_count,_class]

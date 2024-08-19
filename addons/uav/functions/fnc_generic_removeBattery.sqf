@@ -1,12 +1,12 @@
 #include "..\script_component.hpp"
 
-params ["_unit", "_drone"];
+params ["_unit", "_uav"];
 
 scopeName "main";
 
 {
     if (_x canAdd QGVAR(battery)) exitWith {
-        _x addMagazineAmmoCargo [QGVAR(battery), 1, round ((fuel _drone) * 100)];
+        _x addMagazineAmmoCargo [QGVAR(battery), 1, round ((fuel _uav) * 100)];
         breakTo "main";
     };
 } forEach [
@@ -15,5 +15,5 @@ scopeName "main";
     backpackContainer _unit
 ];
 
-[_drone, 0] remoteExec ["setFuel", _drone];
+[_uav, 0] remoteExec ["setFuel", _uav];
 [_unit, "MedicOther"] call ace_common_fnc_doGesture;

@@ -15,10 +15,15 @@ if (_drone isEqualTo "") exitWith {};
         if (local _unit) then {
             _container addMagazineAmmoCargo [_case, -1, _count];
             private _pos = _unit modelToWorld [0,1,0];
-            private _drone = _drone createVehicle _pos;
-            createVehicleCrew _drone;
-            _drone setPos _pos;
-            [_drone, _count / 100] remoteExec ["setFuel", _drone];
+            private _uav = _drone createVehicle _pos;
+            createVehicleCrew _uav;
+            _uav setPos _pos;
+            [_uav, _count / 100] remoteExec ["setFuel", _uav];
+            private _assembled = getText (configFile >> "CfgMagazines" >> _case >> QGVAR(assembled));
+            if (_assembled isEqualTo "") exitWith {};
+            [{
+                (_this select 0) call compile (_this select 1);
+            }, [[_unit, _uav, _drone], _assembled]] call CBA_fnc_execNextFrame;
         };
         [_unit, 'PutDown'] call ace_common_fnc_doGesture;
     },

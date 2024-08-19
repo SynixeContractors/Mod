@@ -1,7 +1,7 @@
 #include "..\script_component.hpp"
 
-params ["_unit", "_drone"];
+params ["_unit", "_uav"];
 
-fuel _drone != 0 && {
+fuel _uav != 0 && {
     _unit canAdd QGVAR(battery)
 }

@@ -12,31 +12,37 @@ params [
 ];
 private _duration = [_unit, _in, _loop, _until] call FUNC(gesturePlay);
 
-private _object = createSimpleObject [_object, [0,0,0]];
-_object attachTo [_unit, _pos, "leftHand", true];
-[_object, _rot] call FUNC(attachedRotate);
+if !(isNull GVAR(object)) then {
+    deleteVehicle GVAR(object);
+};
+
+GVAR(object) = createSimpleObject [_object, [0,0,0]];
+GVAR(object) attachTo [_unit, _pos, "leftHand", true];
+[GVAR(object), _rot] call FUNC(attachedRotate);
 
 if (_loop == "") exitWith {
     [{
-        params ["_unit", "_object", "_out"];
-        deleteVehicle _object;
+        params ["_unit", "_out"];
+        deleteVehicle GVAR(object);
+        GVAR(object) = objNull;
         if (_out != "") then {
             _unit playActionNow _out;
         } else {
             _unit playActionNow "ace_common_stop";
         };
-    }, [_unit, _object, _out], _duration] call CBA_fnc_waitAndExecute;
+    }, [_unit, _out], _duration] call CBA_fnc_waitAndExecute;
 };
 
 [{
-    params ["","","","_until"];
+    params ["","","_until"];
     [_until, {
-        params ["_unit", "_object", "_out"];
-        deleteVehicle _object;
+        params ["_unit", "_out"];
+        deleteVehicle GVAR(object);
+        GVAR(object) = objNull;
         if (_out != "") then {
             _unit playActionNow _out;
         } else {
             _unit playActionNow "ace_common_stop";
         };
     }, _this] call CBA_fnc_waitUntilAndExecute;
-}, [_unit, _object, _out, _until], 0.1] call CBA_fnc_waitAndExecute;
+}, [_unit, _out, _until], 0.1] call CBA_fnc_waitAndExecute;

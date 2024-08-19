@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 
-params ["_unit", "_drone"];
+params ["_unit", "_uav"];
 
 private _children = [];
 
@@ -17,11 +17,11 @@ private _children = [];
                 format ["%1%2", _count, "%"],
                 "z\ace\addons\logistics_uavbattery\ui\UAV_battery_ca.paa",
                 { 
-                    [_this select 0, _this select 2] call FUNC(insertBattery);
+                    [_this select 0, _this select 2] call FUNC(generic_insertBattery);
                 },
                 { true },
                 {},
-                [_container,_count,_drone]
+                [_container,_count,_uav]
             ] call ace_interact_menu_fnc_createAction,
             [],
             ACE_Player
