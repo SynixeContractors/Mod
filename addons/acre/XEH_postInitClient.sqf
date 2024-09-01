@@ -52,7 +52,7 @@ GVAR(radioArsenalButton) = [
 GVAR(saved) = [];
 [{
     private _data = call FUNC(getRadioData);
-    if GVAR(saved) != _data then {
+    if (GVAR(saved) isNotEqualTo _data) then {
         GVAR(saved) = _data;
         [QGVAR(save), [ACE_player, GVAR(saved)]] call CBA_fnc_serverEvent;
     };
