@@ -10,6 +10,7 @@ class CfgMagazines {
         descriptionShort = "A UAV battery";
         ACE_isUnique = 1;
         ACE_asItem = 1;
+        ace_disableRepacking = 1;
         count = 100;
         mass = 20;
     };
@@ -19,6 +20,7 @@ class CfgMagazines {
         count = 1;
         mass = 500;
         ACE_isUnique = 1;
+        ace_disableRepacking = 1;
 
         model = "\A3\Structures_F_Heli\Items\Luggage\PlasticCase_01_small_F.p3d";
         hiddenSelections[] = {"Camo","Camo2"};
