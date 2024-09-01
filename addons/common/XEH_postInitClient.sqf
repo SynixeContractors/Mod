@@ -69,3 +69,12 @@ setCurrentChannel 0;            //Change to Global
         _key in (actionKeys "showMap") && (ace_player getVariable ["ace_captives_isHandcuffed", false])
     }];
 }, [], 60] call CBA_fnc_waitAndExecute;
+
+// Recruits can see nametags
+["crate_client_discord_updatedRoles", {
+    params ["_roles"];
+    if ("709889442730475561" in _roles) then {
+        ace_nametags_showPlayerNames = 5;
+        ace_nametags_playerNamesViewDistance = 3;
+    };
+}] call CBA_fnc_addEventHandler;
