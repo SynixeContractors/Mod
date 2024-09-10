@@ -163,7 +163,7 @@ class CfgVehicles {
 
     // IED UAV
     class UAV_02_IED_Base_lxWS: UAV_02_Base_lxWS {
-        class EventHandlers: EventHandlers;
+        class EventHandlers: EventHandlers {};
         class ACE_Actions: ACE_Actions {
             class ACE_MainActions: ACE_MainActions {
                 class GVAR(pack): GVAR(pack) {
