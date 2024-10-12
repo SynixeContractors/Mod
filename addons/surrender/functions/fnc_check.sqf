@@ -68,6 +68,7 @@ private _check = 15 - _base;
 if (_random < _check) then {
     [QGVAR(surrendered), [_unit, _check, _random]] call CBA_fnc_globalEvent;
     ["ACE_captives_setSurrendered", [_unit, true], _unit] call CBA_fnc_targetEvent;
+    if (_group getVariable [QGVAR(rallyLoop), 0] isNotEqualTo 0) exitWith {};
     _group setVariable [QGVAR(rallyLoop), [{
         params ["_args", "_handle"];
         _args params ["_group"];

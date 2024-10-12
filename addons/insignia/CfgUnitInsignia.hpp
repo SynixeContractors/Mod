@@ -35,6 +35,17 @@ class CfgUnitInsignia {
         texture = QPATHTOF(textures\matias.paa);
     };
 
+    class Synixe_UK_P {
+        displayName = "UK";
+        author = "Synixe Contractors";
+        texture = QPATHTOF(textures\uk_ca.paa);
+    };
+    class Synixe_TraumaTeam_P {
+        displayName = "Trauma Team";
+        author = "Synixe Contractors";
+        texture = QPATHTOF(textures\trauma_team_ca.paa);
+    };
+
     class Synixe_Medic_P {
         displayName = "Medical";
         author = "Synixe Contractors";
