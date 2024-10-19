@@ -24,7 +24,7 @@ jobs:
           cp target/release/synixe.dll synixe_x64.dll
 
       - name: Build Mod
-        run: hemtt release --expsqfc
+        run: hemtt release
 
       - name: Upload
         uses: actions/upload-artifact@v4
