@@ -77,4 +77,4 @@ GVAR(saved) = [];
     [{
         [QGVAR(load), [ACE_player]] call CBA_fnc_serverEvent;
     }, [], 1] call CBA_fnc_waitAndExecute;
-}];
+}] call CBA_fnc_addEventHandler;
