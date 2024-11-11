@@ -1,6 +1,9 @@
 #include "script_component.hpp"
 
+GVAR(weapons) = ["vtf_MK13", "vtf_MK13_black", "CUP_hgun_MP7", "CUP_hgun_MP7_desert", "CUP_hgun_MP7_woodland", "hgun_esd_01_F", "CUP_hgun_TEC9", "CUP_hgun_TEC9_FA", "CUP_hgun_UZI"];
+
 GVAR(holder) = objNull;
+GVAR(holderClass) = "";
 
 // Big credit to KJW for these positions <3
 GVAR(positions) = [
@@ -80,9 +83,9 @@ FUNC(show) = {
 FUNC(handleWeapon) = {
     params ["_unit"];
     if !(local _unit) exitWith {};
-    private _has = handgunWeapon _unit in ["vtf_MK13", "vtf_MK13_black"];
+    private _has = handgunWeapon _unit in GVAR(weapons);
     private _held = currentWeapon _unit == handgunWeapon _unit;
-    private _shown = !(isNull GVAR(holder));
+    private _shown = (!(isNull GVAR(holder))) && (handgunWeapon _unit == GVAR(holderClass));
 
     if (!_has && !_shown) exitWith {};
     if (_has && _held && !_shown) exitWith {};
@@ -99,7 +102,7 @@ FUNC(handleWeapon) = {
 
 ["weapon", LINKFUNC(handleWeapon), true] call CBA_fnc_addPlayerEventHandler;
 
-[[0,2,3,4,5], QGVAR(position), "Mk13 Sling", [
+[[0,2,3,4,5], QGVAR(position), "Secondary Sling", [
     ["position", "Position", {true}, "", {GVAR(positionNames) select ((_this select 0) getVariable [QGVAR(position), 0])}],
     ["next", "Next", {true}, "", {}, {
         private _position = (_this select 0) getVariable [QGVAR(position), 0];
@@ -111,7 +114,7 @@ FUNC(handleWeapon) = {
         [ace_player] call FUNC(show);
     }]
 ], {
-    handgunWeapon (_this select 0) in ["vtf_MK13", "vtf_MK13_black"]
+    handgunWeapon (_this select 0) in GVAR(weapons)
 }] call ace_arsenal_fnc_addAction;
 
 ["CBA_loadoutSet", {
