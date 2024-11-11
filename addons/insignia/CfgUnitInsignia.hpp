@@ -17,11 +17,10 @@ class CfgUnitInsignia {
         author = "Chaplain Yi";
         texture = QPATHTOF(textures\chaplain.paa);
     };
-
-    class Synixe_Yorkshire_P {
-        displayName = "Yorkshire";
-        author = "Chris Bolland";
-        texture = QPATHTOF(textures\yorkshire_ca.paa);
+    class Synixe_Matias_P {
+        displayName = "Matías Jackson";
+        author = "Matías Jackson";
+        texture = QPATHTOF(textures\matias.paa);
     };
 
     class Synixe_Gabe_P {
@@ -29,21 +28,26 @@ class CfgUnitInsignia {
         author = "Gabriel Penteado";
         texture = QPATHTOF(textures\gabe.paa);
     };
-    class Synixe_Matias_P {
-        displayName = "Matías Jackson";
-        author = "Matías Jackson";
-        texture = QPATHTOF(textures\matias.paa);
-    };
 
     class Synixe_UK_P {
         displayName = "UK";
         author = "Synixe Contractors";
         texture = QPATHTOF(textures\uk_ca.paa);
     };
+    class Synixe_Yorkshire_P {
+        displayName = "Yorkshire";
+        author = "Chris Bolland";
+        texture = QPATHTOF(textures\yorkshire_ca.paa);
+    };
     class Synixe_TraumaTeam_P {
         displayName = "Trauma Team";
         author = "Synixe Contractors";
         texture = QPATHTOF(textures\trauma_team_ca.paa);
+    };
+    class Synixe_Helmet_P {
+        displayName = "Helmets";
+        author = "Synixe Contractors";
+        texture = QPATHTOF(textures\helmet_ca.paa);
     };
 
     class Synixe_Medic_P {
