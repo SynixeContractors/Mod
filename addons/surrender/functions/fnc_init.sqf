@@ -50,7 +50,7 @@ if (hasInterface && {_group getVariable [QGVAR(onAimChance), 0] > 0}) then {
         params ["_unit", "", "_shooter"];
         private _side = side _unit;
         if (_side != civilian && {_side getFriend side _shooter > 0.6}) exitWith {};
-        if ((_unit distance2d _shooter) > 300) exitWith {};
+        if ((_unit distance2D _shooter) > 300) exitWith {};
         if (CBA_missionTime < (_unit getVariable [QGVAR(suppressedTimeout), 0])) exitWith {};
         _unit setVariable [QGVAR(suppressedTimeout), CBA_missionTime + 0.5];
         [QGVAR(check), [_unit, "suppressed"]] call CBA_fnc_serverEvent;
@@ -60,7 +60,7 @@ if (hasInterface && {_group getVariable [QGVAR(onAimChance), 0] > 0}) then {
         params ["_unit", "_shooter"];
         private _side = side _unit;
         if (_side != civilian && {_side getFriend side _shooter > 0.6}) exitWith {};
-        if ((_unit distance2d _shooter) > 300) exitWith {};
+        if ((_unit distance2D _shooter) > 300) exitWith {};
         [QGVAR(check), [_unit, "hit"]] call CBA_fnc_serverEvent;
     }];
 } forEach units _group;

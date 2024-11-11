@@ -20,5 +20,5 @@ if (_caliber > 1.5) then {
     };
 };
 
-addCamshake (if (isWeaponRested _shooter) then {[0.6, 0.4, 10]} else {[1.2, 0.4, 15]});
+addCamShake (if (isWeaponRested _shooter) then {[0.6, 0.4, 10]} else {[1.2, 0.4, 15]});
 

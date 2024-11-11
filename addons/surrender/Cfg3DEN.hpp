@@ -9,7 +9,7 @@ class Cfg3DEN {
                         tooltip = "Disable the dynamic surrender system for this group";
                         property = QGVAR(attribute_disabled);
                         control = "Checkbox";
-                        expression = QUOTE(_this setVariable [ARR_2(QQGVAR(disabled),_value)];);
+                        expression = QUOTE(_this setVariable [ARR_2(QQGVAR(disable),_value)];);
                         defaultValue = "false";
                     };
                     class OnHitMultiplier {

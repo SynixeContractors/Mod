@@ -5,7 +5,7 @@ FUNC(mapAnimate) = {
     private _rot = [50,170,-90];
     private _item = "\A3\Structures_F\Items\Documents\Map_unfolded_F.p3d";
     private _terminal = ace_player getSlotItemName 612;
-    if (_terminal != "") then {
+    if (_terminal != "" && _terminal != "ItemGPS") then {
         _item = getText (configFile >> "CfgWeapons" >> _terminal >> "model");
         _rot = [70,90,0];
     } else {
@@ -21,7 +21,7 @@ GVAR(inUAV) = false;
 
 addMissionEventHandler ["Map", {
     params ["_mapIsOpened"];
-    if (vehicle ace_player != ace_player) exitWith {};
+    if (!isNull objectParent ace_player) exitWith {};
     if (GVAR(inUAV)) exitWith {};
     if (_mapIsOpened) then {
         call FUNC(mapAnimate);
@@ -29,7 +29,7 @@ addMissionEventHandler ["Map", {
 }];
 
 addUserActionEventHandler ["Compass", "Activate", {
-    if (vehicle ace_player != ace_player) exitWith {};
+    if (!isNull objectParent ace_player) exitWith {};
     if (!isNull findDisplay 312) exitWith {}; // don't use in Zeus
     if (ace_player getVariable ["ace_captives_isHandcuffed", false]) exitWith {};
     if ("compass" in gestureState ace_player) exitWith {};
@@ -38,7 +38,7 @@ addUserActionEventHandler ["Compass", "Activate", {
 }];
 
 addUserActionEventHandler ["Watch", "Activate", {
-    if (vehicle ace_player != ace_player) exitWith {};
+    if (!isNull objectParent ace_player) exitWith {};
     if (!isNull findDisplay 312) exitWith {}; // don't use in Zeus
     if (ace_player getVariable ["ace_captives_isHandcuffed", false]) exitWith {};
     if ("watch" in gestureState ace_player) exitWith {};
@@ -52,7 +52,7 @@ addUserActionEventHandler ["Watch", "Activate", {
 }];
 
 [{
-    if (vehicle ace_player != ace_player) exitWith {};
+    if (!isNull objectParent ace_player) exitWith {};
     params ["_unit", "_range", "_explosive", "_fuzeTime", "_triggerItem"];
     private _model = getText (configFile >> "CfgWeapons" >> _triggerItem >> "model");
     [ace_player, QGVAR(clacker), "", {true}, "", _model, [0.02,0,0], [0,0,-100]] call FUNC(gestureItem);
@@ -64,7 +64,7 @@ addUserActionEventHandler ["Watch", "Activate", {
     if (isNull _uav) then {
         GVAR(inUAV) = false;
     } else {
-        if (vehicle ace_player != ace_player) exitWith {};
+        if (!isNull objectParent ace_player) exitWith {};
         GVAR(inUAV) = true;
         call FUNC(mapAnimate);
     };
@@ -73,7 +73,7 @@ addUserActionEventHandler ["Watch", "Activate", {
 ace_huntir_animatePlayer = false;
 GVAR(huntIROpen) = false;
 ["ace_huntir_monitorOpened", {
-    if (vehicle ace_player != ace_player) exitWith {};
+    if (!isNull objectParent ace_player) exitWith {};
     GVAR(huntIROpen) = true;
     private _item = "\z\ace\addons\huntir\data\ace_huntir_monitor.p3d";
     [ace_player, QGVAR(map_start), QGVAR(map_loop), {!GVAR(huntIROpen)}, QGVAR(map_end), _item, [0.02,0.02,0.01], [70,90,0]] call FUNC(gestureItem);
@@ -86,8 +86,8 @@ GVAR(huntIROpen) = false;
 ["CBA_settingsInitialized", {
     ["visionMode", {
         params ["_unit", "_visionMode"];
-        if (vehicle _unit != _unit) exitWith {};
-        if (currentWeapon ace_player == secondaryWeapon ace_player && (cameraView == "GUNNER")) exitWith {};
+        if (!isNull objectParent _unit) exitWith {};
+        if (cameraView == "GUNNER") exitWith {};
         if (ace_player getVariable ["ace_captives_isHandcuffed", false]) exitWith {};
         if (_visionMode == 1) then {
             ace_player playActionNow QGVAR(nvg_down);

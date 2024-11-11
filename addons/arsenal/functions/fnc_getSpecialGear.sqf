@@ -7,7 +7,7 @@ private _roles = [_unit] call EFUNC(common,findRoles);
 private _missing = [];
 
 {
-    switch (tolower _x) do {
+    switch (toLower _x) do {
         case "medic": {
             [["ACE_bodyBag_blue"],      3, "Bodybags (Blue)", _missing] call FUNC(countItem);
             [["ACE_bodyBag_white"],     2, "Bodybags (White)", _missing] call FUNC(countItem);

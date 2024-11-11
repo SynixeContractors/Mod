@@ -18,6 +18,8 @@ if (missionNamespace getVariable [QGVAR(disable), false]) exitWith {};
 
 private _group = group _unit;
 
+if (_group getVariable [QGVAR(disable), false]) exitWith {};
+
 private _state = if (CBA_missionTime > (_group getVariable [QGVAR(stateTimeout), 0])) then {
     private _state = createHashMap;
 
@@ -78,6 +80,9 @@ if (_random < _check) then {
         private _roll = _group getVariable [QGVAR(canRallyMultiplier), 0.5] < random 1;
         if (_hostiles < 1 || {_roll && _fighters >= _hostiles * random 2}) then {
             {
+                if (!captive _x) then {
+                    continue;
+                };
                 ["ACE_captives_setSurrendered", [_x, false], _x] call CBA_fnc_targetEvent;
             } forEach units _group;
             _group setVariable [QGVAR(rallyLoop), nil];

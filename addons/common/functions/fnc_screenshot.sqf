@@ -3,7 +3,7 @@
 private _state = GVAR(screenshotMode);
 
 // Hide UI
-if (_state == false) then {
+if (!_state) then {
     call FUNC(screenshotMode);
 };
 
@@ -13,7 +13,7 @@ if (_state == false) then {
         sleep 0.3;
         EXT callExtension ["screenshot", []];
         sleep 0.3;
-        if (_state == false) then {
+        if (!_state) then {
             call FUNC(screenshotMode);
         };
     };

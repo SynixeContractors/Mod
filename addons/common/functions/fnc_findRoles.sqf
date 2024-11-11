@@ -13,7 +13,7 @@ private _ret = [];
             _x deleteAt 0;
             {
                 _ret pushBackUnique _x#0;
-            } foreach _x;
+            } forEach _x;
         } forEach _match;
     };
 } forEach allMapMarkers;

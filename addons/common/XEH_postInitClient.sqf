@@ -48,7 +48,7 @@ setCurrentChannel 0;            //Change to Global
                 _mission,
                 _role,
                 toLower(worldName),
-                getText (configfile >> "CfgWorlds" >> worldName >> "description")
+                getText (configFile >> "CfgWorlds" >> worldName >> "description")
             ]
         ];
     }, 20] call CBA_fnc_addPerFrameHandler;

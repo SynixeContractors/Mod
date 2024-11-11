@@ -7,8 +7,8 @@ class ace_arsenal_display {
         class requiredGearBox: RscControlsGroupNoScrollbars {
             idc = IDC_requiredGearBox;
             fade = 0;
-            x = QUOTE(safezoneX + safezoneW - (94 + 48) * GRID_W);
-            y = QUOTE(safezoneY + 1.8 * GRID_H);
+            x = QUOTE(safeZoneX + safeZoneW - (94 + 48) * GRID_W);
+            y = QUOTE(safeZoneY + 1.8 * GRID_H);
             w = QUOTE(47 * GRID_W);
             h = QUOTE(45 * GRID_H);
             class controls {
@@ -48,8 +48,8 @@ class ace_arsenal_display {
         class requiredGearTitle: RscText {
             idc = IDC_requiredGearTitle;
             style = ST_CENTER;
-            x = QUOTE(safezoneX + safezoneW - (94 + 47) * GRID_W);
-            y = QUOTE(safezoneY + 1.8 * GRID_H);
+            x = QUOTE(safeZoneX + safeZoneW - (94 + 47) * GRID_W);
+            y = QUOTE(safeZoneY + 1.8 * GRID_H);
             w = QUOTE(47 * GRID_W);
             h = QUOTE(5 * GRID_H);
             colorBackground[]={0,0,0,0};
@@ -60,8 +60,8 @@ class ace_arsenal_display {
         class specialGearBox: RscControlsGroupNoScrollbars {
             idc = IDC_specialGearBox;
             fade = 0;
-            x = QUOTE(safezoneX + safezoneW - (94 + 48) * GRID_W);
-            y = QUOTE(safezoneY + 1.8 * GRID_H);
+            x = QUOTE(safeZoneX + safeZoneW - (94 + 48) * GRID_W);
+            y = QUOTE(safeZoneY + 1.8 * GRID_H);
             w = QUOTE(47 * GRID_W);
             h = QUOTE(45 * GRID_H);
             class controls {
@@ -101,8 +101,8 @@ class ace_arsenal_display {
         class specialGearTitle: RscText {
             idc = IDC_specialGearTitle;
             style = ST_CENTER;
-            x = QUOTE(safezoneX + safezoneW - (94 + 47) * GRID_W);
-            y = QUOTE(safezoneY + 1.8 * GRID_H);
+            x = QUOTE(safeZoneX + safeZoneW - (94 + 47) * GRID_W);
+            y = QUOTE(safeZoneY + 1.8 * GRID_H);
             w = QUOTE(47 * GRID_W);
             h = QUOTE(5 * GRID_H);
             colorBackground[]={0,0,0,0};

@@ -8,7 +8,7 @@
 params ["_interactionType"];
 
 //Ignore self-interaction menu or mounted vehicle interaction
-if ((_interactionType != 0) || {(vehicle ACE_player) != ACE_player}) exitWith {};
+if ((_interactionType != 0) || {!isNull objectParent ACE_player}) exitWith {};
 
 if !([ace_player] call FUNC(hasAxe)) exitWith {};
 
@@ -40,8 +40,8 @@ if !([ace_player] call FUNC(hasAxe)) exitWith {};
                 ((!isNull _attachedTree) && {(damage _attachedTree) < 1} && {[_player] call FUNC(hasAxe)} && {
                     //Custom LOS check for tree
                     private _headPos = ACE_player modelToWorldVisual (ACE_player selectionPosition "pilot");
-                    ((!(lineIntersects [AGLtoASL _headPos, AGLtoASL (_helper modelToWorldVisual [0,0,1.25]), _attachedTree, ACE_player])) ||
-                    {!(lineIntersects [AGLtoASL _headPos, getPosASL _attachedTree, _attachedTree, ACE_player])})
+                    ((!(lineIntersects [AGLToASL _headPos, AGLToASL (_helper modelToWorldVisual [0,0,1.25]), _attachedTree, ACE_player])) ||
+                    {!(lineIntersects [AGLToASL _headPos, getPosASL _attachedTree, _attachedTree, ACE_player])})
                 })
             };
 

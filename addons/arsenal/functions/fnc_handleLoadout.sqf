@@ -33,8 +33,8 @@ if (_missingRequired isEqualTo []) then {
 } else {
     private _ctrlBox = GVAR(arsenalDisplay)#0 displayCtrl IDC_requiredGearBox;
     _ctrlBox ctrlSetPosition [
-        safezoneX + safezoneW - (94 + 48) * GRID_W,
-        safezoneY + 1.8 * GRID_H,
+        safeZoneX + safeZoneW - (94 + 48) * GRID_W,
+        safeZoneY + 1.8 * GRID_H,
         47 * GRID_W,
         (5 + (4 * count _missingRequired)) * GRID_H
     ];
@@ -67,8 +67,8 @@ if (_missingSpecial isEqualTo []) then {
 } else {
     private _ctrlTitle = GVAR(arsenalDisplay)#0 displayCtrl IDC_specialGearTitle;
     _ctrlTitle ctrlSetPosition [
-        safezoneX + safezoneW - (94 + 48) * GRID_W,
-        safezoneY + (1.8 + _yOffset) * GRID_H,
+        safeZoneX + safeZoneW - (94 + 48) * GRID_W,
+        safeZoneY + (1.8 + _yOffset) * GRID_H,
         47 * GRID_W,
         5 * GRID_H
     ];
@@ -76,8 +76,8 @@ if (_missingSpecial isEqualTo []) then {
 
     private _ctrlBox = GVAR(arsenalDisplay)#0 displayCtrl IDC_specialGearBox;
     _ctrlBox ctrlSetPosition [
-        safezoneX + safezoneW - (94 + 48) * GRID_W,
-        safezoneY + (1.8 + _yOffset) * GRID_H,
+        safeZoneX + safeZoneW - (94 + 48) * GRID_W,
+        safeZoneY + (1.8 + _yOffset) * GRID_H,
         47 * GRID_W,
         (5 + (4 * count _missingSpecial)) * GRID_H
     ];

@@ -1,8 +1,8 @@
 class CfgAmmo {
     class MineBase;
     class RC40_explosion_Ammo_RF: MineBase {
-        hit = 180;
-        indirectHit = 30;
+        hit = 140;
+        indirectHit = 20;
         GVAR(enabled) = 1;
         GVAR(force) = 1;
 

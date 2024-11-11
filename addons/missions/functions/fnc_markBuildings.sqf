@@ -8,7 +8,7 @@
  * Call from initServer.sqf on mission start.
  *
  * Arguments:
- * 0: Objects <ARRAY>
+ * 0: Objects or Layer <ARRAY> or <STRING>
  * 1: Filter to only buildings <BOOL> (default: true)
  *
  * Return Value:
@@ -16,10 +16,14 @@
  *
  * Examples:
  * [[MyObject, MyObject2]] call synixe_missions_fnc_markBuildings;
- * [(getMissionLayerEntities "Test Layer" select 0)] callsynixe_missions_fnc_(markBuildings;
+ * ["Test Layer"] call synixe_missions_fnc_markBuildings;
 */
 
 params ["_objectArray", ["_filter", true]];
+
+if (typeName _objectArray == "STRING") then {
+    _objectArray = getMissionLayerEntities _objectArray select 0;
+};
 
 if (_objectArray isEqualTo []) exitWith {
     WARNING("Object Array is empty");

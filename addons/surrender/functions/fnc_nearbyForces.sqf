@@ -29,6 +29,6 @@ private _side = side _group;
     if (_xSide == _side && !captive _x) then {
         _fighters = _fighters + 1;
     };
-} foreach ((getPos leader _group) nearEntities ["Man", _range]);
+} forEach ((getPos leader _group) nearEntities ["Man", _range]);
 
 [_fighters, _hostiles]

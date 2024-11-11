@@ -3,7 +3,7 @@
 params ["_shooter", "", "", "", "_ammo"];
 
 if (player == _shooter) exitWith {};
-if ((vehicle player) != player) exitWith {};
+if (!isNull objectParent player) exitWith {};
 private _dist = ((positionCameraToWorld [0,0,0]) distance _shooter);
 if (_dist > 60) exitWith {};
 

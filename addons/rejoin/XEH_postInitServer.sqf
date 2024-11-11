@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-GVAR(positions) = createHashmap;
+GVAR(positions) = createHashMap;
 
 addMissionEventHandler ["HandleDisconnect", {
     params ["_unit", "_id", "_uid", "_name"];
