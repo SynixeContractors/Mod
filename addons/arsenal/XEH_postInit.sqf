@@ -2,10 +2,10 @@
 
 ace_arsenal_enableIdentityTabs = false;
 
-["ace_arsenal_displayOpened", FUNC(handleDisplayOpened)] call CBA_fnc_addEventHandler;
-["ace_arsenal_displayClosed", FUNC(handleDisplayClosed)] call CBA_fnc_addEventHandler;
-["ace_arsenal_loadoutsDisplayOpened", FUNC(handleLoadoutsDisplayOpened)] call CBA_fnc_addEventHandler;
-["ace_arsenal_loadoutsDisplayClosed", FUNC(handleLoadoutsDisplayClosed)] call CBA_fnc_addEventHandler;
+["ace_arsenal_displayOpened", LINKFUNC(handleDisplayOpened)] call CBA_fnc_addEventHandler;
+["ace_arsenal_displayClosed", LINKFUNC(handleDisplayClosed)] call CBA_fnc_addEventHandler;
+["ace_arsenal_loadoutsDisplayOpened", LINKFUNC(handleLoadoutsDisplayOpened)] call CBA_fnc_addEventHandler;
+["ace_arsenal_loadoutsDisplayClosed", LINKFUNC(handleLoadoutsDisplayClosed)] call CBA_fnc_addEventHandler;
 
 ["CBA_SettingChanged", {
     params ["_setting", "_value"];

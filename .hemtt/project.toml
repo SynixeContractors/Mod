@@ -11,14 +11,12 @@ include = [
 [hemtt.launch.default]
 workshop = [
     "450814997", # CBA
-    # "463939057", # ACE3
+    "463939057", # ACE3
     "1779063631", # Zeus Enhanced
+    "2975055854", # Secondary Mk13
 ]
 dlc = [
     "ws",
-]
-parameters = [
-    "-mod=\"H:\\Programming\\GitHub\\brettmayson\\ace3\\.hemttout\\release\""
 ]
 
 [hemtt.launch.rf]

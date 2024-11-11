@@ -29,5 +29,5 @@ if (
         _roles = [""];
     };
     player setVariable ["diwako_dui_nametags_customGroup", _roles select 0, true];
-    [QGVAR(roleUpdated), [player, _roles select 0]] call CBA_fnc_globalEvent;
+    [QGVAR(roleUpdated), [player, _roles]] call CBA_fnc_globalEvent;
 };
