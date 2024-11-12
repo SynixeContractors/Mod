@@ -11,16 +11,33 @@ include = [
 [hemtt.launch.default]
 workshop = [
     "450814997", # CBA
-    "463939057", # ACE3
+    # "463939057", # ACE3
     "1779063631", # Zeus Enhanced
     "2975055854", # Secondary Mk13
 ]
 dlc = [
     "ws",
+    "rf",
+]
+parameters = [
+    "-mod=\"H:\\Programming\\GitHub\\brettmayson\\ace3\\.hemttout\\release\""
 ]
 
-[hemtt.launch.rf]
+[hemtt.launch.aegis]
 extends = "default"
-dlc = [
-    "rf",
+workshop = [
+    "2538332070", # Aegis - Development
+    "2538339575", # Atlas - Development
+    "2538342230", # Opposing Forces - Development
+    "2538343773", # Police - Development
+    "2402219547", # Theseus
+    "2684335735", # Revolución
+    "3302425224", # JCA MP5
+    "2989752481", # JCA Modular Carrier
+]
+
+[hemtt.launch.adt]
+extends = "default"
+workshop = [
+    "2369477168", # ADT
 ]

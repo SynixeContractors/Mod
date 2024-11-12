@@ -7,8 +7,11 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "synixe_main"
+            "synixe_main",
+            "ace_compat_ws_realisticnames",
+            "data_f_lxWS_Loadorder",
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

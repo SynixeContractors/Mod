@@ -7,8 +7,10 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "synixe_main"
+            "synixe_main",
+            "vtf_secondary_GL",
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };

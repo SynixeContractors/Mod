@@ -7,8 +7,12 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "synixe_main"
+            "synixe_main",
+            "ace_compat_aegis_realisticnames",
+            "A3_Aegis_Weapons_F_Aegis",
+            "A3_Atlas_Weapons_F_Atlas"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };
