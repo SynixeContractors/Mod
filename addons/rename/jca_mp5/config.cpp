@@ -8,8 +8,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "synixe_main",
-            "ace_compat_rf_realisticnames",
-            "RF_Data_Loadorder",
+            "Weapons_F_JCA_IA_SMGs_MP5"
         };
         skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
@@ -17,4 +16,3 @@ class CfgPatches {
 };
 
 #include "CfgWeapons.hpp"
-#include "CfgGlasses.hpp"

@@ -1,4 +1,4 @@
-#define COMPONENT rename_jca_mp5
+#define COMPONENT rename_aegis
 #include "..\..\main\script_mod.hpp"
 
 #include "..\..\main\script_macros.hpp"

@@ -709,4 +709,22 @@ class CfgWeapons {
         displayName = "SKS-M (Oak)";
     };
 
+    // Sound Suppressor
+    class muzzle_snds_460: ItemCore {
+        displayName = "Sound Suppressor (4.6 mm, Black)";
+    };
+    class muzzle_snds_H;
+    class muzzle_snds_545: muzzle_snds_H {
+        displayName = "Sound Suppressor (5.45 mm, Black)";
+    };
+    class aegis_muzzle_snds_pbs_545_blk: muzzle_snds_545 {
+        displayName = "PBS-4 Suppressor (5.45 mm, Black)";
+    };
+    class muzzle_snds_B;
+    class aegis_muzzle_snds_pbs_762_blk: muzzle_snds_B {
+        displayName = "PBS-1 Suppressor (7.62 mm, Black)";
+    };
+    class aegis_muzzle_snds_sr25_blk: muzzle_snds_B {
+        displayName = "Mk11 Suppressor (Black)";
+    };
 };

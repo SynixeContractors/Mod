@@ -24,4 +24,13 @@ class CfgWeapons {
     class hgun_Glock19_auto_RF: hgun_Glock19_RF {
         displayName = "Glock 19X Auto (Black)";
     };
+
+    // Sound Suppressor
+    class muzzle_snds_H;
+    class suppressor_127x55_small_RF: muzzle_snds_H {
+        displayName = "Sound Suppressor (12.7 mm, Black)";
+    };
+    class suppressor_127x55_big_RF: muzzle_snds_H {
+        displayName = "Large Sound Suppressor (12.7 mm, Black)";
+    };
 };
