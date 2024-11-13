@@ -15,7 +15,13 @@ class CfgWeapons {
     };
 
     // FN FAL 50.00
-    class arifle_SLR_lxWS;
+    class DMR_06_base_F;
+    class arifle_SLR_lxWS: DMR_06_base_F {
+        displayName = "FN FAL 50.00 (Classic)";
+    };
+    class arifle_SLR_GL_lxWS: arifle_SLR_lxWS {
+        displayName = "FN FAL 50.00 GL (Classic)";
+    };
     class arifle_SLR_V_lxWS: arifle_SLR_lxWS {
         displayName = "FN FAL 50.00 (Black)";
     };
@@ -46,4 +52,25 @@ class CfgWeapons {
     class sgun_aa40_lxWS: sgun_aa40_base_lxWS {
         displayName = "AA12 (Black)";
     };
+
+    // Vektor
+    class arifle_Velko_base_lxWS;
+    class arifle_Velko_lxWS: arifle_Velko_base_lxWS {
+        displayName = "Vektor R4 (Black)";
+    };
+    class arifle_VelkoR5_lxWS: arifle_Velko_base_lxWS {
+        displayName = "Vektor R5 Carbine (Black)";
+    };
+    class arifle_VelkoR5_GL_lxWS: arifle_VelkoR5_lxWS{
+        displayName = "Vektor R5 Carbine GL (Black)";
+    };
+    class LMG_S77_base_lxWS;
+    class LMG_S77_lxWS: LMG_S77_base_lxWS {
+        displayName = "Vektor SS-77 (Black)";
+    };
+    class LMG_S77_Compact_base_lxWS;
+    class LMG_S77_Compact_lxWS: LMG_S77_Compact_base_lxWS {
+        displayName = "Vektor SS-77 Compact (Black)";
+    };
+
 };

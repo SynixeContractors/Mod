@@ -85,4 +85,80 @@ class CfgWeapons {
     class launch_RPG32_camo_F: launch_RPG32_F {
         displayName = "RPG-32 (Camo)";
     };
+
+    // GM6 Lynx
+    class GM6_base_F;
+    class srifle_GM6_F: GM6_base_F {
+        displayName = "GM6 Lynx (Black)";
+    };
+    class srifle_GM6_camo_F: srifle_GM6_F {
+        displayName = "GM6 Lynx (Hex)";
+    };
+
+    // TAR-21
+    class Tavor_base_F;
+    class arifle_TRG21_F: Tavor_base_F {
+        displayName = "TAR-21 (Olive)";
+    };
+    class arifle_TRG20_F: Tavor_base_F {
+        displayName = "CTAR-21 (Olive)";
+    };
+    class arifle_TRG21_GL_F: arifle_TRG21_F {
+        displayName = "GTAR-21 (Olive)";
+    };
+
+    // M200 Intervention
+    class LRR_base_F;
+    class srifle_LRR_F: LRR_base_F {
+        displayName = "M200 Intervention (Black)";
+    };
+
+    // Mk14 Mod 1 EBR
+    class EBR_base_F;
+    class srifle_EBR_F: EBR_base_F {
+        displayName = "Mk14 Mod 1 EBR (Tan)";
+    };
+
+    // MX
+    class arifle_MX_Base_F;
+    class arifle_MX_F: arifle_MX_Base_F {
+        displayName = "MX (Tan)";
+    };
+    class arifle_MX_GL_F: arifle_MX_Base_F {
+        displayName = "MX 3GL (Tan)";
+    };
+    class arifle_MX_SW_F: arifle_MX_Base_F {
+        displayName = "MX LSW (Tan)";
+    };
+    class arifle_MXC_F: arifle_MX_Base_F {
+        displayName = "MXC (Tan)";
+    };
+    class arifle_MXM_F: arifle_MX_Base_F {
+        displayName = "MXM (Tan)";
+    };
+
+    // Negev NG7
+    class Rifle_Long_Base_F;
+    class LMG_Zafir_F: Rifle_Long_Base_F {
+        displayName = "Negev NG7 (Tan)";
+    };
+
+    // Stoner 99 LMG
+    class LMG_Mk200_F: Rifle_Long_Base_F {
+        displayName = "Stoner 99 LMG (Tan)";
+    };
+
+    // RPK-15
+    class arifle_RPK12_base_F;
+    class arifle_RPK12_F: arifle_RPK12_base_F {
+        displayName = "RPK-15 (Black)";
+    };
+    class arifle_RPK12_arid_F: arifle_RPK12_base_F {
+        displayName = "RPK-15 (Arid)";
+    };
+    class arifle_RPK12_lush_F: arifle_RPK12_base_F {
+        displayName = "RPK-15 (Lush)";
+    };
+
+
 };

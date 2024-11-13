@@ -20,7 +20,7 @@ dlc = [
     "rf",
 ]
 parameters = [
-    "-mod=\"H:\\Programming\\GitHub\\brettmayson\\ace3\\.hemttout\\release\""
+    "-mod=\"E:\\Modlist 2025\\@ace\""
 ]
 
 [hemtt.launch.aegis]
@@ -29,7 +29,6 @@ workshop = [
     "2538332070", # Aegis - Development
     "2538339575", # Atlas - Development
     "2538342230", # Opposing Forces - Development
-    "2538343773", # Police - Development
     "2402219547", # Theseus
     "2684335735", # Revolución
     "3302425224", # JCA MP5

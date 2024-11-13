@@ -299,7 +299,7 @@ class CfgWeapons {
         displayName = "FAMAS G4 GL";
     };
 
-    // Fort-65*
+    // Fort-65 / TAR-21
     class arifle_TRG20_F;
     class arifle_FORT651_F: arifle_TRG20_F {
         displayName = "Fort-651";
@@ -308,9 +308,19 @@ class CfgWeapons {
     class arifle_FORT652_F: arifle_TRG21_F {
         displayName = "Fort-652";
     };
+    class arifle_TRG21_black_F: arifle_TRG21_F {
+        displayName = "TAR-21 (Black)";
+    };
+    class arifle_TRG20_black_F: arifle_TRG20_F {
+        displayName = "CTAR-21 (Black)";
+    };
+
     class arifle_TRG21_GL_F;
     class arifle_FORT652_GL_F: arifle_TRG21_GL_F {
         displayName = "Fort-652 GL";
+    };
+    class arifle_TRG21_GL_black_F: arifle_TRG21_GL_F {
+        displayName = "GTAR-21 (Black)";
     };
 
     // G36
@@ -341,4 +351,362 @@ class CfgWeapons {
     class launch_RPG32_black_F: launch_RPG32_F {
         displayName = "RPG-32 (Black)";
     };
+
+    // L22A3
+    class arifle_SA80_C_base_F;
+    class arifle_SA80_C_blk_F: arifle_SA80_C_base_F {
+        displayName = "L22A3 (Black)";
+    };
+    class arifle_SA80_C_khk_F: arifle_SA80_C_base_F {
+        displayName = "L22A3 (Khaki)";
+    };
+    class arifle_SA80_C_snd_F: arifle_SA80_C_base_F {
+        displayName = "L22A3 (Sand)";
+    };
+
+    // L85A3
+    class arifle_SA80_base_F;
+    class arifle_SA80_blk_F: arifle_SA80_base_F {
+        displayName = "L85A3 (Black)";
+    };
+    class arifle_SA80_khk_F: arifle_SA80_base_F {
+        displayName = "L85A3 (Khaki)";
+    };
+    class arifle_SA80_snd_F: arifle_SA80_base_F {
+        displayName = "L85A3 (Sand)";
+    };
+    class arifle_SA80_GL_base_F;
+    class arifle_SA80_GL_blk_F: arifle_SA80_GL_base_F {
+        displayName = "L85A3 GL (Black)";
+    };
+    class arifle_SA80_GL_khk_F: arifle_SA80_GL_base_F {
+        displayName = "L85A3 GL (Khaki)";
+    };
+    class arifle_SA80_GL_snd_F: arifle_SA80_GL_base_F {
+        displayName = "L85A3 GL (Sand)";
+    };
+
+    // M240B / GPMG
+    class Aegis_MMG_FNMAG_Base;
+    class Aegis_MMG_FNMAG_F: Aegis_MMG_FNMAG_Base {
+        displayName = "M240B";
+    };
+    class Aegis_MMG_FNMAG_old_F: Aegis_MMG_FNMAG_Base {
+        displayName = "M240";
+    };
+    class Aegis_MMG_FNMAG_240_F: Aegis_MMG_FNMAG_Base {
+        displayName = "M240G";
+    };
+    
+    // M16E4
+    class Aegis_arifle_M16A4_base_F;
+    class Aegis_arifle_M16A4_F: Aegis_arifle_M16A4_base_F {
+        displayName = "M16E4";
+    };
+    class Aegis_arifle_M16A4_FG_base_F;
+    class Aegis_arifle_M16A4_FG_F: Aegis_arifle_M16A4_FG_base_F {
+        displayName = "M16E4 FG";
+    };
+    class Aegis_arifle_M16A4_GL_base_F;
+    class Aegis_arifle_M16A4_GL_F: Aegis_arifle_M16A4_GL_base_F {
+        displayName = "M16E4 GL";
+    };
+
+    // M200 Intervention
+    class srifle_LRR_F;
+    class Aegis_srifle_LRR_sand_F: srifle_LRR_F {
+        displayName = "M200 Intervention (Sand)";
+    };
+    class Aegis_srifle_LRR_olive_F: Aegis_srifle_LRR_sand_F {
+        displayName = "M200 Intervention (Olive)";
+    };
+
+    // M32 MGL
+    class GL_M32_F: Rifle_Base_F {
+        displayName = "M32 MGL";
+    };
+
+    // Benelli M4 SSAS
+    class sgun_M4_F: Rifle_Short_Base_F {
+        displayName = "M4 SSAS";
+    };
+
+    // M4A1
+    class Aegis_arifle_M4A1_base_F;
+    class Aegis_arifle_M4A1_F: Aegis_arifle_M4A1_base_F {
+        displayName = "M4A1 (Black)";
+    };
+    class Aegis_arifle_M4A1_khaki_F: Aegis_arifle_M4A1_base_F {
+        displayName = "M4A1 (Khaki)";
+    };
+    class Aegis_arifle_M4A1_sand_F: Aegis_arifle_M4A1_base_F {
+        displayName = "M4A1 (Sand)";
+    };
+    class Aegis_arifle_M4A1_Grip_base_F;
+    class Aegis_arifle_M4A1_grip_F: Aegis_arifle_M4A1_Grip_base_F {
+        displayName = "M4A1 FG (Black)";
+    };
+    class Aegis_arifle_M4A1_grip_khaki_F: Aegis_arifle_M4A1_Grip_base_F {
+        displayName = "M4A1 FG (Khaki)";
+    };
+    class Aegis_arifle_M4A1_grip_sand_F: Aegis_arifle_M4A1_Grip_base_F {
+        displayName = "M4A1 FG (Sand)";
+    };
+    class Aegis_arifle_M4A1_GL_base_F;
+    class Aegis_arifle_M4A1_GL_F: Aegis_arifle_M4A1_GL_base_F {
+        displayName = "M4A1 GL (Black)";
+    };
+    class Aegis_arifle_M4A1_GL_khaki_F: Aegis_arifle_M4A1_GL_base_F {
+        displayName = "M4A1 GL (Khaki)";
+    };
+    class Aegis_arifle_M4A1_GL_sand_F: Aegis_arifle_M4A1_GL_base_F {
+        displayName = "M4A1 GL (Sand)";
+    };
+    class Aegis_arifle_M4A1_short_base_F;
+    class Aegis_arifle_M4A1_short_F: Aegis_arifle_M4A1_short_base_F {
+        displayName = "M4A1 SBR (Black)";
+    };
+    class Aegis_arifle_M4A1_short_khaki_F: Aegis_arifle_M4A1_short_base_F {
+        displayName = "M4A1 SBR (Khaki)";
+    };
+    class Aegis_arifle_M4A1_short_sand_F: Aegis_arifle_M4A1_short_base_F {
+        displayName = "M4A1 SBR (Sand)";
+    };
+
+    // Mk11
+    class Aegis_arifle_SR25_blk_F: Aegis_arifle_SR25_base_F {
+        displayName = "Mk11 (Black)";
+    };
+    class Aegis_arifle_SR25_khk_F: Aegis_arifle_SR25_base_F {
+        displayName = "Mk11 (Khaki)";
+    };
+    class Aegis_arifle_SR25_snd_F: Aegis_arifle_SR25_base_F {
+        displayName = "Mk11 (Sand)";
+    };
+
+    // Mk14 Mod 1 EBR
+    class srifle_EBR_F;
+    class srifle_EBR_blk_F: srifle_EBR_F {
+        displayName = "Mk14 Mod 1 EBR (Grey)";
+    };
+
+    // Mk16
+    class arifle_SCAR_L_base_F;
+    class arifle_SCAR_L_F: arifle_SCAR_L_base_F {
+        displayName = "Mk16 (Tan)";
+    };
+    class arifle_SCAR_L_black_base_F;
+    class arifle_SCAR_L_black_F: arifle_SCAR_L_black_base_F {
+        displayName = "Mk16 (Black)";
+    };
+    class arifle_SCAR_L_khaki_base_F;
+    class arifle_SCAR_L_khaki_F: arifle_SCAR_L_khaki_base_F {
+        displayName = "Mk16 (Khaki)";
+    };
+    class arifle_SCAR_L_grip_base_F;
+    class arifle_SCAR_L_grip_F: arifle_SCAR_L_grip_base_F {
+        displayName = "Mk16 FG (Tan)";
+    };
+    class arifle_SCAR_L_grip_black_base_F;
+    class arifle_SCAR_L_grip_black_F: arifle_SCAR_L_grip_black_base_F {
+        displayName = "Mk16 FG (Black)";
+    };
+    class arifle_SCAR_L_grip_khaki_base_F;
+    class arifle_SCAR_L_grip_khaki_F: arifle_SCAR_L_grip_khaki_base_F {
+        displayName = "Mk16 FG (Khaki)";
+    };
+    class arifle_SCAR_L_short_base_F;
+    class arifle_SCAR_L_short_F: arifle_SCAR_L_short_base_F {
+        displayName = "Mk16C (Tan)";
+    };
+    class arifle_SCAR_L_short_black_base_F;
+    class arifle_SCAR_L_short_black_F: arifle_SCAR_L_short_black_base_F {
+        displayName = "Mk16C (Black)";
+    };
+    class arifle_SCAR_L_short_khaki_base_F;
+    class arifle_SCAR_L_short_khaki_F: arifle_SCAR_L_short_khaki_base_F {
+        displayName = "Mk16C (Khaki)";
+    };
+    class arifle_SCAR_L_GL_base_F;
+    class arifle_SCAR_L_GL_F: arifle_SCAR_L_GL_base_F {
+        displayName = "Mk16C GL (Tan)";
+    };
+    class arifle_SCAR_L_GL_black_base_F;
+    class arifle_SCAR_L_GL_black_F: arifle_SCAR_L_GL_black_base_F {
+        displayName = "Mk16C GL (Black)";
+    };
+    class arifle_SCAR_L_GL_khaki_base_F;
+    class arifle_SCAR_L_GL_khaki_F: arifle_SCAR_L_GL_khaki_base_F {
+        displayName = "Mk16C GL (Khaki)";
+    };
+
+    // Mk17
+    class arifle_SCAR_base_F;
+    class arifle_SCAR_F: arifle_SCAR_base_F {
+        displayName = "Mk17 (Tan)";
+    };
+    class arifle_SCAR_black_base_F;
+    class arifle_SCAR_black_F: arifle_SCAR_black_base_F {
+        displayName = "Mk17 (Black)";
+    };
+    class arifle_SCAR_khaki_base_F;
+    class arifle_SCAR_khaki_F: arifle_SCAR_khaki_base_F {
+        displayName = "Mk17 (Khaki)";
+    };
+    class arifle_SCAR_grip_base_F;
+    class arifle_SCAR_grip_F: arifle_SCAR_grip_base_F {
+        displayName = "Mk17 FG (Tan)";
+    };
+    class arifle_SCAR_grip_black_base_F;
+    class arifle_SCAR_grip_black_F: arifle_SCAR_grip_black_base_F {
+        displayName = "Mk17 FG (Black)";
+    };
+    class arifle_SCAR_grip_khaki_base_F;
+    class arifle_SCAR_grip_khaki_F: arifle_SCAR_grip_khaki_base_F {
+        displayName = "Mk17 FG (Khaki)";
+    };
+    class arifle_SCAR_short_base_F;
+    class arifle_SCAR_short_F: arifle_SCAR_short_base_F {
+        displayName = "Mk17C (Tan)";
+    };
+    class arifle_SCAR_short_black_base_F;
+    class arifle_SCAR_short_black_F: arifle_SCAR_short_black_base_F {
+        displayName = "Mk17C (Black)";
+    };
+    class arifle_SCAR_short_khaki_base_F;
+    class arifle_SCAR_short_khaki_F: arifle_SCAR_short_khaki_base_F {
+        displayName = "Mk17C (Khaki)";
+    };
+    class arifle_SCAR_GL_base_F;
+    class arifle_SCAR_GL_F: arifle_SCAR_GL_base_F {
+        displayName = "Mk17C GL (Tan)";
+    };
+    class arifle_SCAR_GL_black_base_F;
+    class arifle_SCAR_GL_black_F: arifle_SCAR_GL_black_base_F {
+        displayName = "Mk17C GL (Black)";
+    };
+    class arifle_SCAR_GL_khaki_base_F;
+    class arifle_SCAR_GL_khaki_F: arifle_SCAR_GL_khaki_base_F {
+        displayName = "Mk17C GL (Khaki)";
+    };
+
+    // MP7
+    class SMG_04_base_F;
+    class SMG_04_blk_F: SMG_04_base_F {
+        displayName = "MP7 (Black)";
+    };
+    class SMG_04_khk_F: SMG_04_base_F {
+        displayName = "MP7 (Khaki)";
+    };
+    class SMG_04_snd_F: SMG_04_base_F {
+        displayName = "MP7 (Sand)";
+    };
+
+    // NCAR
+    class arifle_AK12_F;
+    class arifle_NCAR15_F: arifle_AK12_F {
+        displayName = "NCAR-15";
+    };
+    class arifle_AK12_GL_F;
+    class arifle_NCAR15_GL_F: arifle_AK12_GL_F {
+        displayName = "NCAR-15 GL";
+    };
+    class arifle_RPK12_F;
+    class arifle_NCAR15_MG_F: arifle_RPK12_F {
+        displayName = "NCAR-15-1";
+    };
+    class arifle_AK12U_F;
+    class arifle_NCAR15B_F: arifle_AK12U_F {
+        displayName = "NCAR-15B";
+    };
+
+    // Punisher 25mm
+    class GL_XM25_F: Rifle_Base_F {
+        displayName = "Punisher";
+    };
+
+    // RPK
+    class arifle_RPK_base_F;
+    class arifle_RPK_F: arifle_RPK_base_F {
+        displayName = "RPK";
+    };
+    class Aegis_arifle_RPK12_545_base_F;
+    class Aegis_arifle_RPK12_545_F: Aegis_arifle_RPK12_545_base_F {
+        displayName = "RPK-12 (Black)";
+    };
+    class Aegis_arifle_RPK12_545_arid_F: Aegis_arifle_RPK12_545_base_F {
+        displayName = "RPK-12 (Arid)";
+    };
+    class Aegis_arifle_RPK12_545_lush_F: Aegis_arifle_RPK12_545_base_F {
+        displayName = "RPK-12 (Lush)";
+    };
+    class Aegis_arifle_RPK12_545_tan_F: Aegis_arifle_RPK12_545_F {
+        displayName = "RPK-12 (Tan)";
+    };
+    class Aegis_arifle_RPK74_base_F;
+    class Aegis_arifle_RPK74M_F: Aegis_arifle_RPK74_base_F {
+        displayName = "RPK-74M";
+    };
+
+    // SVD
+    class Aegis_srifle_SVD_base_F;
+    class Aegis_srifle_SVD_f: Aegis_srifle_SVD_base_F {
+        displayName = "SVD (Classic)";
+    };
+    class Aegis_srifle_SVD_blk_f: Aegis_srifle_SVD_base_F {
+        displayName = "SVD (Black)";
+    };
+    class Aegis_srifle_SVD_plum_f: Aegis_srifle_SVD_base_F {
+        displayName = "SVD (Plum)";
+    };
+
+    // Vektor
+    class arifle_Velko_base_lxWS;
+    class Aegis_arifle_Velko_sand: arifle_Velko_base_lxWS {
+        displayName = "Vektor R4 (Sand)";
+    };
+    class Aegis_arifle_Velko_oak: arifle_Velko_base_lxWS {
+        displayName = "Vektor R4 (Classic)";
+    };
+    class arifle_VelkoR5_lxWS;
+    class Aegis_arifle_VelkoR5_sand: arifle_VelkoR5_lxWS {
+        displayName = "Vektor R5 Carbine (Sand)";
+    };
+    class Aegis_arifle_VelkoR5_oak: arifle_VelkoR5_lxWS {
+        displayName = "Vektor R5 Carbine (Classic)";
+    };
+
+    // VS-121
+    class srifle_DMR_01_F;
+    class srifle_DMR_01_black_F: srifle_DMR_01_F {
+        displayName = "VS-121 (Weathered)";
+    };
+
+    // PPL-20M Upyr
+    class Aegis_SMG_Gepard_Base_F;
+    class Aegis_SMG_Gepard_blk_F: Aegis_SMG_Gepard_Base_F {
+        displayName = "PPL-20M Upyr";
+    };
+
+    // TNG-7
+    class LMG_Zafir_black_F;
+    class Atlas_LMG_Negev_black_F: LMG_Zafir_black_F {
+        displayName = "TNG-7 (Black)";
+    };
+
+    // RFL
+    class Opf_RFB_base_F;
+    class Opf_arifle_RFB_F: Opf_RFB_base_F {
+        displayName = "RFB SDAR RIS";
+    };
+
+    // SKS
+    class Opf_arifle_SKS_base_F;
+    class Opf_arifle_SKS_F: Opf_arifle_SKS_base_F {
+        displayName = "SKS-M (Classic)";
+    };
+    class Opf_arifle_SKS_oak_F: Opf_arifle_SKS_base_F {
+        displayName = "SKS-M (Oak)";
+    };
+
 };
