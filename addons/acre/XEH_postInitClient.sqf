@@ -70,7 +70,7 @@ GVAR(saved) = [];
 }] call CBA_fnc_addEventHandler;
 
 ["crate_client_gear_shop_enter_ok", {
-    GVAR(shopRadios) = call FUNC(getRadioData);
+    [QGVAR(save), [ACE_player, GVAR(saved)]] call CBA_fnc_serverEvent;
 }] call CBA_fnc_addEventHandler;
 
 ["crate_client_gear_shop_leave_ok", {

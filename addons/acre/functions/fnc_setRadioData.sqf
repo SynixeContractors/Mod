@@ -13,8 +13,8 @@ private _sortedRadios = [];
         _sortedRadios pushBack (_radios select _foundRadio);
     };
 } forEach _data;
-_radios = _sortedRadios + (_radios - _sortedRadios);
-[_radios] call acre_api_fnc_setMultiPushToTalkAssignment;
+_radios = _sortedRadios;
+[_radios + (_radios - _sortedRadios)] call acre_api_fnc_setMultiPushToTalkAssignment;
 {
     (_data select _forEachIndex) params ["", "_channel", "_volume", "_spatial"];
     [_x, _channel] call acre_api_fnc_setRadioChannel;
