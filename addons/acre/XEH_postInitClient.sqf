@@ -13,7 +13,7 @@ GVAR(radioArsenalButton) = [
 ["ace_unconscious", {
     params ["_unit", "_state"];
 
-    if (_unit != ACE_player) exitWith {}; // Ignore if remote unit
+    if (_unit != ace_player) exitWith {}; // Ignore if remote unit
 
     if (_state) then {
         ["un"] call acre_api_fnc_babelSetSpokenLanguages;
@@ -54,7 +54,7 @@ GVAR(saved) = [];
     private _data = call FUNC(getRadioData);
     if (GVAR(saved) isNotEqualTo _data) then {
         GVAR(saved) = _data;
-        [QGVAR(save), [ACE_player, GVAR(saved)]] call CBA_fnc_serverEvent;
+        [QGVAR(save), [player, GVAR(saved)]] call CBA_fnc_serverEvent;
     };
 }, 30] call CBA_fnc_addPerFrameHandler;
 
@@ -65,16 +65,16 @@ GVAR(saved) = [];
 
 ["crate_client_gear_loadout_set", {
     [{
-        [QGVAR(load), [ACE_player]] call CBA_fnc_serverEvent;
+        [QGVAR(load), [player]] call CBA_fnc_serverEvent;
     }, [], 1] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
 
 ["crate_client_gear_shop_enter_ok", {
-    [QGVAR(save), [ACE_player, GVAR(saved)]] call CBA_fnc_serverEvent;
+    [QGVAR(save), [player, call FUNC(getRadioData)]] call CBA_fnc_serverEvent;
 }] call CBA_fnc_addEventHandler;
 
 ["crate_client_gear_shop_leave_ok", {
     [{
-        [QGVAR(load), [ACE_player]] call CBA_fnc_serverEvent;
+        [QGVAR(load), [player]] call CBA_fnc_serverEvent;
     }, [], 1] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
