@@ -4,7 +4,6 @@ GVAR(serverSaved) = createHashMap;
 
 [QGVAR(save), {
     params ["_unit", "_data"];
-    systemChat format ["%1 Data - %2", _unit, _data];
     GVAR(serverSaved) set [getPlayerUID _unit, _data];
 }] call CBA_fnc_addEventHandler;
 
