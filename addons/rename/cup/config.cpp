@@ -7,8 +7,9 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
-            "synixe_main"
+            "CUP_Weapons_LoadOrder"
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };
