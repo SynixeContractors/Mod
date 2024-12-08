@@ -43,3 +43,9 @@ extends = "default"
 workshop = [
     "2369477168", # ADT
 ]
+
+[hemtt.launch.gcg]
+extends = "default"
+parameters = [
+    "-mod=\"F:\\Swifty\\Synixe\\@generic_civilian_clothing\""
+]
