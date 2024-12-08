@@ -4,3 +4,4 @@ target/
 *.pbo
 *.exe
 .hemttout/
+utils/**/*.txt

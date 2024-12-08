@@ -2,4 +2,7 @@
 
 if (is3DEN) exitWith {};
 
-call FUNC(bindWarn);
+// Don't run when using HEMTT commands
+if (profileName != "hemtt") then {
+    call FUNC(bindWarn);
+};
