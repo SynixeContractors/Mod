@@ -62,14 +62,14 @@ _holders append (_unit getVariable [QGVAR(holders), []]);
                 _items pushBack _class;
             };
         };
-        private _cargo = (getWeaponCargo _x);
-        for "_c" from 0 to (count (_cargo select 0)) - 1 do {
-            private _class = (_cargo select 0) select _c;
-            private _count = (_cargo select 1) select _c;
-            for "_i" from 0 to _count do {
-                _weapons pushBack _class;
-            };
-        };
+        {
+            _items pushBack ([_x#0] call ace_arsenal_fnc_baseWeapon);
+            _items pushBack _x#2;
+            _items pushBack _x#3;
+            _items pushBack _x#4#0;
+            _items pushBack _x#5#0;
+            _items pushBack _x#6;
+        } forEach (weaponsItemsCargo _x);
         deleteVehicle _x;
     };
 } forEach _holders;
