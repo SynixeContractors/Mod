@@ -32,6 +32,12 @@ workshop = [
     "2989752481", # JCA Modular Carrier
 ]
 
+[hemtt.launch.mgp]
+extends = "default"
+workshop = [
+    "2871002081" # Mil Gear Pack - Simpel
+]
+
 [hemtt.launch.adt]
 extends = "default"
 workshop = [
