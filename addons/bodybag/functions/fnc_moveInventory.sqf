@@ -48,7 +48,7 @@ if !((goggles _unit ) in (_unit getVariable [QGVAR(droppedItems), []])) then {
 };
 
 // Process items from the weapon holders
-private _holders = getCorpseWeaponholders (_unit getVariable [QGVAR(corpse), _unit]);
+private _holders = getCorpseWeaponholders (_unit getVariable [QGVAR(corpse), objNull]);
 _holders append getCorpseWeaponholders _unit;
 _holders append (_unit getVariable [QGVAR(holders), []]);
 {
