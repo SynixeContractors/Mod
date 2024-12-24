@@ -109,7 +109,7 @@ private _nearHolders = _bodybag nearObjects ["WeaponHolderSimulated", 5];
 TRACE_1("Near Holders",_nearHolders);
 {
     private _holderWeapons = ((getWeaponCargo _x) select 0) select {_x in _weapons};
-    if !(_holderWeapons isEqualTo []) exitWith {
+    if (_holderWeapons isNotEqualTo []) exitWith {
         deleteVehicle _x;
     };
 } forEach _nearHolders;

@@ -91,7 +91,7 @@ if (count _triggerMarkers != count _triggerMarkersFiltered) then {
 _triggerMarkers = _triggerMarkersFiltered;
 
 // Defaults
-if !(_name isEqualTo "") then {
+if (_name != "") then {
     _name = [" (", _name, ")"] joinString "";
 };
 

@@ -48,3 +48,6 @@
 
 // Regex
 #define PERSON_MARKER_REGEX "%1 \(([^,]+)(?:,\s*([^,\)]+))*\)"
+
+// Hide
+#define HIDE(CLASS,PARENT) class CLASS: PARENT { scope = 1; scopeCurator = 1; }

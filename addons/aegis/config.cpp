@@ -21,6 +21,9 @@ class CfgPatches {
             "A3_Aegis_Armor_F_Aegis_MBT_03",
             "A3_Aegis_Characters_F_Aegis",
             "A3_Aegis_Characters_F_Aegis_RF",
+
+            // Hide Factions
+            "A3_Atlas_Characters_F_Atlas",
         };
         skipWhenMissingDependencies = 1;
         author = ECSTRING(main,Authors);
@@ -32,3 +35,4 @@ class CfgPatches {
 
 #include "CfgAmmo.hpp"
 #include "CfgVehicles.hpp"
+#include "CfgGroups.hpp"

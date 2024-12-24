@@ -182,4 +182,6 @@ class CfgVehicles {
             class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {};
         };
     };
+
+    #include "CfgVehicles_Hide.hpp"
 };
