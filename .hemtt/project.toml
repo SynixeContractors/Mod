@@ -43,3 +43,9 @@ extends = "default"
 workshop = [
     "2369477168", # ADT
 ]
+
+[hemtt.launch.oteden]
+extends = "default"
+workshop = [
+    "1923321700", # O&T Expansion Eden
+]

@@ -51,3 +51,8 @@
 
 // Hide
 #define HIDE(CLASS,PARENT) class CLASS: PARENT { scope = 1; scopeCurator = 1; }
+
+// CBA XEH
+#define XEH class EventHandlers { \
+    class CBA_Extended_EventHandlers: CBA_Extended_EventHandlers_base {}; \
+}
