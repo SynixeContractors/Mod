@@ -16,6 +16,7 @@ class CfgPatches {
             "Props_Globe_Humanitarian_Supplies",
             "Props_Globe_Items_Electronics",
         };
+        skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
     };
 };
