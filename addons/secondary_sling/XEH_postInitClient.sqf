@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-GVAR(weapons) = ["vtf_MK13", "vtf_MK13_black", "CUP_hgun_MP7", "CUP_hgun_MP7_desert", "CUP_hgun_MP7_woodland", "hgun_esd_01_F", "CUP_hgun_TEC9", "CUP_hgun_TEC9_FA", "CUP_hgun_UZI"];
+GVAR(weapons) = ["vtf_MK13", "vtf_MK13_black", "hgun_esd_01_F", "CUP_hgun_MP7", "CUP_hgun_MP7_desert", "CUP_hgun_MP7_woodland", "CUP_hgun_TEC9", "CUP_hgun_TEC9_FA", "CUP_hgun_UZI"];
 
 GVAR(holder) = objNull;
 GVAR(holderClass) = "";
@@ -83,9 +83,18 @@ FUNC(show) = {
 FUNC(handleWeapon) = {
     params ["_unit"];
     if !(local _unit) exitWith {};
+
+    if (handgunWeapon _unit != GVAR(holderClass)) then {
+        if !(isNull GVAR(holder)) then {
+            deleteVehicle GVAR(holder);
+        };
+        GVAR(holder) = objNull;
+        GVAR(holderClass) = "";
+    };
+
     private _has = handgunWeapon _unit in GVAR(weapons);
     private _held = currentWeapon _unit == handgunWeapon _unit;
-    private _shown = (!(isNull GVAR(holder))) && (handgunWeapon _unit == GVAR(holderClass));
+    private _shown = !(isNull GVAR(holder));
 
     if (!_has && !_shown) exitWith {};
     if (_has && _held && !_shown) exitWith {};
@@ -98,6 +107,7 @@ FUNC(handleWeapon) = {
     // Remove the weapon holder
     deleteVehicle GVAR(holder);
     GVAR(holder) = objNull;
+    GVAR(holderClass) = "";
 };
 
 ["weapon", LINKFUNC(handleWeapon), true] call CBA_fnc_addPlayerEventHandler;
