@@ -709,6 +709,12 @@ class CfgWeapons {
         displayName = "SKS-M (Oak)";
     };
 
+    // Noreen ULR
+    class srifle_DMR_02_F;
+    class srifle_DMR_02_tna_F: srifle_DMR_02_F {
+        displayName = "Noreen ""Bad News"" ULR (Tropic)";
+    };
+
     // Sound Suppressor
     class muzzle_snds_460: ItemCore {
         displayName = "Sound Suppressor (4.6 mm, Black)";

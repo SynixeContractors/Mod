@@ -24,6 +24,9 @@ class CfgPatches {
 
             // Hide Factions
             "A3_Atlas_Characters_F_Atlas",
+
+            // Aegis M4A1 & M16 Scopes
+            "A3_Aegis_Weapons_F_Aegis_Rifles_M4A1",
         };
         skipWhenMissingDependencies = 1;
         author = ECSTRING(main,Authors);
@@ -34,5 +37,6 @@ class CfgPatches {
 };
 
 #include "CfgAmmo.hpp"
-#include "CfgVehicles.hpp"
 #include "CfgGroups.hpp"
+#include "CfgVehicles.hpp"
+#include "CfgWeapons.hpp"
