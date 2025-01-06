@@ -55,11 +55,11 @@ setCurrentChannel 0;            //Change to Global
 }] call CBA_fnc_waitUntilAndExecute;
 
 // Disable GPS minimap
-
 ["vehicle", {
     params ["_unit"];
-    _unit enableInfoPanelComponent ["left", "MinimapDisplayComponent", false];
-    _unit enableInfoPanelComponent ["right", "MinimapDisplayComponent", false];
+    private _driver = driver vehicle _unit == _unit;
+    _unit enableInfoPanelComponent ["left", "MinimapDisplayComponent", _driver];
+    _unit enableInfoPanelComponent ["right", "MinimapDisplayComponent", _driver];
 }, true] call CBA_fnc_addPlayerEventHandler;
 
 // Disable map when handcuffed
