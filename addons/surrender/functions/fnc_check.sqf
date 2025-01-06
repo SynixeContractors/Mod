@@ -57,14 +57,14 @@ switch (_reason) do {
         _base = _base - ((missionNamespace getVariable [QGVAR(influenceSupressed), 1]) * (_group getVariable [QGVAR(onSuppressMultiplier), 0.5]));
     };
     case "speak": {
-        _base = _base - ((missionNamespace getVariable [QGVAR(influenceSpeak), 1]) * (_group getVariable [QGVAR(onSpeakMultiplier), 0.5]));
+        _base = _base - ((missionNamespace getVariable [QGVAR(influenceSpeak), 0.5]) * (_group getVariable [QGVAR(onSpeakMultiplier), 0.5]));
     };
     case "aim": {
         _base = _base - ((missionNamespace getVariable [QGVAR(influenceAim), 0.5]) * (_group getVariable [QGVAR(onAimMultiplier), 0.5]));
     };
 };
 
-private _random = random (missionNamespace getVariable [QGVAR(roll), 500]);
+private _random = random (missionNamespace getVariable [QGVAR(roll), 600]);
 private _check = 15 - _base;
 
 if (_random < _check) then {

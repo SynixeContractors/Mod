@@ -49,7 +49,7 @@ class Cfg3DEN {
                         tooltip = "The Multiplier for the unit to surrender when they hear enemy voices nearby";
                         property = QGVAR(attribute_onSpeakMultiplier);
                         control = "Slider";
-                        defaultValue = "0";
+                        defaultValue = "0.5";
                         expression = QUOTE(_this setVariable [ARR_2(QQGVAR(onSpeakMultiplier),_value)];);
                     };
                     class CanRallyMultiplier {
