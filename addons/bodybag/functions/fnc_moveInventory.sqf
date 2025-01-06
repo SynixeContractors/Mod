@@ -64,7 +64,7 @@ _holders append (_unit getVariable [QGVAR(holders), []]);
             };
         };
         {
-            _items pushBack ([_x#0] call ace_arsenal_fnc_baseWeapon);
+            _weapons pushBack ([_x#0] call ace_arsenal_fnc_baseWeapon);
             _items pushBack _x#2;
             _items pushBack _x#3;
             _items pushBack _x#4#0;
