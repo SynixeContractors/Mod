@@ -7,7 +7,7 @@ _unit playActionNow "putDown";
 
 [_uav, "SetWeapon", []] call lxws_fnc_droneWeapon;
 
-if (count (_loadout#0) == 0) then {	
+if ((_loadout#0) isEqualTo []) then {	
     _loadout = [_weapon,nil,nil,nil,nil,nil,nil,nil,nil,nil];
     _unit setUnitLoadout _loadout;	
 } else {	

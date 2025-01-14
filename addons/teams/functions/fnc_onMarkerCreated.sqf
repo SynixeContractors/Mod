@@ -25,7 +25,7 @@ if (
         };
     };
     private _roles = [player] call synixe_common_fnc_findRoles;
-    if (count _roles == 0) then {
+    if (_roles isEqualTo []) then {
         _roles = [""];
     };
     player setVariable ["diwako_dui_nametags_customGroup", _roles select 0, true];

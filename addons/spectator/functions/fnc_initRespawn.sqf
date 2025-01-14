@@ -26,14 +26,14 @@ GVAR(triggers) = [];
 player addEventHandler ["Respawn", {
     params ["_unit", "_corpse"];
     private _locations = GVAR(locations) select { _x getVariable [QGVAR(active), false] };
-    if (count _locations == 0) exitWith {};
+    if (_locations isEqualTo []) exitWith {};
     [{
         params ["_unit", "_pos"];
         _unit setPosASL _pos;
     }, [_unit, getPosASL selectRandom _locations]] call CBA_fnc_execNextFrame;
 }];
 
-if (count GVAR(triggers) == 0) exitWith {};
+if (GVAR(triggers) isEqualTo []) exitWith {};
 [{
     {
         _x params ["_trigger", "_wasActivated"];

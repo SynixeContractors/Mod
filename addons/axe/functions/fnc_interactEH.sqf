@@ -61,7 +61,7 @@ if !([ace_player] call FUNC(hasAxe)) exitWith {};
 
             [{
                 params ["_helperQueue","_PFHID"];
-                if (count _helperQueue == 0) exitWith {[_PFHID] call CBA_fnc_removePerFrameHandler};
+                if (_helperQueue isEqualTo []) exitWith {[_PFHID] call CBA_fnc_removePerFrameHandler};
                 (_helperQueue deleteAt 0) params ["_helper","_tree"];
                 _helper setPosASL ([_tree] call FUNC(findTrunk));
             },0.1,_helperQueue] call CBA_fnc_addPerFrameHandler;

@@ -70,11 +70,11 @@ _holders append (_unit getVariable [QGVAR(holders), []]);
     };
 } forEach _holders;
 
+INFO_2("Body Inventory: %1 %2",_items,_weapons);
+
 // Clear empty names and destroy items with a random chance
 _items = _items select {_x != "" && {random 100 > GVAR(destroyChance)} };
 _weapons = _weapons select {_x != "" && {random 100 > GVAR(destroyChance)} };
-
-INFO_2("Body Inventory: %1 %2",_items,_weapons);
 
 {
     _bodybag addItemCargoGlobal [_x, 1];
