@@ -22,6 +22,7 @@ private _items = [];
 private _weapons = [];
 
 _items pushBack (headgear _unit);
+_items pushBack (goggles _unit);
 _items pushBack (uniform _unit);
 _items append (uniformItems _unit);
 _items pushBack (vest _unit);
@@ -36,16 +37,9 @@ _items append (secondaryWeaponMagazine _unit);
 _weapons pushBack (handgunWeapon _unit);
 _items append (handgunItems _unit);
 _items append (handgunMagazine _unit);
-_weapons append (_unit getVariable [QGVAR(droppedWeapons), []]);
-_items append (_unit getVariable [QGVAR(droppedItems), []]);
 _items append (assignedItems _unit);
 //_weapons pushBack (binocular _unit); // dropped into inventory on death
 _items pushBack (_unit call CBA_fnc_binocularMagazine);
-// If someone has the same goggles in their inventory as on their head, it will lose one
-// but that is super rare and not worth the effort to fix
-if !((goggles _unit ) in (_unit getVariable [QGVAR(droppedItems), []])) then {
-    _items pushBack (goggles _unit);
-};
 
 // Process items from the weapon holders
 private _holders = getCorpseWeaponholders (_unit getVariable [QGVAR(corpse), objNull]);
@@ -64,7 +58,8 @@ _holders append (_unit getVariable [QGVAR(holders), []]);
             };
         };
         {
-            _weapons pushBack ([_x#0] call ace_arsenal_fnc_baseWeapon);
+            _weapons pushBack _x#0;
+            _items pushBack _x#1;
             _items pushBack _x#2;
             _items pushBack _x#3;
             _items pushBack _x#4#0;
@@ -79,7 +74,7 @@ _holders append (_unit getVariable [QGVAR(holders), []]);
 _items = _items select {_x != "" && {random 100 > GVAR(destroyChance)} };
 _weapons = _weapons select {_x != "" && {random 100 > GVAR(destroyChance)} };
 
-TRACE_2("Body Inventory",_items,_weapons);
+INFO_2("Body Inventory",_items,_weapons);
 
 {
     _bodybag addItemCargoGlobal [_x, 1];
@@ -109,7 +104,7 @@ private _nearHolders = _bodybag nearObjects ["WeaponHolderSimulated", 5];
 TRACE_1("Near Holders",_nearHolders);
 {
     private _holderWeapons = ((getWeaponCargo _x) select 0) select {_x in _weapons};
-    if (_holderWeapons isNotEqualTo []) exitWith {
+    if (_holderWeapons isEqualTo []) then {
         deleteVehicle _x;
     };
 } forEach _nearHolders;
