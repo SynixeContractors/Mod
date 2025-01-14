@@ -46,7 +46,7 @@ private _holders = getCorpseWeaponholders (_unit getVariable [QGVAR(corpse), obj
 _holders append getCorpseWeaponholders _unit;
 _holders append (_unit getVariable [QGVAR(holders), []]);
 {
-    if (_bodybag distance _x < 5) then {
+    if (_unit distance _x < 5) then {
         private _cargo = getItemCargo _x;
         _cargo append (getMagazineCargo _x);
         _cargo append (getBackpackCargo _x);
@@ -98,16 +98,6 @@ if (_backpack != "" && {random 100 > GVAR(destroyChance)}) then {
     };
     _bodybag addBackpackCargoGlobal [_backpackNonPreset, 1];
 };
-
-// Remove possible left-over ground weapon holder
-private _nearHolders = _bodybag nearObjects ["WeaponHolderSimulated", 5];
-TRACE_1("Near Holders",_nearHolders);
-{
-    private _holderWeapons = ((getWeaponCargo _x) select 0) select {_x in _weapons};
-    if (_holderWeapons isEqualTo []) then {
-        deleteVehicle _x;
-    };
-} forEach _nearHolders;
 
 if !(isNil "GRAD_slingHelmet_fnc_weaponHolder") then {
     private _slungWH = [_unit] call GRAD_slingHelmet_fnc_weaponHolder;
