@@ -62,6 +62,13 @@ setCurrentChannel 0;            //Change to Global
     _unit enableInfoPanelComponent ["right", "MinimapDisplayComponent", _driver];
 }, true] call CBA_fnc_addPlayerEventHandler;
 
+player addEventHandler ["SeatSwitchedMan", {
+    params ["_unit"];
+    private _driver = driver vehicle _unit == _unit;
+    _unit enableInfoPanelComponent ["left", "MinimapDisplayComponent", _driver];
+    _unit enableInfoPanelComponent ["right", "MinimapDisplayComponent", _driver];
+}];
+
 // Disable map when handcuffed
 [{
     findDisplay 46 displayAddEventHandler ["KeyDown", {
