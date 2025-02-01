@@ -85,16 +85,3 @@ player addEventHandler ["SeatSwitchedMan", {
         ace_nametags_playerNamesViewDistance = 3;
     };
 }] call CBA_fnc_addEventHandler;
-
-// Uncon Collision
-["ace_unconscious", {
-    params ["_unit", "_state"];
-
-    {
-        if (_state) then {
-            _unit disableCollisionWith _x;
-        } else {
-            _unit enableCollisionWith _x;
-        };
-    } forEach allPlayers;
-}] call CBA_fnc_addEventHandler;
