@@ -219,4 +219,10 @@ class CfgWeapons {
     class optic_MRD: ItemCore {
         displayName = "EOTEch MRDS (Sand)";
     };
+
+    // FN Minimi SPW
+    class LMG_03_base_F;
+    class LMG_03_F: LMG_03_base_F {
+        displayName = "FN Minimi SPW (Black)";
+    };
 };
