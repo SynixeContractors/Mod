@@ -55,3 +55,9 @@ extends = "default"
 workshop = [
     "2983059191", # SMA Optics
 ]
+
+[hemtt.launch.theseus]
+extends = "default"
+workshop = [
+    "646999497" # Theseus Services
+]

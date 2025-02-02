@@ -4,7 +4,7 @@ class CfgWeapons {
     class Hidden_Ballistic_Vest_01: V_TacVest_blk {
         author = "DankLlamaTech";
         scope = 2;
-        displayName = "Undercover Ballistic Vest [Heavy]";
+        displayName = "Undercover Ballistic Vest [Level 3]";
         model = QPATHTOF(data\ground.p3d);
         hiddenSelections[] = {"Camo"};
         hiddenSelectionsTextures[] = {QPATHTOF(data\vest.paa)};
@@ -41,7 +41,7 @@ class CfgWeapons {
     class Hidden_Ballistic_Vest_02: V_TacVest_blk {
         author = "DankLlamaTech";
         scope = 2;
-        displayName = "Undercover Ballistic Vest [Medium]";
+        displayName = "Undercover Ballistic Vest [Level 2]";
         model = QPATHTOF(data\ground.p3d);
         hiddenSelections[] = {"Camo"};
         hiddenSelectionsTextures[] = {QPATHTOF(data\vest.paa)};
@@ -78,7 +78,7 @@ class CfgWeapons {
     class Hidden_Ballistic_Vest_03: V_TacVest_blk {
         author = "DankLlamaTech";
         scope = 2;
-        displayName = "Undercover Ballistic Vest [Light]";
+        displayName = "Undercover Ballistic Vest [Level 1]";
         model = QPATHTOF(data\ground.p3d);
         hiddenSelections[] = {"Camo"};
         hiddenSelectionsTextures[] = {QPATHTOF(data\vest.paa)};
