@@ -57,17 +57,19 @@ setCurrentChannel 0;            //Change to Global
 // Disable GPS minimap
 ["vehicle", {
     params ["_unit"];
-    private _driver = driver objectParent _unit == _unit;
-    _unit enableInfoPanelComponent ["left", "MinimapDisplayComponent", _driver];
-    _unit enableInfoPanelComponent ["right", "MinimapDisplayComponent", _driver];
+    private _vehicle = vehicle _unit;
+    private _driver = driver vehicle _unit == _unit;
+    _vehicle enableInfoPanelComponent ["left", "MinimapDisplayComponent", _driver];
+    _vehicle enableInfoPanelComponent ["right", "MinimapDisplayComponent", _driver];
     diag_log format ["vehicle gps: %1 = %2", _unit, _driver];
 }, true] call CBA_fnc_addPlayerEventHandler;
 
 player addEventHandler ["SeatSwitchedMan", {
     params ["_unit"];
-    private _driver = driver objectParent _unit == _unit;
-    _unit enableInfoPanelComponent ["left", "MinimapDisplayComponent", _driver];
-    _unit enableInfoPanelComponent ["right", "MinimapDisplayComponent", _driver];
+    private _vehicle = vehicle _unit;
+    private _driver = driver vehicle _unit == _unit;
+    _vehicle enableInfoPanelComponent ["left", "MinimapDisplayComponent", _driver];
+    _vehicle enableInfoPanelComponent ["right", "MinimapDisplayComponent", _driver];
     diag_log format ["seat switch gps: %1 = %2", _unit, _driver];
 }];
 
