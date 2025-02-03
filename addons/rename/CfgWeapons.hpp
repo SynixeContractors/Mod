@@ -225,4 +225,10 @@ class CfgWeapons {
     class LMG_03_F: LMG_03_base_F {
         displayName = "FN Minimi SPW (Black)";
     };
+
+    // Beanie
+    class HelmetBase;
+    class H_Watchcap_blk: HelmetBase {
+        displayName = "Beanie (Navy)";
+    };
 };

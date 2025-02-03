@@ -1,6 +1,6 @@
 name = "Synixe"
-prefix = "synixe"
-mainprefix = "x"
+prefix = "mod"
+mainprefix = "synixe"
 author = "Synixe Contractors"
 
 [files]
@@ -29,7 +29,6 @@ workshop = [
     "2402219547", # Theseus
     "2684335735", # Revolución
     "3302425224", # JCA MP5
-    "2989752481", # JCA Modular Carrier
 ]
 
 [hemtt.launch.mgp]

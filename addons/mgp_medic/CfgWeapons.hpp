@@ -109,7 +109,7 @@ class CfgWeapons {
     class milgp_h_opscore_01_rgr_blk_whtc;
     class CLASS(h_opscore_01_rgr_blk_medicc): milgp_h_opscore_01_rgr_blk_whtc {
         author = "Brett";
-        displayName = "Opscore (RGR/BLK/Medic Cover)";
+        displayName = "OpsCore (RGR/BLK/Medic Cover)";
         picture = QPATHTOF(ui\h_opscore_01_rgr_blk_medicc.paa);
         hiddenSelectionsTextures[] = {
             QPATHTOF(textures\h_opscore_blk_medicc_co.paa),
@@ -119,7 +119,7 @@ class CfgWeapons {
     class milgp_h_opscore_01_khk_blk_whtc;
     class CLASS(h_opscore_01_khk_blk_medicc): milgp_h_opscore_01_khk_blk_whtc {
         author = "Brett";
-        displayName = "Opscore (KHK/BLK/Medic Cover)";
+        displayName = "OpsCore (KHK/BLK/Medic Cover)";
         picture = QPATHTOF(ui\h_opscore_01_khk_blk_medicc.paa);
         hiddenSelectionsTextures[] = {
             QPATHTOF(textures\h_opscore_blk_medicc_co.paa),
@@ -129,7 +129,7 @@ class CfgWeapons {
     class milgp_h_opscore_01_blk_blk_whtc;
     class CLASS(h_opscore_01_blk_blk_medicc): milgp_h_opscore_01_blk_blk_whtc {
         author = "Brett";
-        displayName = "Opscore (BLK/BLK/Medic Cover)";
+        displayName = "OpsCore (BLK/BLK/Medic Cover)";
         picture = QPATHTOF(ui\h_opscore_01_blk_blk_medicc.paa);
         hiddenSelectionsTextures[] = {
             QPATHTOF(textures\h_opscore_blk_medicc_co.paa),
@@ -141,7 +141,7 @@ class CfgWeapons {
     class milgp_h_opscore_01_rgr_khk_whtc;
     class CLASS(h_opscore_01_rgr_khk_medicc): milgp_h_opscore_01_rgr_khk_whtc {
         author = "Brett";
-        displayName = "Opscore (RGR/KHK/Medic Cover)";
+        displayName = "OpsCore (RGR/KHK/Medic Cover)";
         picture = QPATHTOF(ui\h_opscore_01_rgr_khk_medicc.paa);
         hiddenSelectionsTextures[] = {
             QPATHTOF(textures\h_opscore_rgr_medicc_co.paa),
@@ -151,7 +151,7 @@ class CfgWeapons {
     class milgp_h_opscore_01_khk_khk_whtc;
     class CLASS(h_opscore_01_khk_khk_medicc): milgp_h_opscore_01_khk_khk_whtc {
         author = "Brett";
-        displayName = "Opscore (KHK/KHK/Medic Cover)";
+        displayName = "OpsCore (KHK/KHK/Medic Cover)";
         picture = QPATHTOF(ui\h_opscore_01_khk_khk_medicc.paa);
         hiddenSelectionsTextures[] = {
             QPATHTOF(textures\h_opscore_khk_medicc_co.paa),
@@ -161,7 +161,7 @@ class CfgWeapons {
     class milgp_h_opscore_01_blk_khk_whtc;
     class CLASS(h_opscore_01_blk_khk_medicc): milgp_h_opscore_01_blk_khk_whtc {
         author = "Brett";
-        displayName = "Opscore (BLK/KHK/Medic Cover)";
+        displayName = "OpsCore (BLK/KHK/Medic Cover)";
         picture = QPATHTOF(ui\h_opscore_01_blk_khk_medicc.paa);
         hiddenSelectionsTextures[] = {
             QPATHTOF(textures\h_opscore_blk_medicc_co.paa),
@@ -173,7 +173,7 @@ class CfgWeapons {
     class milgp_h_opscore_01_rgr_rgr_whtc;
     class CLASS(h_opscore_01_rgr_rgr_medicc): milgp_h_opscore_01_rgr_rgr_whtc {
         author = "Brett";
-        displayName = "Opscore (RGR/RGR/Medic Cover)";
+        displayName = "OpsCore (RGR/RGR/Medic Cover)";
         picture = QPATHTOF(ui\h_opscore_01_rgr_rgr_medicc.paa);
         hiddenSelectionsTextures[] = {
             QPATHTOF(textures\h_opscore_rgr_medicc_co.paa),
@@ -183,7 +183,7 @@ class CfgWeapons {
     class milgp_h_opscore_01_khk_rgr_whtc;
     class CLASS(h_opscore_01_khk_rgr_medicc): milgp_h_opscore_01_khk_rgr_whtc {
         author = "Brett";
-        displayName = "Opscore (KHK/RGR/Medic Cover)";
+        displayName = "OpsCore (KHK/RGR/Medic Cover)";
         picture = QPATHTOF(ui\h_opscore_01_khk_rgr_medicc.paa);
         hiddenSelectionsTextures[] = {
             QPATHTOF(textures\h_opscore_khk_medicc_co.paa),
@@ -193,7 +193,7 @@ class CfgWeapons {
     class milgp_h_opscore_01_blk_rgr_whtc;
     class CLASS(h_opscore_01_blk_rgr_medicc): milgp_h_opscore_01_blk_rgr_whtc {
         author = "Brett";
-        displayName = "Opscore (BLK/RGR/Medic Cover)";
+        displayName = "OpsCore (BLK/RGR/Medic Cover)";
         picture = QPATHTOF(ui\h_opscore_01_blk_rgr_medicc.paa);
         hiddenSelectionsTextures[] = {
             QPATHTOF(textures\h_opscore_blk_medicc_co.paa),
