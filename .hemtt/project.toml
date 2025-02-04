@@ -1,6 +1,6 @@
 name = "Synixe"
-prefix = "mod"
-mainprefix = "synixe"
+prefix = "synixe"
+mainprefix = "x"
 author = "Synixe Contractors"
 
 [files]
