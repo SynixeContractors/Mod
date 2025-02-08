@@ -29,11 +29,11 @@ class CfgAmmo {
     class G_40mm_Smoke: SmokeShell {
         explosionTime = 2;
         timeToLive = 40;
-        SmokeShellSoundHit1[] = {"A3\Sounds_F\weapons\smokeshell\smoke_1", 1.25893, 1, 100};
-        SmokeShellSoundHit2[] = {"A3\Sounds_F\weapons\smokeshell\smoke_2", 1.25893, 1, 100};
-        SmokeShellSoundHit3[] = {"A3\Sounds_F\weapons\smokeshell\smoke_3", 1.25893, 1, 100};
-        SmokeShellSoundLoop1[] = {"A3\Sounds_F\weapons\smokeshell\smoke_loop1", 0.125893, 1, 70};
-        SmokeShellSoundLoop2[] = {"A3\Sounds_F\weapons\smokeshell\smoke_loop2", 0.125893, 1, 70};
+        SmokeShellSoundHit1[] = {"\A3\Sounds_F\weapons\smokeshell\smoke_1", 1.25893, 1, 100};
+        SmokeShellSoundHit2[] = {"\A3\Sounds_F\weapons\smokeshell\smoke_2", 1.25893, 1, 100};
+        SmokeShellSoundHit3[] = {"\A3\Sounds_F\weapons\smokeshell\smoke_3", 1.25893, 1, 100};
+        SmokeShellSoundLoop1[] = {"\A3\Sounds_F\weapons\smokeshell\smoke_loop1", 0.125893, 1, 70};
+        SmokeShellSoundLoop2[] = {"\A3\Sounds_F\weapons\smokeshell\smoke_loop2", 0.125893, 1, 70};
         grenadeBurningSound[] = {"SmokeShellSoundLoop1", 0.5, "SmokeShellSoundLoop2", 0.5};
         grenadeFireSound[] = {
             "SmokeShellSoundHit1", 0.25,

@@ -136,9 +136,7 @@ class CfgWorlds {
                 name = "Quai";
             };
             class LZ_Redeye {
-                name = "Zone Hélico de Tufani";
-                position[] = { 4174.94, 2496.68 };
-                type = "StrongpointArea";
+                name = "Zone Hélico de Atohuna";
             };
             class LZ_Victor {
                 name = "Zone Hélico de Paumeau";
@@ -176,6 +174,8 @@ class CfgWorlds {
             };
             class Relay_Station {
                 name = "Zone Hélico de Tufani";
+                position[] = { 4174.94, 2496.68 };
+                type = "StrongpointArea";
             };
             class Right_Right_Depot {
                 name = "Dépôt";
