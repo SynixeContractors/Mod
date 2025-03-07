@@ -1,10 +1,9 @@
 #define COMPONENT arsenal
-#include "..\main\script_mod.hpp"
 
+#include "..\main\script_mod.hpp"
 #include "..\main\script_macros.hpp"
 
-// Vanilla AI
-#define CT_STRUCTURED_TEXT 13
+#include "\a3\ui_f\hpp\defineResincl.inc"
 
 // ACE
 

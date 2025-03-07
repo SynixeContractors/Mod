@@ -12,14 +12,6 @@
     #define PREP(fncName) [QPATHTOF(functions\DOUBLES(fnc,fncName).sqf), QFUNC(fncName)] call CBA_fnc_compileFunction
 #endif
 
-// GUI
-#define ST_LEFT           0
-#define ST_RIGHT          1
-#define ST_CENTER         2
-
-#define IDC_OK            1
-#define IDC_CANCEL        2
-
 // Class
 #define CLASS(var1) DOUBLES(PREFIX,var1)
 #define QCLASS(var1) QUOTE(DOUBLES(PREFIX,var1))

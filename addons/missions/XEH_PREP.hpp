@@ -8,3 +8,6 @@ PREP(players);
 PREP(speak_internal);
 PREP(speak);
 PREP(toggleLights);
+
+PREP(keypadPress);
+PREP(keypadSetup);
