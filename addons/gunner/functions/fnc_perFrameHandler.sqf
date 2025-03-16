@@ -30,6 +30,7 @@ if (count (_vehicle isVehicleSensorEnabled "LaserSensorComponent") > 0) then {
 if (count (_vehicle isVehicleSensorEnabled "VisualSensorComponent") > 0) then {
     // Markers
     {
+        if (_x select 3 isEqualTo "aid") then { continue };
         if (markerShape _x != "ICON") then { continue };
         if (worldToScreen (markerPos [_x, true]) isEqualTo []) then { continue };
         if (markerShape _x == "Empty") then { continue };
