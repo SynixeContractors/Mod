@@ -58,7 +58,11 @@ setCurrentChannel 0;            //Change to Global
 ["vehicle", {
     params ["_unit"];
     private _vehicle = vehicle _unit;
-    private _driver = driver vehicle _unit == _unit;
+    private _driver = if (isNull objectParent _unit) then {
+        false
+    } else {
+        driver _vehicle == _unit
+    };
     _vehicle enableInfoPanelComponent ["left", "MinimapDisplayComponent", _driver];
     _vehicle enableInfoPanelComponent ["right", "MinimapDisplayComponent", _driver];
     diag_log format ["vehicle gps: %1 = %2", _unit, _driver];
@@ -67,7 +71,7 @@ setCurrentChannel 0;            //Change to Global
 player addEventHandler ["SeatSwitchedMan", {
     params ["_unit"];
     private _vehicle = vehicle _unit;
-    private _driver = driver vehicle _unit == _unit;
+    private _driver = driver _vehicle == _unit;
     _vehicle enableInfoPanelComponent ["left", "MinimapDisplayComponent", _driver];
     _vehicle enableInfoPanelComponent ["right", "MinimapDisplayComponent", _driver];
     diag_log format ["seat switch gps: %1 = %2", _unit, _driver];
