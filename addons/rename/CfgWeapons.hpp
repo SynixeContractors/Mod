@@ -231,4 +231,9 @@ class CfgWeapons {
     class H_Watchcap_blk: HelmetBase {
         displayName = "Beanie (Navy)";
     };
+
+    class DMR_06_hunter_base_F;
+    class srifle_DMR_06_hunter_F: DMR_06_hunter_base_F {
+        displayName = "M14 (Wood)";
+    };
 };
