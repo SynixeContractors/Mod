@@ -6,3 +6,4 @@ PREP(modal);
 PREP(onModalClose);
 PREP(onModalOpen);
 PREP(screenshotMode);
+PREP(autofries);
