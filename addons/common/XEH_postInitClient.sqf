@@ -93,3 +93,39 @@ player addEventHandler ["SeatSwitchedMan", {
         ace_nametags_playerNamesViewDistance = 3;
     };
 }] call CBA_fnc_addEventHandler;
+
+if (getNumber (missionConfigFile >> "synixe_template ") == 3) then {
+    GVAR(markers) = [];
+    private _index = 0;
+    {
+        private _name = configName _x;
+        if (_name select [0,19] == "crate_client_garage") then {
+            private _marker = format ["%1_%2", _name, _index];
+            _index = _index + 1;
+            createMarkerLocal [_marker, getPos _x];
+            switch (_name select [20,4]) do {
+                case "land": {
+                    _marker setMarkerTypeLocal "loc_car";
+                };
+                case "heli": {
+                    _marker setMarkerTypeLocal "loc_heli";
+                };
+                case "sea_": {
+                    _marker setMarkerTypeLocal "loc_boat";
+                };
+                case "thin": {
+                    _marker setMarkerTypeLocal "loc_container";
+                };
+            };
+            _marker setMarkerColorLocal "ColorBlack";
+            _marker setMarkerAlphaLocal 0;
+        };
+    } forEach allMissionObjects "";
+    (findDisplay 12) displayAddEventHandler ["MouseZChanged", {
+        params ["_display", "_scroll"];
+        private _scale = ctrlMapScale (_display displayCtrl 51);
+        {
+            _x setMarkerAlphaLocal linearConversion [0, 0.05, _scale, 1, 0, true];
+        } forEach GVAR(markers);
+    }];
+};
