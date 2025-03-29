@@ -98,7 +98,7 @@ if (getNumber (missionConfigFile >> "synixe_template ") == 3) then {
     GVAR(markers) = [];
     private _index = 0;
     {
-        private _name = configName _x;
+        private _name = typeOf _x;
         if (_name select [0,19] == "crate_client_garage") then {
             private _marker = format ["%1_%2", _name, _index];
             _index = _index + 1;
