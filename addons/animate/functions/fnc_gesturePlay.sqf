@@ -5,7 +5,9 @@ params [
     ["_in", ""],
     ["_loop", ""],
     ["_until", {true}]
-]; 
+];
+
+if ((getUnitFreefallInfo _unit)#0) exitWith {};
 
 private _duration = 0.1;
 if (_in != "") then {
