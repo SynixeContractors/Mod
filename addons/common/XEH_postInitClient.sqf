@@ -78,12 +78,12 @@ player addEventHandler ["SeatSwitchedMan", {
 }];
 
 // Disable map when handcuffed
-[{
-    findDisplay 46 displayAddEventHandler ["KeyDown", {
-        params ["_display", "_key"];
-        _key in (actionKeys "showMap") && (ace_player getVariable ["ace_captives_isHandcuffed", false])
-    }];
-}, [], 60] call CBA_fnc_waitAndExecute;
+addUserActionEventHandler ["showMap", "Activate", {
+    if (ace_player getVariable ["ace_captives_isHandcuffed", false]) then {
+        disableUserInput true;
+        disableUserInput false;
+    };
+}];
 
 // Recruits can see nametags
 ["crate_client_discord_updatedRoles", {
