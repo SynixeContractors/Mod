@@ -120,6 +120,7 @@ if (getNumber (missionConfigFile >> "synixe_template ") == 3) then {
             _marker setMarkerColorLocal "ColorBlack";
             _marker setMarkerAlphaLocal 0;
         };
+        GVAR(markers) pushBack _marker;
     } forEach allMissionObjects "";
     (findDisplay 12) displayAddEventHandler ["MouseZChanged", {
         params ["_display", "_scroll"];
