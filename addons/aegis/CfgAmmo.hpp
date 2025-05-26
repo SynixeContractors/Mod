@@ -1,7 +1,7 @@
 class CfgAmmo {
     class GrenadeHand;
     class SmokeShell: GrenadeHand {
-        aiAmmoUsageFlags = "4 + 2";
+        aiAmmoUsageFlags = 6;
         grenadeFireSound[] = {
             "SmokeShellSoundHit1", 0.25,
             "SmokeShellSoundHit2", 0.25,
@@ -9,22 +9,22 @@ class CfgAmmo {
         };
     };
     class SmokeShellRed: SmokeShell {
-        aiAmmoUsageFlags = "4 + 2";
+        aiAmmoUsageFlags = 6;
     };
     class SmokeShellGreen: SmokeShell {
-        aiAmmoUsageFlags = "4 + 2";
+        aiAmmoUsageFlags = 6;
     };
     class SmokeShellYellow: SmokeShell {
-        aiAmmoUsageFlags = "4 + 2";
+        aiAmmoUsageFlags = 6;
     };
     class SmokeShellPurple: SmokeShell {
-        aiAmmoUsageFlags = "4 + 2";
+        aiAmmoUsageFlags = 6;
     };
     class SmokeShellBlue: SmokeShell {
-        aiAmmoUsageFlags = "4 + 2";
+        aiAmmoUsageFlags = 6;
     };
     class SmokeShellOrange: SmokeShell {
-        aiAmmoUsageFlags = "4 + 2";
+        aiAmmoUsageFlags = 6;
     };
     class G_40mm_Smoke: SmokeShell {
         explosionTime = 2;
@@ -57,7 +57,7 @@ class CfgAmmo {
         aiAmmoUsageFlags = "4 + 2";
     };
     class G_40mm_SmokeOrange: G_40mm_Smoke {
-        aiAmmoUsageFlags = "4 + 2";
+        aiAmmoUsageFlags = 6;
     };
 
     class Chemlight_base;

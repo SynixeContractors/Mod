@@ -10,6 +10,6 @@ class CfgAmmo {
         GVAR(metal) = 300;
         GVAR(charge) = 60;
         GVAR(gurney_c) = 2700;
-        GVAR(gurney_k) = "1/2";
+        GVAR(gurney_k) = 0.5;
     };
 };
