@@ -24,5 +24,13 @@ class CfgSoundShaders {
     };
 };
 
+class CfgWeapons {
+    class ItemCore;
+    class ace_xm157_prototype: ItemCore {
+        scope = 2;
+        scopeArsenal = 2;
+    };
+};
+
 #include "CfgEventHandlers.hpp"
 #include "ui\RscModal.hpp"
