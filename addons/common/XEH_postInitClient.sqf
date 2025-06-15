@@ -100,6 +100,7 @@ if (getNumber (missionConfigFile >> "synixe_template ") == 3) then {
     {
         private _name = typeOf _x;
         if (_name select [0,19] == "crate_client_garage") then {
+            diag_log format ["Creating marker for %1", _name];
             private _marker = format ["%1_%2", _name, _index];
             _index = _index + 1;
             createMarkerLocal [_marker, getPos _x];
@@ -122,11 +123,13 @@ if (getNumber (missionConfigFile >> "synixe_template ") == 3) then {
             GVAR(markers) pushBack _marker;
         };
     } forEach allMissionObjects "";
+    diag_log format ["Created %1 markers", count GVAR(markers)];
     (findDisplay 12) displayAddEventHandler ["MouseZChanged", {
         params ["_display", "_scroll"];
         private _scale = ctrlMapScale (_display displayCtrl 51);
         {
             _x setMarkerAlphaLocal linearConversion [0, 0.05, _scale, 1, 0, true];
         } forEach GVAR(markers);
+        diag_log format ["Map scale changed to %1, markers alpha set to %2", _scale, linearConversion [0, 0.05, _scale, 1, 0, true]];
     }];
 };
