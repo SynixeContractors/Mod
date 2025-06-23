@@ -9,7 +9,7 @@ GVAR(serverSaved) = createHashMap;
 
 [QGVAR(load), {
     params ["_unit"];
-    private _data = GVAR(serverSaved) get [getPlayerUID _unit, []];
+    private _data = GVAR(serverSaved) getOrDefault [getPlayerUID _unit, []];
     if (_data isEqualTo []) exitWith {};
     [QGVAR(loaded), [_data], _unit] call CBA_fnc_targetEvent;
 }] call CBA_fnc_addEventHandler;
