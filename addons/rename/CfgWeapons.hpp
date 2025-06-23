@@ -31,7 +31,7 @@ class CfgWeapons {
 
     // VS-121
     class DMR_01_base_F;
-    class srifle_DMR_01_F: srifle_DMR_01_F {
+    class srifle_DMR_01_F: DMR_01_base_F {
         displayName = "VS-121 (Hex)";
     };
 

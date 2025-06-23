@@ -42,19 +42,19 @@ class CfgAmmo {
         };
     };
     class G_40mm_SmokeRed: G_40mm_Smoke {
-        aiAmmoUsageFlags = "4 + 2";
+        aiAmmoUsageFlags = 4 + 2;
     };
     class G_40mm_SmokeGreen: G_40mm_Smoke {
-        aiAmmoUsageFlags = "4 + 2";
+        aiAmmoUsageFlags = 4 + 2;
     };
     class G_40mm_SmokeYellow: G_40mm_Smoke {
-        aiAmmoUsageFlags = "4 + 2";
+        aiAmmoUsageFlags = 4 + 2;
     };
     class G_40mm_SmokePurple: G_40mm_Smoke {
-        aiAmmoUsageFlags = "4 + 2";
+        aiAmmoUsageFlags = 4 + 2;
     };
     class G_40mm_SmokeBlue: G_40mm_Smoke {
-        aiAmmoUsageFlags = "4 + 2";
+        aiAmmoUsageFlags = 4 + 2;
     };
     class G_40mm_SmokeOrange: G_40mm_Smoke {
         aiAmmoUsageFlags = 6;
