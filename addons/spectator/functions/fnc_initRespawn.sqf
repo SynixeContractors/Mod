@@ -2,7 +2,7 @@
 
 if (getNumber (missionConfigFile >> "synixe_template") < 3) exitWith {};
 
-createMarkerLocal ["respawn", getPosASL player];
+createMarkerLocal ["respawn", getPosAGL player];
 
 GVAR(locations) = [];
 GVAR(triggers) = [];
