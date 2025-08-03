@@ -1,5 +1,4 @@
 class CfgWeapons {
-    class InventoryItem_Base_F;
     class VestItem;
 
     class Aegis_V_CarrierRigKBT_01_cqb_base_F;

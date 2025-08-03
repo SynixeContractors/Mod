@@ -14,10 +14,14 @@ workshop = [
     "463939057", # ACE3
     "1779063631", # Zeus Enhanced
     "2975055854", # Secondary Mk13
+    "751965892", # ACRE2
 ]
 dlc = [
     "ws",
     "rf",
+]
+parameters = [
+    "-mod=\"Z:/home/brett/Documents/GitHub/BrettMayson/aid/.hemttout/dev\""
 ]
 
 [hemtt.launch.aegis]
@@ -40,7 +44,7 @@ workshop = [
 [hemtt.launch.adt]
 extends = "default"
 workshop = [
-    "2369477168", # ADT
+    "3499977893", # ADT
 ]
 
 [hemtt.launch.oteden]

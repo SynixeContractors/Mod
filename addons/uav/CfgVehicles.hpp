@@ -1,4 +1,3 @@
-class Components;
 class CfgVehicles {
     class Weapon_Bag_Base;
     class GVAR(uav_bag_base): Weapon_Bag_Base {
@@ -52,7 +51,7 @@ class CfgVehicles {
     };
     class Helicopter_Base_F: Helicopter {
         class ACE_Actions: ACE_Actions {
-            class ACE_MainActions;
+            class ACE_MainActions: ACE_MainActions {};
         };
     };
 
