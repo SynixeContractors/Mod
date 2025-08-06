@@ -7,7 +7,7 @@ mod discord;
 
 fn browser(url: String) {
     if let Err(e) = webbrowser::open(&url) {
-        println!("Failed to open browser: {}", e);
+        println!("Failed to open browser: {e}");
     }
 }
 

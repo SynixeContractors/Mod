@@ -94,7 +94,7 @@ addUserActionEventHandler ["showMap", "Activate", {
     };
 }] call CBA_fnc_addEventHandler;
 
-if (getNumber (missionConfigFile >> "synixe_template ") == 3) then {
+if (getNumber (missionConfigFile >> "synixe_template") == 3) then {
     GVAR(markers) = [];
     private _index = 0;
     {

@@ -30,7 +30,6 @@ class CfgMagazines {
 
     // Darter
     class GVAR(base_darter): GVAR(base) {
-        aid_uav_maxRange = 13000;
         count = 100;
         picture = "\A3\Drones_F\Air_F_Gamma\UAV_01\Data\UI\UAV_01_CA.paa";
     };

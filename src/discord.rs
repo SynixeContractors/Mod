@@ -39,6 +39,6 @@ pub fn update(details: String, state: String, image: String, text: String) {
                 })
             })
     }) {
-        println!("Failed to update Discord presence: {}", e);
+        println!("Failed to update Discord presence: {e}");
     }
 }
