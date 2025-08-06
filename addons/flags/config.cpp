@@ -7,9 +7,7 @@ class CfgPatches {
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"synixe_main"};
-        author = ECSTRING(main,Author);
         authors[] = {"ArmaForces"};
-        url = ECSTRING(main,URL);
         VERSION_CONFIG;
     };
 };

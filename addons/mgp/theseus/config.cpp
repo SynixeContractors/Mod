@@ -11,9 +11,7 @@ class CfgPatches {
             "tacs_variants_milgp"
         };
         skipWhenMissingDependencies = 1;
-        author = ECSTRING(main,Author);
         authors[] = {"Brett"};
-        url = ECSTRING(main,URL);
         VERSION_CONFIG;
     };
 };

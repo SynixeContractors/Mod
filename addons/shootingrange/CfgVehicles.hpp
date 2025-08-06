@@ -1,7 +1,6 @@
 class CfgVehicles {
     class ACE_Module;
     class GVAR(Module): ACE_Module {
-        author = ECSTRING(main,Author);
         category = QUOTE(ADDON);
         displayName = CSTRING(Range);
         function = QFUNC(moduleInit);

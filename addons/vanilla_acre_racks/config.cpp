@@ -13,9 +13,7 @@ class CfgPatches {
             "acre_sys_rack"
         };
         skipWhenMissingDependencies = 1;
-        author = ECSTRING(main,Author);
         authors[] = {"JoramD"};
-        url = ECSTRING(main,URL);
         VERSION_CONFIG;
     };
 };

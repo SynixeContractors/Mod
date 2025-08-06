@@ -10,9 +10,7 @@ class CfgPatches {
             "RF_Data_Loadorder",
         };
         skipWhenMissingDependencies = 1;
-        author = ECSTRING(main,Author);
         authors[] = {"Brett"};
-        url = ECSTRING(main,URL);
         VERSION_CONFIG;
     };
 };

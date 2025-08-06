@@ -29,9 +29,7 @@ class CfgPatches {
             "A3_Aegis_Weapons_F_Aegis_Rifles_M4A1",
         };
         skipWhenMissingDependencies = 1;
-        author = ECSTRING(main,Authors);
         authors[] = {"Mike", "Brett"};
-        url = ECSTRING(main,URL);
         VERSION_CONFIG;
     };
 };
