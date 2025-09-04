@@ -72,10 +72,10 @@ if (isServer) then {
     };
     (call _fnc_randomLastLoginDate) params ["_weekDay", "_month", "_day", "_hours", "_minutes", "_seconds"];
 
-    private _terminalLogin = format [" %1 login: ", _user];
+    private _terminalLogin = format [" %1 login: ", _host];
     private _terminalPrepare = [
         [
-            format ["%1 %2", _terminalLogin, _host],
+            format ["%1 %2", _terminalLogin, _user],
             " Password:"
         ], [
             format [" Last Login: %1 %2 %3 %4:%5:%6 on ttyl", _weekDay, _month, _day, _hours, _minutes, _seconds],
