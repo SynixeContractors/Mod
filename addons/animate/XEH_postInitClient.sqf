@@ -85,13 +85,13 @@ GVAR(huntIROpen) = false;
 
 ["CBA_settingsInitialized", {
     ["visionMode", {
-        params ["_unit", "_visionMode"];
+        params ["_unit", "_visionMode", "_previousVisionMode"];
         if (!isNull objectParent _unit) exitWith {};
         if (cameraView == "GUNNER") exitWith {
             GVAR(lastInGunner) = true;
         };
         if (ace_player getVariable ["ace_captives_isHandcuffed", false]) exitWith {};
-        if (_visionMode == 1) then {
+        if (_visionMode == 1 && _previousVisionMode == 0) then {
             ace_player playActionNow QGVAR(nvg_down);
         } else {
             if (_visionMode == 0) then {
