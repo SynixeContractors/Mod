@@ -53,7 +53,7 @@ if (!_initialized) then {
 
             _uav addForce [(vectorNormalized velocity _projectile) vectorMultiply -1000 vectorMultiply linearConversion [0,1,random 1,_recoil#0,_recoil#1],[0,0,-0.2]];
 
-            private _cartridge = getText (configFile >> "CfgAmmo" >> typeOf _projectile >> "cartridge");
+            private _cartridge = getText (configOf _projectile >> "cartridge");
             if (_cartridge != "") then {
                 _cartridge = getText (configFile >> "CfgVehicles" >> _cartridge >> "model");
                 drop [
