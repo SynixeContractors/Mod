@@ -87,14 +87,19 @@ GVAR(huntIROpen) = false;
     ["visionMode", {
         params ["_unit", "_visionMode"];
         if (!isNull objectParent _unit) exitWith {};
-        if (cameraView == "GUNNER") exitWith {};
+        if (cameraView == "GUNNER") exitWith {
+            GVAR(lastInGunner) = true;
+        };
         if (ace_player getVariable ["ace_captives_isHandcuffed", false]) exitWith {};
         if (_visionMode == 1) then {
             ace_player playActionNow QGVAR(nvg_down);
         } else {
             if (_visionMode == 0) then {
-                ace_player playActionNow QGVAR(nvg_up);
+                if !(GVAR(lastInGunner)) then {
+                    ace_player playActionNow QGVAR(nvg_up);
+                };
             };
         };
+        GVAR(lastInGunner) = false;
     }, false] call CBA_fnc_addPlayerEventHandler;
 }] call CBA_fnc_addEventHandler;
