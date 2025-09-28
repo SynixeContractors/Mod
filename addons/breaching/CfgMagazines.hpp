@@ -11,7 +11,7 @@ class CfgMagazines {
         ACEGVAR(explosives,SetupObject) = QGVAR(BreachingCharge_Place);
 
         class ACE_Triggers {
-            SupportedTriggers[] = {"Command", "MK16_Transmitter"};
+            SupportedTriggers[] = {"Command", "Timer", "MK16_Transmitter"};
         };
     };
 };
