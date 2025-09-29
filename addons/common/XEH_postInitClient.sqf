@@ -2,7 +2,7 @@
 
 // Always holster when leaving the arsenal
 ["ace_arsenal_displayClosed", {
-    if !(missionName in ["Arsenal", "TRA30_Synixe_MaldenTrainingFacility"]) then {
+    if !(missionName in ["Arsenal", "TRA30_Synixe_MaldenTrainingFacility", "TRA30_Synixe_BozcaadaTrainingFacility"]) then {
         [{
             if ((currentWeapon ACE_player) != "") then {
                 if (ACE_player isEqualTo player) then {
