@@ -24,10 +24,14 @@ jobs:
           cp target/release/synixe.dll synixe_x64.dll
 
       - name: Build Mod
-        run: hemtt release
+        run: hemtt build
+
+      - name: Rename build folder
+        run: mv .hemttout/build .hemttout/@synixe_mod
 
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
-          name: synixe.zip
-          path: releases/synixe-latest.zip
+          name: synixe_mod.zip
+          path: .hemttout/@*
+          include-hidden-files: true 
