@@ -15,7 +15,7 @@ GVAR(triggers) = [];
 
 {
     private _locations = synchronizedObjects _x select { _x isKindOf QGVAR(respawn) };
-    if (count _locations > 0) then {
+    if (_locations isNotEqualTo []) then {
         GVAR(triggers) pushBack [_x, triggerActivated _x];
     };
     {

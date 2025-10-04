@@ -47,7 +47,7 @@ _marker setMarkerColorLocal _colour;
     _args params ["_location", "_marker", "_isGlobal", "_maxSize"];
 
     if (isNull _location) exitWith {
-        WARNING_1("Ping Location for marker: %1 no longer exists",_markerName);
+        WARNING_1("Ping Location for marker: %1 no longer exists",_marker);
         [_handle] call CBA_fnc_removePerFrameHandler;
         deleteMarker _marker;
     };

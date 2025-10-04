@@ -8,7 +8,7 @@ _uav setVariable ["lxws_initialized",true];
 
 if (is3DEN) then {
     _uav spawn {
-        if (count (_this get3DENAttribute "lxws_holdingWeapon") == 0 || {
+        if ((_this get3DENAttribute "lxws_holdingWeapon") isEqualTo [] || {
             (_this get3DENAttribute "lxws_holdingWeapon")#0 isEqualTo ""
         }) then {
             _this set3DENAttribute ["lxws_holdingWeapon",getArray (configOf _this >> "lxws_droneWeapon")];

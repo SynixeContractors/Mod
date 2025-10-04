@@ -16,7 +16,7 @@
 
 params ["_groups"];
 
-if (_groups findIf {!(_x isEqualType "GROUP")}) exitWith {
+if (_groups findIf {!(_x isEqualType "GROUP")} == -1) exitWith {
     ERROR_MSG("countAlive input only allows groups, detected unit.");
 };
 

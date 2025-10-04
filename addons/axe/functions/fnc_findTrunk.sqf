@@ -38,7 +38,7 @@ private _trunkPos = _searchPos;
         _endPos set [2,_searchPos select 2];
 
         _lineIntersections = (lineIntersectsSurfaces [_searchPos,_endPos]) select {_x select 3 == _tree};
-        if (count _lineIntersections > 0) then {
+        if (_lineIntersections isNotEqualTo []) then {
             _trunkPos = _lineIntersections select 0 select 0;
             _trunkFound = true;
             breakTo "main";

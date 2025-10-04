@@ -16,7 +16,7 @@ GVAR(autoEnabled) = true;
 [{
     if !(GVAR(autoEnabled)) exitWith {};
     private _allNear = allPlayers findIf {
-        count (nearestObjects [getPos _x, [QGVAR(screen)], GVAR(autoRange)]) == 0
+        (nearestObjects [getPos _x, [QGVAR(screen)], GVAR(autoRange)]) isEqualTo []
     } == -1;
     if (_allNear) then {
         if !(GVAR(allowed)) exitWith {};

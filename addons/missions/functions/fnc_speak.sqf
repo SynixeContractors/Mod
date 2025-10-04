@@ -64,6 +64,7 @@ private _action = [
         [QGVAR(speak), [_unit, _sound, _startCode, _stopCode, _id, _replayable]] call CBA_fnc_globalEvent;
     },
     {
+        _this#2 params ["", "_unit", "_sound"];
         alive _target && !(_target getVariable [QGVAR(speaking), false]) && {[_sound] call _this#2#0}
     },
     {},

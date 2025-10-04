@@ -65,19 +65,20 @@ if (GVAR(requireRadio) && {!("sl" in _roles)}) then {
 [["SmokeShell"],            2,  "Smoke Grenade (White)", _missing] call FUNC(countItem);
 [["ACE_CableTie"],          10, "Cable Tie", _missing] call FUNC(countItem);
 
-if (_new#9#0 isEqualTo "") then {
+private _loadout = getUnitLoadout _unit;
+if (_loadout#9#0 isEqualTo "") then {
     _missing pushBack "A Map";
 };
 
-if (_new#9#1 isEqualTo "") then {
+if (_loadout#9#1 isEqualTo "") then {
     _missing pushBack "A GPS";
 };
 
-if (_new#9#3 isEqualTo "") then {
+if (_loadout#9#3 isEqualTo "") then {
     _missing pushBack "A Compass";
 };
 
-if (_new#9#4 isEqualTo "") then {
+if (_loadout#9#4 isEqualTo "") then {
     _missing pushBack "A Watch";
 };
 
