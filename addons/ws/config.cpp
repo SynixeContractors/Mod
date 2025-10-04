@@ -4,7 +4,7 @@ class CfgPatches {
     class Missions_F_lxWS {
         WS_DELETE;
     };
-    class Missions_F_lxWS_data {
+    class Missions_F_lxWS_Data {
         WS_DELETE;
     };
     class Missions_F_lxWS_Video {
@@ -163,7 +163,7 @@ class CfgPatches {
     class Rocks_F_lxWS {
         WS_DELETE;
     };
-    class animals_F_lxWS {
+    class animals_f_lxWS {
         WS_DELETE;
     };
 };
