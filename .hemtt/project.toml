@@ -21,9 +21,6 @@ dlc = [
     "ws",
     "rf",
 ]
-parameters = [
-    "-mod=\"Z:/home/brett/Documents/GitHub/BrettMayson/aid/.hemttout/dev\""
-]
 
 [hemtt.launch.aegis]
 extends = "default"
