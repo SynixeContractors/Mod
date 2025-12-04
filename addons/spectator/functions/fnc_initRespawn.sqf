@@ -50,7 +50,7 @@ if (GVAR(triggers) isEqualTo []) exitWith {};
             } forEach GVAR(locations);
             {
                 _x setVariable [QGVAR(active), true];
-            } forEach synchronizedObjects _trigger select { _x isKindOf QGVAR(respawn) };
+            } forEach (synchronizedObjects _trigger select { _x isKindOf QGVAR(respawn) });
         };
     } forEach GVAR(triggers);
 }, 2] call CBA_fnc_addPerFrameHandler;

@@ -22,6 +22,12 @@ dlc = [
     "rf",
 ]
 
+[hemtt.launch.cup_terrains_core]
+extends = "default"
+workshop = [
+    "583496184", # CUP Terrains - Core
+]
+
 [hemtt.launch.aegis]
 extends = "default"
 workshop = [
@@ -67,4 +73,10 @@ workshop = [
 extends = "default"
 workshop = [
     "1726184748", # Archipelago
+]
+
+[hemtt.launch.north_takistan]
+extends = "cup_terrains_core"
+workshop = [
+    "2829330653", # North Takistan
 ]
