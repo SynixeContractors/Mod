@@ -31,3 +31,12 @@ if (!hasInterface) exitWith {};
         [_vehicle] call FUNC(unloadMFD);
     };
 }] call CBA_fnc_addClassEventHandler;
+
+["zen_curatorDisplayUnloaded", {
+    [{
+        private _vehicle = vehicle ACE_player;
+        if (_vehicle getVariable [QGVAR(drawID), -1] != -1) then {
+            GVAR(camera) cameraEffect ["Internal", "BACK", "rendertarget0"];
+        };
+    }, [], 1] call CBA_fnc_waitAndExecute;
+}] call CBA_fnc_addEventHandler;

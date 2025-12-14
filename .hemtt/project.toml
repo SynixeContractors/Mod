@@ -80,3 +80,9 @@ extends = "cup_terrains_core"
 workshop = [
     "2829330653", # North Takistan
 ]
+
+[hemtt.launch.melb]
+extends = "default"
+workshop = [
+    "561177050", # MELB
+]
