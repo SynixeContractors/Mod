@@ -1,8 +1,9 @@
-PREP(handleDisplayOpened);
-PREP(handleDisplayClosed);
-PREP(handleLoadoutsDisplayOpened);
-PREP(handleLoadoutsDisplayClosed);
-PREP(handleLoadout);
-PREP(getMissingGear);
-PREP(getSpecialGear);
 PREP(countItem);
+PREP(getMissingGear);
+PREP(getNightGear);
+PREP(getSpecialGear);
+PREP(handleDisplayClosed);
+PREP(handleDisplayOpened);
+PREP(handleLoadout);
+PREP(handleLoadoutsDisplayClosed);
+PREP(handleLoadoutsDisplayOpened);

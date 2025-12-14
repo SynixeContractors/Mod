@@ -19,84 +19,59 @@ if !(GVAR(enabled)) exitWith {
     } forEach CUSTOM_BOXES;
 };
 
-private _missingRequired = [_unit] call FUNC(getMissingGear);
-private _missingSpecial = [_unit] call FUNC(getSpecialGear);
-
 private _yOffset = 0;
 
-if (_missingRequired isEqualTo []) then {
-    {
-        private _ctrl = GVAR(arsenalDisplay)#0 displayCtrl _x;
-        _ctrl ctrlShow false;
-        _ctrl ctrlCommit 0.15;
-    } forEach [IDC_requiredGearBox, IDC_requiredGearTitle];
-} else {
-    private _ctrlBox = GVAR(arsenalDisplay)#0 displayCtrl IDC_requiredGearBox;
-    _ctrlBox ctrlSetPosition [
-        safeZoneX + safeZoneW - (94 + 48) * GRID_W,
-        safeZoneY + 1.8 * GRID_H,
-        47 * GRID_W,
-        (5 + (4 * count _missingRequired)) * GRID_H
-    ];
-    _ctrlBox ctrlCommit 0;
-    _yOffset = _yOffset + (4 * count _missingRequired) + 6;
+private _gearTypes = [
+    [[_unit] call FUNC(getMissingGear), IDC_requiredGearBox, IDC_requiredGearTitle, IDC_requiredGearText],
+    [[_unit] call FUNC(getSpecialGear), IDC_specialGearBox, IDC_specialGearTitle, IDC_specialGearText],
+    [[_unit] call FUNC(getNightGear), IDC_nightGearBox, IDC_nightGearTitle, IDC_nightGearText]
+];
 
-    private _ctrlText = GVAR(arsenalDisplay)#0 displayCtrl IDC_requiredGearText;
-    _ctrlText ctrlSetStructuredText parseText (_missingRequired joinString "<br/>");
-    _ctrlText ctrlSetPosition [
-        0 * GRID_W,
-        5 * GRID_H,
-        45 * GRID_W,
-        (4 * count _missingRequired) * GRID_H
-    ];
-    _ctrlText ctrlCommit 0;
+private _baseYOffset = 1.8;
+{
+    _x params ["_missingItems", "_idcBox", "_idcTitle", "_idcText"];
     
-    {
-        private _ctrl = GVAR(arsenalDisplay)#0 displayCtrl _x;
-        _ctrl ctrlShow true;
-        _ctrl ctrlCommit 0.15;
-    } forEach [IDC_requiredGearBox, IDC_requiredGearTitle];
-};
+    if (_missingItems isEqualTo []) then {
+        {
+            private _ctrl = GVAR(arsenalDisplay)#0 displayCtrl _x;
+            _ctrl ctrlShow false;
+            _ctrl ctrlCommit 0.15;
+        } forEach [_idcBox, _idcTitle];
+    } else {
+        private _ctrlTitle = GVAR(arsenalDisplay)#0 displayCtrl _idcTitle;
+        _ctrlTitle ctrlSetPosition [
+            safeZoneX + safeZoneW - (94 + 48) * GRID_W,
+            safeZoneY + (_baseYOffset + _yOffset) * GRID_H,
+            47 * GRID_W,
+            5 * GRID_H
+        ];
+        _ctrlTitle ctrlCommit 0;
 
-if (_missingSpecial isEqualTo []) then {
-    {
-        private _ctrl = GVAR(arsenalDisplay)#0 displayCtrl _x;
-        _ctrl ctrlShow false;
-        _ctrl ctrlCommit 0.15;
-    } forEach [IDC_specialGearBox, IDC_specialGearTitle];
-} else {
-    private _ctrlTitle = GVAR(arsenalDisplay)#0 displayCtrl IDC_specialGearTitle;
-    _ctrlTitle ctrlSetPosition [
-        safeZoneX + safeZoneW - (94 + 48) * GRID_W,
-        safeZoneY + (1.8 + _yOffset) * GRID_H,
-        47 * GRID_W,
-        5 * GRID_H
-    ];
-    _ctrlTitle ctrlCommit 0;
+        private _ctrlBox = GVAR(arsenalDisplay)#0 displayCtrl _idcBox;
+        _ctrlBox ctrlSetPosition [
+            safeZoneX + safeZoneW - (94 + 48) * GRID_W,
+            safeZoneY + (_baseYOffset + _yOffset) * GRID_H,
+            47 * GRID_W,
+            (5 + (4 * count _missingItems)) * GRID_H
+        ];
+        _ctrlBox ctrlCommit 0;
+        _yOffset = _yOffset + (4 * count _missingItems) + 6;
 
-    private _ctrlBox = GVAR(arsenalDisplay)#0 displayCtrl IDC_specialGearBox;
-    _ctrlBox ctrlSetPosition [
-        safeZoneX + safeZoneW - (94 + 48) * GRID_W,
-        safeZoneY + (1.8 + _yOffset) * GRID_H,
-        47 * GRID_W,
-        (5 + (4 * count _missingSpecial)) * GRID_H
-    ];
-    _ctrlBox ctrlCommit 0;
-
-    private _ctrlText = GVAR(arsenalDisplay)#0 displayCtrl IDC_specialGearText;
-    _ctrlText ctrlSetStructuredText parseText (_missingSpecial joinString "<br/>");
-    _ctrlText ctrlSetPosition [
-        0 * GRID_W,
-        5 * GRID_H,
-        45 * GRID_W,
-        (4 * count _missingSpecial) * GRID_H
-    ];
-    _ctrlText ctrlCommit 0;
-
-    {
-        private _ctrl = GVAR(arsenalDisplay)#0 displayCtrl _x;
-        _ctrl ctrlShow true;
-        _ctrl ctrlCommit 0.15;
-    } forEach [IDC_specialGearBox, IDC_specialGearTitle];
-};
+        private _ctrlText = GVAR(arsenalDisplay)#0 displayCtrl _idcText;
+        _ctrlText ctrlSetStructuredText parseText (_missingItems joinString "<br/>");
+        _ctrlText ctrlSetPosition [
+            0 * GRID_W,
+            5 * GRID_H,
+            45 * GRID_W,
+            (4 * count _missingItems) * GRID_H
+        ];
+        _ctrlText ctrlCommit 0;
+        
+        {
+            private _ctrl = GVAR(arsenalDisplay)#0 displayCtrl _x;
+            _ctrl ctrlShow true;
+            _ctrl ctrlCommit 0.15;
+        } forEach [_idcBox, _idcTitle];
+    };
+} forEach _gearTypes;
 

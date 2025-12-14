@@ -2,7 +2,7 @@
 
 GVAR(radioArsenalButton) = [
     ([] call FUNC(getAllRadios)) + ["ACRE_VHF30108MAST", "ACRE_VHF30108SPIKE", "ACRE_VHF30108"],
-    LLSTRING(Category),
+    "Radios",
     "\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\radio_ca.paa"
 ] call ace_arsenal_fnc_addRightPanelButton;
 

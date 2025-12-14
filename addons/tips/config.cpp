@@ -8,17 +8,7 @@ class CfgPatches {
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "synixe_main",
-            "tem_ihantalaw"
         };
-        skipWhenMissingDependencies = 1;
-        author = "Brett";
         VERSION_CONFIG;
-    };
-};
-
-class CfgWorlds {
-    class CAWorld;
-    class tem_ihantalaw: CAWorld {
-        description = "Ihantala (Winter)";
     };
 };
