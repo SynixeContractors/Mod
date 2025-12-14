@@ -48,7 +48,6 @@ GVAR(radioArsenalButton) = [
 
 // Save radio data
 // ACRE has no events, so save occasionally
-// TODO make events for ACRE
 GVAR(saved) = [];
 [{
     private _data = call FUNC(getRadioData);
@@ -78,3 +77,32 @@ GVAR(saved) = [];
         [QGVAR(load), [player]] call CBA_fnc_serverEvent;
     }, [], 1] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
+
+// Radio damage
+["CAManBase", "HitPart", {
+    (_this select 0) params ["_target", "_shooter", "_projectile", "_position", "_velocity", "_selection", "_ammo"];
+    if !(local _target) exitWith {};
+    private _selectionName = _selection select 0;
+    private _radios = [] call acre_api_fnc_getCurrentRadioList;
+    if !(_selectionName in ["spine", "spine1", "spine2", "spine3"]) exitWith {};
+    {
+        if (round(random 100) > 3) then {
+            continue;
+        };
+        private _baseRadio = [_x] call acre_api_fnc_getBaseRadio;
+        private _damagedRadio = _baseRadio + "_destroyed";
+        if (_damagedRadio in uniformItems _target) then {
+            _target removeItem _damagedRadio;
+            _target addItemToUniform "ACRE_PRC343_DAMAGED";
+        };
+        if (_damagedRadio in vestItems _target) then {
+            _target removeItem _damagedRadio;
+            _target addItemToVest "ACRE_PRC343_DAMAGED";
+        };
+        if (_damagedRadio in backpackItems _target) then {
+            _target removeItem _damagedRadio;
+            _target addItemToBackpack "ACRE_PRC343_DAMAGED";
+        };
+        [_target, QGVAR(break), nil, true, true, true] call CBA_fnc_globalSay3D;
+    } forEach _radios;
+}] call CBA_fnc_addClassEventHandler;
