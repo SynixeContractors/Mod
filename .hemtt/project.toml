@@ -86,3 +86,9 @@ extends = "default"
 workshop = [
     "561177050", # MELB
 ]
+
+[hemtt.launch.greenmag]
+extends = "default"
+workshop = [
+    "2352603233", # GreenMag
+]
