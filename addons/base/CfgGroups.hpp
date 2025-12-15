@@ -1,5 +1,5 @@
 class CfgGroups {
-    class Blufor {
+    class West {
         class SynixeContractors {
             name = "Synixe Contractors";
             class BaseComponents {
