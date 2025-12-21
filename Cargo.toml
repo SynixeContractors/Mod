@@ -13,4 +13,4 @@ arma-rs = "1.10.5"
 discord-presence = "1.2"
 enigo = { git = "https://github.com/NaokiM03/enigo" }
 lazy_static = "1.5.0"
-webbrowser = "1.0.1"
+webbrowser = "1.0.6"
