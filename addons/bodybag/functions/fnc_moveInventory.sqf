@@ -68,6 +68,32 @@ _holders append (_unit getVariable [QGVAR(holders), []]);
             _items pushBack _x#6;
         } forEach (weaponsItemsCargo _x);
         deleteVehicle _x;
+    } else {
+        INFO_2("Bodybag: Holder %1 too far from bodybag %2",_x,_bodybag);
+        if !(_x in (getCorpseWeaponholders _unit)) then {continue};
+        private _newHolder = createVehicle [
+            "WeaponHolderSimulated",
+            getPos _x,
+            [],
+            0,
+            "CAN_COLLIDE"
+        ];
+        private _itemCargo = getItemCargo _x;
+        {
+            _newHolder addItemCargoGlobal [_x, _itemCargo select 1 select _forEachIndex];
+        } forEach (_itemCargo select 0);
+        private _magCargo = getMagazineCargo _x;
+        {
+            _newHolder addMagazineCargoGlobal [_x, _magCargo select 1 select _forEachIndex];
+        } forEach (_magCargo select 0);
+        private _backpackCargo = getBackpackCargo _x;
+        {
+            _newHolder addBackpackCargoGlobal [_x, _backpackCargo select 1 select _forEachIndex];
+        } forEach (_backpackCargo select 0);
+        private _weaponItemsCargo = weaponsItemsCargo _x;
+        {
+            _newHolder addWeaponWithAttachmentsCargoGlobal [_x, 1];
+        } forEach _weaponItemsCargo;
     };
 } forEach _holders;
 
