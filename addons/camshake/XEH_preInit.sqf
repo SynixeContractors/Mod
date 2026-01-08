@@ -3,7 +3,7 @@ ADDON = false;
 
 #include "XEH_PREP.hpp"
 
-GVAR(variableHandler) = call CBA_fnc_createNamespace;
+GVAR(hitCache) = createHashMap;
 GVAR(playerFiredEHID) = -1;
 
 ["unit", {
