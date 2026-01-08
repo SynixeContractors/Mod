@@ -46,7 +46,8 @@ private _holders = getCorpseWeaponholders (_unit getVariable [QGVAR(corpse), obj
 _holders append getCorpseWeaponholders _unit;
 _holders append (_unit getVariable [QGVAR(holders), []]);
 {
-    if (_unit distance _x < 5) then {
+    if (isNull _x) then { continue };
+    if (_bodybag distance _x < 5) then {
         private _cargo = getItemCargo _x;
         _cargo append (getMagazineCargo _x);
         _cargo append (getBackpackCargo _x);
