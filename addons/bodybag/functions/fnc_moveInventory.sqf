@@ -69,7 +69,6 @@ _holders append (_unit getVariable [QGVAR(holders), []]);
         } forEach (weaponsItemsCargo _x);
         deleteVehicle _x;
     } else {
-        INFO_2("Bodybag: Holder %1 too far from bodybag %2",_x,_bodybag);
         if !(_x in (getCorpseWeaponholders _unit)) then {continue};
         private _newHolder = createVehicle [
             "WeaponHolderSimulated",
