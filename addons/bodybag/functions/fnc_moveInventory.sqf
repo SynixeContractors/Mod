@@ -47,8 +47,9 @@ _holders append getCorpseWeaponholders _unit;
 _holders append (_unit getVariable [QGVAR(holders), []]);
 {
     if (isNull _x) then { continue };
-    if (_bodybag distance _x < 5) then {
-        INFO_2("Holder in range: %1 @ %2", _x, _bodybag distance _x);
+    private _bodyBagDistance = _bodybag distance _x;
+    private _unitDistance = _unit distance _x;
+    if ((_bodyBagDistance min _unitDistance) < 5) then {
         private _cargo = getItemCargo _x;
         _cargo append (getMagazineCargo _x);
         _cargo append (getBackpackCargo _x);
@@ -70,9 +71,7 @@ _holders append (_unit getVariable [QGVAR(holders), []]);
         } forEach (weaponsItemsCargo _x);
         deleteVehicle _x;
     } else {
-        INFO_2("Holder out of range: %1 @ %2", _x, _bodybag distance _x);
         if !(_x in (getCorpseWeaponholders _unit)) then {continue};
-        INFO_1("Recreating holder: %1", _x);
         private _newHolder = createVehicle [
             "WeaponHolderSimulated",
             getPos _x,
