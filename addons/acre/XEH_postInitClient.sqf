@@ -91,17 +91,17 @@ GVAR(saved) = [];
         };
         private _baseRadio = [_x] call acre_api_fnc_getBaseRadio;
         private _damagedRadio = _baseRadio + "_destroyed";
-        if (_damagedRadio in uniformItems _target) then {
-            _target removeItem _damagedRadio;
-            _target addItemToUniform "ACRE_PRC343_DAMAGED";
+        if (_baseRadio in uniformItems _target) then {
+            _target removeItem _baseRadio;
+            _target addItemToUniform _damagedRadio;
         };
-        if (_damagedRadio in vestItems _target) then {
-            _target removeItem _damagedRadio;
-            _target addItemToVest "ACRE_PRC343_DAMAGED";
+        if (_baseRadio in vestItems _target) then {
+            _target removeItem _baseRadio;
+            _target addItemToVest _damagedRadio;
         };
-        if (_damagedRadio in backpackItems _target) then {
-            _target removeItem _damagedRadio;
-            _target addItemToBackpack "ACRE_PRC343_DAMAGED";
+        if (_baseRadio in backpackItems _target) then {
+            _target removeItem _baseRadio;
+            _target addItemToBackpack _damagedRadio;
         };
         [_target, QGVAR(break), nil, true, true, true] call CBA_fnc_globalSay3D;
     } forEach _radios;
