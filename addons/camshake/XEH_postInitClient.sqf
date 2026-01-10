@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-GVAR(blur) = ppEffectCreate ["DynamicBlur", 500];
+GVAR(blur) = ppEffectCreate ["DynamicBlur", 600];
 GVAR(blur) ppEffectEnable true;
 GVAR(blurStrength) = 0;
 
