@@ -81,7 +81,6 @@ GVAR(saved) = [];
 // Radio damage
 ["CAManBase", "HitPart", {
     (_this select 0) params ["_target", "_shooter", "_projectile", "_position", "_velocity", "_selection", "_ammo"];
-    if !(local _target) exitWith {};
     private _selectionName = _selection select 0;
     private _radios = [_target] call acre_sys_core_fnc_getGear;
     if !(_selectionName in ["spine", "spine1", "spine2", "spine3"]) exitWith {};
