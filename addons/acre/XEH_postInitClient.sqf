@@ -86,7 +86,7 @@ GVAR(saved) = [];
     private _radios = [] call acre_api_fnc_getCurrentRadioList;
     if !(_selectionName in ["spine", "spine1", "spine2", "spine3"]) exitWith {};
     {
-        if (round(random 100) > 3) then {
+        if (round(random 100) > missionNamespace getVariable [QGVAR(breakChance), 3]) then {
             continue;
         };
         private _baseRadio = [_x] call acre_api_fnc_getBaseRadio;
