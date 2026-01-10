@@ -12,7 +12,7 @@ private _hit = (GVAR(hitCache) getOrDefaultCall [_ammo, {
 }, true]) * 0.125; // multiplied by 0.125 to scale down the effect, based on balancing when we used caliber
 
 // Reduce the hit value based on hearing protection
-_hit = _hit * (1 min (2 * (ace_hearing_volumeAttenuation * ([1,0.3] select (ACE_player getVariable ["ACE_hasEHP", false] || {ACE_player getVariable ["ACE_hasBuiltInEHP", false]})))));
+_hit = _hit * (1 min ((ace_hearing_volumeAttenuation * ([1,0.3] select (ACE_player getVariable ["ACE_hasEHP", false] || {ACE_player getVariable ["ACE_hasBuiltInEHP", false]})))));
 
 private _maxDist = 14 + (_hit / 1.1);
 private _intensity = (_dist / _maxDist);
