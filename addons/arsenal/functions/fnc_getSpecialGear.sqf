@@ -9,7 +9,7 @@ private _missing = [];
 {
     switch (toLower _x) do {
         case "medic": {
-            [["ACE_bodyBag_blue"],      3, "Bodybags (Blue)", _missing] call FUNC(countItem);
+            [["synixe_bodyBag_yellow"], 3, "Bodybags (Yellow)", _missing] call FUNC(countItem);
             [["ACE_bodyBag_white"],     2, "Bodybags (White)", _missing] call FUNC(countItem);
             [["ACE_adenosine"],         2, "Adenosine", _missing] call FUNC(countItem);
             [["ACE_epinephrine"],       2, "Epinephrine", _missing] call FUNC(countItem);

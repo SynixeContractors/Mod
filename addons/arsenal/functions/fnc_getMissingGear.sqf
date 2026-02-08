@@ -57,7 +57,7 @@ if (GVAR(requireRadio) && {!("sl" in _roles)}) then {
 
 [["ACE_fieldDressing", "ACE_elasticBandage", "ACE_packingBandage", "ACE_quikclot"],
                             15, "Bandages", _missing] call FUNC(countItem);
-[["ACE_bodyBag_blue"],      1,  "Bodybag (Blue)", _missing] call FUNC(countItem);
+[["synixe_bodyBag_yellow"], 1,  "Bodybag (Yellow)", _missing] call FUNC(countItem);
 [["ACE_splint"],            1,  "Splint", _missing] call FUNC(countItem);
 [["ACE_painkillers"],       1,  "Painkillers", _missing] call FUNC(countItem);
 [["ACE_tourniquet"],        2,  "Tourniquets", _missing] call FUNC(countItem);
