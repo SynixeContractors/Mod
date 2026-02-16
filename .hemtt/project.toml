@@ -16,6 +16,7 @@ workshop = [
     "2975055854", # Secondary Mk13
     "751965892", # ACRE2
     "623475643", # 3den Enhanced
+    "1378046829", # Advanced Weapon Mounting
 ]
 dlc = [
     "ws",
@@ -37,12 +38,6 @@ workshop = [
     "2402219547", # Theseus
     "2684335735", # Revolución
     "3302425224", # JCA MP5
-]
-
-[hemtt.launch.mgp]
-extends = "default"
-workshop = [
-    "2871002081" # Mil Gear Pack - Simpel
 ]
 
 [hemtt.launch.adt]

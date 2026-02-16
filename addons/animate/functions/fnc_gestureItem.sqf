@@ -24,7 +24,6 @@ if (_loop == "") exitWith {
     [{
         params ["_unit", "_out"];
         deleteVehicle GVAR(object);
-        GVAR(object) = objNull;
         if (_out != "") then {
             _unit playActionNow _out;
         } else {
@@ -38,7 +37,6 @@ if (_loop == "") exitWith {
     [_until, {
         params ["_unit", "_out"];
         deleteVehicle GVAR(object);
-        GVAR(object) = objNull;
         if (_out != "") then {
             _unit playActionNow _out;
         } else {

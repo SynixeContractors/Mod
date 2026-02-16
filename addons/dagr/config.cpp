@@ -2,19 +2,19 @@
 
 class CfgPatches {
     class ADDON {
-        name = COMPONENT_NAME;
+        name = QUOTE(COMPONENT);
         units[] = {};
         weapons[] = {};
-        magazines[] = {};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {
             "synixe_main",
-            "A3_Atlas_Characters_F_Atlas",
+            "ace_dagr",
         };
-        skipWhenMissingDependencies = 1;
-        authors[] = {"Brett"};
         VERSION_CONFIG;
     };
 };
 
-#include "CfgGroups.hpp"
+#include "CfgEventHandlers.hpp"
+#include "CfgFunctions.hpp"
+#include "CfgVehicles.hpp"
+#include "CfgWeapons.hpp"
