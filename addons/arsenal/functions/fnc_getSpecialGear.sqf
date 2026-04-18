@@ -25,11 +25,6 @@ private _missing = [];
             [["ACE_splint"],            5, "Splints", _missing] call FUNC(countItem);
             [["ACE_tourniquet"],        8, "Tourniquets", _missing] call FUNC(countItem);
             [["ACE_surgicalKit"],       1, "Surgical Kit", _missing] call FUNC(countItem);
-            // [["kat_chestSeal"],         2, "Chest Seals", _missing] call FUNC(countItem);
-            // [["kat_guedel"],            6, "Guedel Tubes", _missing] call FUNC(countItem);
-            // [["kat_larynx"],            2, "KingLT", _missing] call FUNC(countItem);
-            // [["kat_Pulseoximeter"],     2, "Pulse Oximeter", _missing] call FUNC(countItem);
-            // [["kat_stethoscope"],       1, "Stethoscope", _missing] call FUNC(countItem);
         };
         case "engineer": {
             [["ACE_wirecutter"],        1, "Wirecutter", _missing] call FUNC(countItem);
