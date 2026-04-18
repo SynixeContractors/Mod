@@ -21,7 +21,7 @@
     "SLIDER",
     "Primary Ammunition",
     ["Synixe - Arsenal", "Required Equipment"],
-    [0, 240, 150, 0, false],
+    [0, 240, 140, 0, false],
     true
 ] call CBA_fnc_addSetting;
 
