@@ -10,13 +10,12 @@ include = [
 
 [hemtt.launch.default]
 workshop = [
-    "450814997", # CBA
-    "463939057", # ACE3
-    "1779063631", # Zeus Enhanced
+    "synixe:@cba_a3", # CBA
+    "synixe:@ace", # ACE3
+    "synixe:@zen", # Zeus Enhanced
+    "synixe:@acre2", # ACRE2
     "2975055854", # Secondary Mk13
-    "751965892", # ACRE2
     "623475643", # 3den Enhanced
-    "1378046829", # Advanced Weapon Mounting
 ]
 dlc = [
     "ws",
@@ -26,7 +25,13 @@ dlc = [
 [hemtt.launch.cup_terrains_core]
 extends = "default"
 workshop = [
-    "583496184", # CUP Terrains - Core
+    "synixe:@cup_terrains_core", # CUP Terrains - Core
+]
+
+[hemtt.launch.go]
+extends = "cup_terrains_core"
+workshop = [
+    "synixe:@global_ops_terrains",
 ]
 
 [hemtt.launch.aegis]
