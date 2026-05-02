@@ -31,3 +31,7 @@
         [_entity, false, true] call FUNC(carAlarm);
     }];
 }] call CBA_fnc_addEventHandler;
+
+["crate_client_missions_introText", {
+    ["synixe_start"] call CBA_fnc_localEvent;
+}] call CBA_fnc_addEventHandler;
