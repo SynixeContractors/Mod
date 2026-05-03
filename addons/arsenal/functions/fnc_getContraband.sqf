@@ -9,7 +9,7 @@ private _contraband = [];
 {
     private _config = _x select 1;
     {
-        if (_x == "ItemRadioAcreFlagged") then {continue};
+        if ("acre" in toLower _x) then {continue};
         if (_x == "") then {continue};
         private _price = ([_x, false] call crate_client_gear_fnc_shop_item_price) select 0;
         if (_price < 0) then {

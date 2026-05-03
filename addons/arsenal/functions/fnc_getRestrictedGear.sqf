@@ -32,7 +32,7 @@ if !("medic" in _roles) then {
         [backpack _unit, "Backpack"],
         [headgear _unit, "Headgear"]
     ];
-
+} else {
     // Medic shouldn't be carrying a launcher
     if (secondaryWeapon _unit != "") then {
         _unauthorized pushBackUnique "Launcher";
