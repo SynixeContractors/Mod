@@ -12,7 +12,7 @@ private _ret = [];
         {
             _x deleteAt 0;
             {
-                _ret pushBackUnique _x#0;
+                _ret pushBackUnique toLower (_x#0);
             } forEach _x;
         } forEach _match;
     };

@@ -7,7 +7,7 @@ private _roles = [_unit] call EFUNC(common,findRoles);
 private _missing = [];
 
 {
-    switch (toLower _x) do {
+    switch (_x) do {
         case "medic": {
             [["synixe_bodyBag_yellow"], 3, "Bodybags (Yellow)", _missing] call FUNC(countItem);
             [["ACE_bodyBag_white"],     2, "Bodybags (White)", _missing] call FUNC(countItem);
@@ -62,6 +62,12 @@ private _missing = [];
         };
         case "sl": {
             [["ACRE_PRC152", "ACRE_PRC117F"], 2, "AN/PRC-152", _missing] call FUNC(countItem);
+        };
+        case "uav": {
+            [["B_UavTerminal"], 1, "UAV Terminal", _missing] call FUNC(countItem);
+        };
+        case "aa": {
+            [["synixe_armoury_launch_NSAM_F"], 1, "NSAM", _missing] call FUNC(countItem);
         };
         default { };
     };

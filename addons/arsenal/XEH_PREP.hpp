@@ -1,6 +1,8 @@
 PREP(countItem);
+PREP(getContraband);
 PREP(getMissingGear);
 PREP(getNightGear);
+PREP(getRestrictedGear);
 PREP(getSpecialGear);
 PREP(handleDisplayClosed);
 PREP(handleDisplayOpened);

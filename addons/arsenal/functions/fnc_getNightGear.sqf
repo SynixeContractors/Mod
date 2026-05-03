@@ -29,8 +29,8 @@ if !((_isBetweenSunsetAndSunrise && _sunriseMoreThan45Min) || _withinTwoHoursOfS
 [["Chemlight_blue"],              4, "Chemlight (Blue)", _missing] call FUNC(countItem);
 [["ACE_Chemlight_UltraHiOrange"], 2, "Chemlight (Ultra Hi Orange)", _missing] call FUNC(countItem);
 
-[["ACE_Flashlight_MX991", "ACE_Flashlight_XL50", "ACE_Flashlight_Maglite_ML300L", "acc_flashlight", "acc_flashlightMax",
-    "saber_light_arid_lxWS", "saber_light_lxWS", "saber_light_khaki_lxWS", "saber_light_lush_lxWS", "saber_light_sand_lxWS", "saber_light_snake_lxWS"],
-    1, "Flashlight", _missing] call FUNC(countItem);
+if ((_unit call ace_map_fnc_getUnitFlashlights) isEqualTo []) then {
+    _missing pushBackUnique "1 Map Flashlight";
+};
 
 _missing

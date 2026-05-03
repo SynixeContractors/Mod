@@ -4,12 +4,13 @@ params ["_unit", "_new", "_old"];
 
 GVAR(itemCache) = [];
 {
+    if (_x == "ItemRadioAcreFlagged") then {continue};
     if ([_x] call acre_api_fnc_isRadio) then {
         GVAR(itemCache) pushBack ([_x] call acre_api_fnc_getBaseRadio);
     } else {
         GVAR(itemCache) pushBack _x;
     };
-} forEach (items _unit) + (magazines _unit);
+} forEach (items _unit) + (magazines _unit) + (assignedItems _unit);
 
 if !(GVAR(enabled)) exitWith {
     {
@@ -24,7 +25,9 @@ private _yOffset = 0;
 private _gearTypes = [
     [[_unit] call FUNC(getMissingGear), IDC_requiredGearBox, IDC_requiredGearTitle, IDC_requiredGearText],
     [[_unit] call FUNC(getSpecialGear), IDC_specialGearBox, IDC_specialGearTitle, IDC_specialGearText],
-    [[_unit] call FUNC(getNightGear), IDC_nightGearBox, IDC_nightGearTitle, IDC_nightGearText]
+    [[_unit] call FUNC(getNightGear), IDC_nightGearBox, IDC_nightGearTitle, IDC_nightGearText],
+    [[_unit] call FUNC(getRestrictedGear), IDC_restrictedGearBox, IDC_restrictedGearTitle, IDC_restrictedGearText],
+    [[_unit] call FUNC(getContraband), IDC_contrabandBox, IDC_contrabandTitle, IDC_contrabandText]
 ];
 
 private _baseYOffset = 1.8;

@@ -29,5 +29,17 @@
 #define IDC_nightGearBox 26835
 #define IDC_nightGearTitle 26836
 #define IDC_nightGearText 26837
+#define IDC_restrictedGearBox 27835
+#define IDC_restrictedGearTitle 27836
+#define IDC_restrictedGearText 27837
+#define IDC_contrabandBox 28835
+#define IDC_contrabandTitle 28836
+#define IDC_contrabandText 28837
 
-#define CUSTOM_BOXES [IDC_requiredGearBox, IDC_requiredGearTitle, IDC_specialGearBox, IDC_specialGearTitle]
+#define CUSTOM_BOXES [ \
+    IDC_requiredGearBox, IDC_requiredGearTitle, \
+    IDC_specialGearBox, IDC_specialGearTitle, \
+    IDC_nightGearBox, IDC_nightGearTitle, \
+    IDC_restrictedGearBox, IDC_restrictedGearTitle, \
+    IDC_contrabandBox, IDC_contrabandTitle \
+]
