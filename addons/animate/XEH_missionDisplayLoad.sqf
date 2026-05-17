@@ -10,6 +10,8 @@ _display displayAddEventHandler ["KeyDown", {
     private _index = _actions findIf { _key in actionKeys _x };
     if (_index == -1) exitWith {};
 
+    if (!isNull objectParent ace_player) exitWith {};
+
     if (call FUNC(canAnimate)) exitWith {};
 
     true
