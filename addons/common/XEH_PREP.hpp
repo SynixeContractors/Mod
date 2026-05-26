@@ -2,6 +2,7 @@ PREP(autoFries);
 PREP(browser);
 PREP(createPlayerMarker);
 PREP(findRoles);
+PREP(initDisplayDiary);
 PREP(modal);
 PREP(onModalClose);
 PREP(onModalOpen);

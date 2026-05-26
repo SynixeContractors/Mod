@@ -14,6 +14,8 @@ if (isServer) then {
     }];
 };
 
+GVAR(markers) = [];
+
 [
     "Synixe Utilities",
     QGVAR(screenshot),
