@@ -38,6 +38,7 @@ addMissionEventHandler ["Map", {
 }];
 
 addUserActionEventHandler ["Compass", "Activate", {
+    if (((getUnitLoadout player) select 9) select 3 == "") exitWith {};
     if !(call FUNC(canAnimate)) exitWith {};
     if ("compass" in gestureState ace_player) exitWith {};
     private _model = getText (configFile >> "CfgWeapons" >> ace_player getSlotItemName 609 >> "model");
@@ -45,6 +46,7 @@ addUserActionEventHandler ["Compass", "Activate", {
 }];
 
 addUserActionEventHandler ["Watch", "Activate", {
+    if (((getUnitLoadout player) select 9) select 4 == "") exitWith {};
     if !(call FUNC(canAnimate)) exitWith {};
     if ("watch" in gestureState ace_player) exitWith {};
     private _model = getText (configFile >> "CfgWeapons" >> ace_player getSlotItemName 610 >> "model");
