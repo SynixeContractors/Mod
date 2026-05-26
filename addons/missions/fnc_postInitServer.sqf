@@ -4,7 +4,7 @@
 }] call CBA_fnc_addEventHandler;
 
 [{
-    if (count allPlayers == 0) then {
+    if (allPlayers isEqualTo []) then {
         endMission "END1";
     };
 }, [], 60 * 60 * 6] call CBA_fnc_waitAndExecute;
