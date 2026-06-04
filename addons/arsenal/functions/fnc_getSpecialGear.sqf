@@ -65,6 +65,7 @@ private _missing = [];
         };
         case "uav": {
             [["B_UavTerminal"], 1, "UAV Terminal", _missing] call FUNC(countItem);
+            [["ACRE_PRC152", "ACRE_PRC117F"], 1, "AN/PRC-152", _missing] call FUNC(countItem);
         };
         case "aa": {
             [["synixe_armoury_launch_NSAM_F"], 1, "NSAM", _missing] call FUNC(countItem);
