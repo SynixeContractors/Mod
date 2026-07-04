@@ -47,7 +47,7 @@ if !("uav" in _roles) then {
 };
 
 // AR & AT
-private _needsAmmoBag = _roles findIf { _x in ["ar", "mat", "hat"] } != -1;
+private _needsAmmoBag = _roles findIf { _x in ["ar", "mat", "hat", "ammo"] } != -1;
 if !(_needsAmmoBag) then {
     if ("FieldPack" in backpack _unit) then {
         _unauthorized pushBackUnique "Field Pack";
@@ -55,7 +55,7 @@ if !(_needsAmmoBag) then {
 };
 
 // Engineer
-private _needsEngineerBag = _roles findIf { _x in ["engineer", "eod"] } != -1;
+private _needsEngineerBag = _roles findIf { _x in ["engineer", "demo", "eod"] } != -1;
 if !(_needsEngineerBag) then {
     if ("TacticalPack" in backpack _unit) then {
         _unauthorized pushBackUnique "Tactical Backpack";
