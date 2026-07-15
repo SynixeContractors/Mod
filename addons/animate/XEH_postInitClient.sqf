@@ -21,7 +21,7 @@ GVAR(inUAV) = false;
 
 FUNC(canAnimate) = {
     if (ace_common_isReloading) exitWith {false};
-    // if (!isNull objectParent ace_player) exitWith {false};
+    if (!isNull objectParent ace_player) exitWith {false};
     if (!isNull findDisplay 312) exitWith {false}; // don't use in Zeus
     if (ace_player getVariable ["ace_captives_isHandcuffed", false]) exitWith {false};
     if (!isNull ace_arsenal_currentBox) exitWith {false}; // don't use in ace Arsenal
