@@ -10,7 +10,7 @@ class Cfg3DEN {
                         property = QGVAR(attribute_carAlarm);
                         control = "Checkbox";
                         condition = "objectVehicle";
-                        expression = QUOTE(_this setVariable [ARR_2(QQUOTE(alarmEHRemoved),_value)];);
+                        expression = QUOTE(_this setVariable [ARR_2(QQGVAR(alarmEHRemoved),_value)];);
                         defaultValue = "false";
                     };
                 };
