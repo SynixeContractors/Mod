@@ -22,7 +22,7 @@ private _side = side _group;
     if (_xSide == civilian) then {
         continue;
     };
-    if (_xSide getFriend _side < 0.6 && !captive _x) then {
+    if (_xSide getFriend _side < 0.6 && !captive _x && {currentWeapon _x != ""}) then {
         _hostiles = _hostiles + 1;
         continue;
     };

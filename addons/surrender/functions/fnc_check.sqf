@@ -15,6 +15,7 @@ params ["_unit", "_reason"];
 
 if (captive _unit) exitWith {};
 if (missionNamespace getVariable [QGVAR(disable), false]) exitWith {};
+if (remoteControlled _unit != objNull) exitWith {};
 
 private _group = group _unit;
 
