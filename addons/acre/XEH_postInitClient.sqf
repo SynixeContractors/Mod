@@ -1,11 +1,5 @@
 #include "script_component.hpp"
 
-GVAR(radioArsenalButton) = [
-    ([] call FUNC(getAllRadios)) + ["ACRE_VHF30108MAST", "ACRE_VHF30108SPIKE", "ACRE_VHF30108"],
-    "Radios",
-    "\a3\ui_f\data\IGUI\Cfg\simpleTasks\types\radio_ca.paa"
-] call ace_arsenal_fnc_addRightPanelButton;
-
 // Set spoken
 ["en"] call acre_api_fnc_babelSetSpokenLanguages;
 
