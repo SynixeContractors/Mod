@@ -1,4 +1,10 @@
 PREP(check);
 PREP(enable);
+PREP(aimPFH);
+PREP(debugDraw);
+PREP(forceSurrender);
 PREP(init);
+PREP(initDebug);
+PREP(initUnit);
 PREP(nearbyForces);
+PREP(toggleDebug);

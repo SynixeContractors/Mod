@@ -1,6 +1,13 @@
 #include "script_component.hpp"
 
-GVAR(weapons) = ["vtf_MK13", "vtf_MK13_black", "hgun_esd_01_F", "CUP_hgun_MP7", "CUP_hgun_MP7_desert", "CUP_hgun_MP7_woodland", "CUP_hgun_TEC9", "CUP_hgun_TEC9_FA", "CUP_hgun_UZI"];
+FUNC(canSling) = {
+    params ["_weapon"];
+    if (_weapon isEqualTo "") exitWith {false};
+    GVAR(canSlingCache) getOrDefaultCall [_weapon, {
+        toLower _weapon in GVAR(weapons) ||
+        {getNumber (configFile >> "CfgWeapons" >> _weapon >> QGVAR(allow)) == 1}
+    }, true]
+};
 
 GVAR(holder) = objNull;
 GVAR(holderClass) = "";
@@ -94,7 +101,7 @@ FUNC(handleWeapon) = {
         GVAR(holderClass) = "";
     };
 
-    private _has = handgunWeapon _unit in GVAR(weapons);
+    private _has = [handgunWeapon _unit] call FUNC(canSling);
     private _held = currentWeapon _unit == handgunWeapon _unit;
     private _shown = !(isNull GVAR(holder));
 
@@ -126,7 +133,7 @@ FUNC(handleWeapon) = {
         [ace_player] call FUNC(show);
     }]
 ], {
-    handgunWeapon (_this select 0) in GVAR(weapons)
+    [handgunWeapon (_this select 0)] call FUNC(canSling)
 }] call ace_arsenal_fnc_addAction;
 
 ["CBA_loadoutSet", {

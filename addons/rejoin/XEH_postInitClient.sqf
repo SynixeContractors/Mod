@@ -13,9 +13,13 @@
 }, true] call CBA_fnc_addPlayerEventHandler;
 
 [QGVAR(teleportResponse), {
-    params ["_position", "_vehicleInfo"];
+    params ["_position", "_vehicleInfo", ["_medical", ""]];
     player setPos _position;
     INFO_2("Rejoin: Position %1, VehicleInfo %2",_position,_vehicleInfo);
+    // Must run where the unit is local; ACE waits for medical init itself if needed
+    if (_medical isNotEqualTo "" && {!isNil "ace_medical_fnc_deserializeState"}) then {
+        [player, _medical] call ace_medical_fnc_deserializeState;
+    };
     if (_vehicleInfo isEqualTo []) exitWith {};
     _vehicleInfo params ["_vehicle", "_role"];
     if (!alive _vehicle) exitWith {};

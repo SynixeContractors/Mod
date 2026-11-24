@@ -13,24 +13,12 @@
     [_vehicle, true, true] call FUNC(carAlarm);
 }] call CBA_fnc_addEventHandler;
 
-{
-    if !(_x getVariable [QGVAR(alarmEHRemoved), false]) then {
-        [_x, false, true] call FUNC(carAlarm);
-    };
-} forEach vehicles;
-
-["zen_curatorDisplayLoaded", {
-    private _logic = getAssignedCuratorLogic player;
-    if (isNull _logic) exitWith {
-        WARNING("No curator logic found when opening interface");
-    };
-    if (_logic getVariable [QGVAR(didInit), false]) exitWith {};
-    _logic setVariable [QGVAR(didInit), true];
-    _logic addEventHandler ["CuratorObjectPlaced", {
-        params ["_curator", "_entity"];
-        [_entity, false, true] call FUNC(carAlarm);
-    }];
-}] call CBA_fnc_addEventHandler;
+// Every machine sets up every car (existing and future, including Zeus placed),
+// so the Hit handler exists wherever the car is local
+["Car_F", "init", {
+    params ["_vehicle"];
+    [_vehicle, false, true] call FUNC(carAlarm);
+}, true, [], true] call CBA_fnc_addClassEventHandler;
 
 ["crate_client_missions_introText", {
     ["synixe_start"] call CBA_fnc_localEvent;

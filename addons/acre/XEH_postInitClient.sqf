@@ -42,8 +42,12 @@
 
 // Save radio data
 // ACRE has no events, so save occasionally
+// Saving waits until the server has answered the join-time load, so a rejoining
+// player's default radios don't overwrite their saved setup
 GVAR(saved) = [];
+GVAR(ready) = false;
 [{
+    if !(GVAR(ready)) exitWith {};
     private _data = call FUNC(getRadioData);
     if (GVAR(saved) isNotEqualTo _data) then {
         GVAR(saved) = _data;
@@ -53,8 +57,21 @@ GVAR(saved) = [];
 
 [QGVAR(loaded), {
     params ["_data"];
-    [_data] call FUNC(setRadioData);
+    if (_data isNotEqualTo []) then {
+        [_data] call FUNC(setRadioData);
+    };
+    GVAR(ready) = true;
 }] call CBA_fnc_addEventHandler;
+
+// Restore radios on join (the server only has data if this player was here before, e.g. a rejoin)
+// Radios get their unique IDs a moment after spawning, so wait for them (or give up after 30s)
+[{
+    !isNull player && {([] call acre_api_fnc_getCurrentRadioList) isNotEqualTo []}
+}, {
+    [QGVAR(load), [player]] call CBA_fnc_serverEvent;
+}, [], 30, {
+    [QGVAR(load), [player]] call CBA_fnc_serverEvent;
+}] call CBA_fnc_waitUntilAndExecute;
 
 ["crate_client_gear_loadout_set", {
     [{

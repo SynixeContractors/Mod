@@ -39,6 +39,30 @@ setCurrentChannel 0;            //Change to Global
                 _mission = "Editing Missions";
             } else {
                 _mission = getMissionConfigValue ["onLoadName", briefingName];
+
+                // eg. "Medic · Red Team"
+                private _parts = [];
+                private _roles = [player] call FUNC(findRoles);
+                if (_roles isNotEqualTo []) then {
+                    private _roleName = _roles select 0;
+                    // Short tags (sl, ftl, uav) are acronyms, longer ones are words (medic)
+                    _parts pushBack ([
+                        (toUpper (_roleName select [0, 1])) + (_roleName select [1]),
+                        toUpper _roleName
+                    ] select (count _roleName <= 3));
+                };
+                if (alive player) then {
+                    // Team colour (set from map marker colours), MAIN / unassigned is left out
+                    private _team = assignedTeam player;
+                    if (_team in ["RED", "GREEN", "BLUE", "YELLOW"]) then {
+                        _parts pushBack format ["%1%2 Team", _team select [0, 1], toLower (_team select [1])];
+                    };
+                } else {
+                    _parts pushBack "Spectating";
+                };
+                if (_parts isNotEqualTo []) then {
+                    _role = _parts joinString " · ";
+                };
             };
         };
 

@@ -13,7 +13,9 @@
 
 params ["_unit", "_reason"];
 
+if (!alive _unit || {isPlayer _unit}) exitWith {};
 if (captive _unit) exitWith {};
+if !(GVAR(enabled)) exitWith {};
 if (missionNamespace getVariable [QGVAR(disable), false]) exitWith {};
 if (!isNull remoteControlled _unit) exitWith {};
 
@@ -49,24 +51,28 @@ _base = _base + _difference;
 
 switch (_reason) do {
     case "stun": {
-        _base = _base - ((missionNamespace getVariable [QGVAR(influenceStun), 6]) * (_group getVariable [QGVAR(onStunMultiplier), 0.5]));
+        _base = _base - (GVAR(influenceStun) * (_group getVariable [QGVAR(onStunMultiplier), 0.5]));
     };
     case "hit": {
-        _base = _base - ((missionNamespace getVariable [QGVAR(influenceHit), 3]) * (_group getVariable [QGVAR(onHitMultiplier), 0.5]));
+        _base = _base - (GVAR(influenceHit) * (_group getVariable [QGVAR(onHitMultiplier), 0.5]));
     };
     case "suppressed": {
-        _base = _base - ((missionNamespace getVariable [QGVAR(influenceSupressed), 1]) * (_group getVariable [QGVAR(onSuppressMultiplier), 0.5]));
+        _base = _base - (GVAR(influenceSuppressed) * (_group getVariable [QGVAR(onSuppressMultiplier), 0.5]));
     };
     case "speak": {
-        _base = _base - ((missionNamespace getVariable [QGVAR(influenceSpeak), 0.5]) * (_group getVariable [QGVAR(onSpeakMultiplier), 0.5]));
+        _base = _base - (GVAR(influenceSpeak) * (_group getVariable [QGVAR(onSpeakMultiplier), 0.5]));
     };
     case "aimed": {
-        _base = _base - ((missionNamespace getVariable [QGVAR(influenceAim), 0.5]) * (_group getVariable [QGVAR(onAimMultiplier), 0.5]));
+        _base = _base - (GVAR(influenceAim) * (_group getVariable [QGVAR(onAimMultiplier), 0.5]));
     };
 };
 
-private _random = random (missionNamespace getVariable [QGVAR(roll), 600]);
+private _random = random GVAR(roll);
 private _check = 15 - _base;
+
+if (missionNamespace getVariable [QGVAR(debug), false]) then {
+    _unit setVariable [QGVAR(lastCheck), [_reason, _check, GVAR(roll), _random < _check, CBA_missionTime], true];
+};
 
 if (_random < _check) then {
     [QGVAR(surrendered), [_unit, _check, _random]] call CBA_fnc_globalEvent;

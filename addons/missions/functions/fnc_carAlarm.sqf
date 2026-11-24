@@ -33,6 +33,14 @@ if (_vehicle isKindOf "Wheeled_APC_F") exitWith {
 // Don't add event if JIP and it's already been removed.
 if (_vehicle getVariable [QGVAR(alarmEHRemoved), false]) exitWith {};
 
+// Every car is set up automatically, so a later call (mission script, GRAD Civs) only updates the option
+if (_vehicle getVariable [QGVAR(alarmInit), false]) exitWith {
+    if (_removeAfterFiring) then {
+        _vehicle setVariable [QGVAR(removeAlarmEH), true];
+    };
+};
+_vehicle setVariable [QGVAR(alarmInit), true];
+
 _vehicle setVariable [QGVAR(removeAlarmEH), _removeAfterFiring];
 _vehicle setVariable [QGVAR(alarmEHRemoved), false];
 _vehicle setVariable [QGVAR(alarmPlaying), false];

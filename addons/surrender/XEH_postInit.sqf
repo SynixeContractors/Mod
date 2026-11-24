@@ -10,25 +10,25 @@
     [QGVAR(check), [_unit, "speak"]] call CBA_fnc_serverEvent;
 }] call CBA_fnc_addEventHandler;
 
-{
-    if !(_x getVariable [QGVAR(disable), false]) then {
-        [_x] call FUNC(init);
-    };
-} forEach allGroups;
+// Every machine adds the handlers to every unit (existing and future), so they fire
+// wherever the unit is local, including after transfer to a headless client.
+["CAManBase", "init", {
+    params ["_unit"];
+    [_unit] call FUNC(initUnit);
+}, true, [], true] call CBA_fnc_addClassEventHandler;
 
 if (isServer) then {
     [QGVAR(check), LINKFUNC(check)] call CBA_fnc_addEventHandler;
+
+    [QGVAR(setDebug), {
+        params ["_state"];
+        missionNamespace setVariable [QGVAR(debug), _state, true];
+    }] call CBA_fnc_addEventHandler;
 };
 
-["zen_curatorDisplayLoaded", {
-    private _logic = getAssignedCuratorLogic player;
-    if (isNull _logic) exitWith {
-        WARNING("No curator logic found when opening interface");
-    };
-    if (_logic getVariable [QGVAR(didInit), false]) exitWith {};
-    _logic setVariable [QGVAR(didInit), true];
-    _logic addEventHandler ["CuratorGroupPlaced", {
-        params ["_curator", "_group"];
-        [_group] call FUNC(init);
-    }];
-}] call CBA_fnc_addEventHandler;
+if (hasInterface) then {
+    GVAR(aimTimeout) = 0;
+    [LINKFUNC(aimPFH), 0.1] call CBA_fnc_addPerFrameHandler;
+
+    call FUNC(initDebug);
+};

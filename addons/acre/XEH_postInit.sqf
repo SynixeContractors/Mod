@@ -27,7 +27,7 @@
     if !(alive _target) exitWith {};
     private _radios = [_target] call acre_sys_core_fnc_getGear;
     {
-        if (round (random 100) > missionNamespace getVariable [QGVAR(breakChance), 3]) then {
+        if (round (random 100) > GVAR(breakChance)) then {
             continue;
         };
         private _baseRadio = [_x] call acre_api_fnc_getBaseRadio;
