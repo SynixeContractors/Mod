@@ -39,7 +39,13 @@ if (_onActivation isEqualTo {}) exitWith {
     ERROR_MSG("action onActivation is empty");
 };
 
-private _id = format ["%1Action%2", ADDON, random 10000];
+if (_condition isEqualType false) then {
+    _condition = [{false}, {true}] select _condition;
+};
+
+private _id = format ["%1Action%2", QUOTE(ADDON), random 10000];
+// Shared between all machines (the action id above is random per machine)
+private _usedVar = format [QGVAR(actionUsed_%1), _title];
 
 private _action = [
     _id,
@@ -47,14 +53,20 @@ private _action = [
     _icon,
     {
         params ["_target", "_player", "_args"];
-        _args params ["_id", "_repeatable", "_onActivation"];
+        _args params ["_id", "_repeatable", "_onActivation", "", "_usedVar"];
         if !(_repeatable) then {
             [_target, 0, ["ACE_MainActions", _id]] call ace_interact_menu_fnc_removeActionFromObject;
+            // Hide it for every other player too
+            _target setVariable [_usedVar, true, true];
         };
         _this call _onActivation;
     },
-    _condition,
+    {
+        params ["_target", "_player", "_args"];
+        _args params ["", "_repeatable", "", "_condition", "_usedVar"];
+        (_repeatable || {!(_target getVariable [_usedVar, false])}) && {_this call _condition}
+    },
     {},
-    [_id, _repeatable, _onActivation]
+    [_id, _repeatable, _onActivation, _condition, _usedVar]
 ] call ace_interact_menu_fnc_createAction;
 [_object, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;

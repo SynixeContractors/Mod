@@ -17,13 +17,13 @@ params ["_group"];
 
 INFO_1("init surrender for %1",_group);
 
-if (_group isEqualType "OBJECT") exitWith {
+if !(_group isEqualType grpNull) exitWith {
     ERROR_MSG("Input only allows group, detected unit.");
 };
 
 _group setVariable [QGVAR(init), true];
 
-if (hasInterface && {_group getVariable [QGVAR(onAimChance), 0] > 0}) then {
+if (hasInterface && {_group getVariable [QGVAR(onAimMultiplier), 0] > 0}) then {
     GVAR(aimTimeout) = 0;
     if (isNil QGVAR(aim)) then {
         GVAR(aim) = [{
@@ -34,7 +34,9 @@ if (hasInterface && {_group getVariable [QGVAR(onAimChance), 0] > 0}) then {
             if (!alive _target) exitWith {};
             private _side = side _target;
             if (_side != civilian && {_side getFriend side ace_player > 0.6}) exitWith {};
-            if !((group _target) getVariable [QGVAR(surrender), false]) exitWith {};
+            private _targetGroup = group _target;
+            if !(_targetGroup getVariable [QGVAR(init), false]) exitWith {};
+            if (_targetGroup getVariable [QGVAR(onAimMultiplier), 0] <= 0) exitWith {};
             if (_target distance ace_player > [4,20] select (_side == civilian)) exitWith {};
             if (acos (vectorNormalized (eyeDirection _target) vectorDotProduct (eyeDirection ace_player)) < 100) exitWith {};
             [QGVAR(check), [_target, "aimed"]] call CBA_fnc_serverEvent;

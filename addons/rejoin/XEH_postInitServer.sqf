@@ -21,8 +21,12 @@ addMissionEventHandler ["HandleDisconnect", {
                 case (gunner _vehicle isEqualTo _unit): {
                     ["gunner"]
                 };
-                default {
+                case (_vehicle getCargoIndex _unit != -1): {
                     ["cargo", _vehicle getCargoIndex _unit]
+                };
+                default {
+                    // FFV and other turret seats
+                    ["turret", _vehicle unitTurret _unit]
                 };
             }
         ];

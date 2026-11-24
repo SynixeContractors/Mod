@@ -15,7 +15,7 @@ params ["_unit", "_reason"];
 
 if (captive _unit) exitWith {};
 if (missionNamespace getVariable [QGVAR(disable), false]) exitWith {};
-if (remoteControlled _unit != objNull) exitWith {};
+if (!isNull remoteControlled _unit) exitWith {};
 
 private _group = group _unit;
 
@@ -54,13 +54,13 @@ switch (_reason) do {
     case "hit": {
         _base = _base - ((missionNamespace getVariable [QGVAR(influenceHit), 3]) * (_group getVariable [QGVAR(onHitMultiplier), 0.5]));
     };
-    case "supressed": {
+    case "suppressed": {
         _base = _base - ((missionNamespace getVariable [QGVAR(influenceSupressed), 1]) * (_group getVariable [QGVAR(onSuppressMultiplier), 0.5]));
     };
     case "speak": {
         _base = _base - ((missionNamespace getVariable [QGVAR(influenceSpeak), 0.5]) * (_group getVariable [QGVAR(onSpeakMultiplier), 0.5]));
     };
-    case "aim": {
+    case "aimed": {
         _base = _base - ((missionNamespace getVariable [QGVAR(influenceAim), 0.5]) * (_group getVariable [QGVAR(onAimMultiplier), 0.5]));
     };
 };

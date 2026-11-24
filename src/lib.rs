@@ -6,6 +6,11 @@ mod discord;
 // mod speech;
 
 fn browser(url: String) {
+    // Only allow web links, never file:// or other protocol handlers
+    if !url.starts_with("https://") {
+        println!("Refusing to open non-https url: {url}");
+        return;
+    }
     if let Err(e) = webbrowser::open(&url) {
         println!("Failed to open browser: {e}");
     }

@@ -11,7 +11,7 @@
 }] call CBA_fnc_addEventHandler;
 
 {
-    if !(_x getVariable [QGVAR(disabled), false]) then {
+    if !(_x getVariable [QGVAR(disable), false]) then {
         [_x] call FUNC(init);
     };
 } forEach allGroups;
@@ -22,7 +22,7 @@ if (isServer) then {
 
 ["zen_curatorDisplayLoaded", {
     private _logic = getAssignedCuratorLogic player;
-    if (isNil "_logic") exitWith {
+    if (isNull _logic) exitWith {
         WARNING("No curator logic found when opening interface");
     };
     if (_logic getVariable [QGVAR(didInit), false]) exitWith {};

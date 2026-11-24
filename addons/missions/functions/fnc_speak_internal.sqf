@@ -4,7 +4,7 @@
 params ["_unit", "_sound", "_startCode", "_stopCode", "_id", "_replayable"];
 
 if !(_replayable) then {
-    [_unit, 0, ["ACE_MainActions", _id]] call ace_interaction_menu_fnc_removeActionFromObject;
+    [_unit, 0, ["ACE_MainActions", _id]] call ace_interact_menu_fnc_removeActionFromObject;
 };
 
 private _first = !(_unit getVariable [_id, false]);

@@ -18,6 +18,7 @@ FUNC(mapAnimate) = {
 };
 
 GVAR(inUAV) = false;
+GVAR(lastInGunner) = false;
 
 FUNC(canAnimate) = {
     if (ace_common_isReloading) exitWith {false};

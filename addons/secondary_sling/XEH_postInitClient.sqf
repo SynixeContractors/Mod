@@ -73,11 +73,13 @@ FUNC(show) = {
     };
     private _position = GVAR(positions) select (_unit getVariable [QGVAR(position), 0]);
     private _holder = createVehicle [QGVAR(Holder),[0,0,0]];
+    _holder setVariable [QEGVAR(animate,deleteWithUnit), true, true];
     _holder addWeaponCargoGlobal [handgunWeapon _unit, 1];
     _holder setDamage 1;
     _holder attachTo [_unit, _position#2, _position#0, true];
     _holder setVectorDirAndUp _position#1;
     GVAR(holder) = _holder;
+    GVAR(holderClass) = handgunWeapon _unit;
 };
 
 FUNC(handleWeapon) = {

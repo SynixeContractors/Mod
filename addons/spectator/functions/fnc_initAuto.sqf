@@ -15,7 +15,7 @@ GVAR(autoEnabled) = true;
 
 [{
     if !(GVAR(autoEnabled)) exitWith {};
-    private _allNear = allPlayers findIf {
+    private _allNear = (call CBA_fnc_players) findIf {
         (nearestObjects [getPos _x, [QGVAR(screen)], GVAR(autoRange)]) isEqualTo []
     } == -1;
     if (_allNear) then {

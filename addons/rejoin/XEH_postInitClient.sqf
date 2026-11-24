@@ -15,38 +15,52 @@
 [QGVAR(teleportResponse), {
     params ["_position", "_vehicleInfo"];
     player setPos _position;
-    diag_log format ["Rejoin: Position %1, VehicleInfo %2", _position, _vehicleInfo];
-    if (_vehicleInfo isNotEqualTo []) then {
-        _vehicleInfo params ["_vehicle", "_role"];
-        if (!alive _vehicle) exitWith {};
-        if (count _role == 2) exitWith {
-            _vehicle moveInCargo [_vehicle, _role select 1];
-        };
-        switch (_role) do {
-            case "commander": {
-                if (commander _vehicle isEqualTo objNull) then {
-                    player moveInCommander _vehicle;
-                } else {
-                    player moveInAny _vehicle;
-                };
-            };
-            case "gunner": {
-                if (gunner _vehicle isEqualTo objNull) then {
-                    player moveInGunner _vehicle;
-                } else {
-                    player moveInAny _vehicle;
-                };
-            };
-            case "driver": {
-                if (driver _vehicle isEqualTo objNull) then {
-                    player moveInDriver _vehicle;
-                } else {
-                    player moveInAny _vehicle;
-                };
-            };
-            default {
+    INFO_2("Rejoin: Position %1, VehicleInfo %2",_position,_vehicleInfo);
+    if (_vehicleInfo isEqualTo []) exitWith {};
+    _vehicleInfo params ["_vehicle", "_role"];
+    if (!alive _vehicle) exitWith {};
+    _role params ["_seat", ["_index", -1]];
+    switch (_seat) do {
+        case "commander": {
+            if (isNull commander _vehicle) then {
+                player moveInCommander _vehicle;
+            } else {
                 player moveInAny _vehicle;
             };
+        };
+        case "gunner": {
+            if (isNull gunner _vehicle) then {
+                player moveInGunner _vehicle;
+            } else {
+                player moveInAny _vehicle;
+            };
+        };
+        case "driver": {
+            if (isNull driver _vehicle) then {
+                player moveInDriver _vehicle;
+            } else {
+                player moveInAny _vehicle;
+            };
+        };
+        case "cargo": {
+            private _free = (fullCrew [_vehicle, "cargo", true]) findIf {
+                _x#2 == _index && {isNull (_x#0)}
+            } != -1;
+            if (_free) then {
+                player moveInCargo [_vehicle, _index];
+            } else {
+                player moveInAny _vehicle;
+            };
+        };
+        case "turret": {
+            if (_index isNotEqualTo [] && {isNull (_vehicle turretUnit _index)}) then {
+                player moveInTurret [_vehicle, _index];
+            } else {
+                player moveInAny _vehicle;
+            };
+        };
+        default {
+            player moveInAny _vehicle;
         };
     };
 }] call CBA_fnc_addEventHandler;

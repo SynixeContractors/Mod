@@ -71,31 +71,3 @@ GVAR(saved) = [];
         [QGVAR(load), [player]] call CBA_fnc_serverEvent;
     }, [], 1] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
-
-// Radio damage
-["CAManBase", "HitPart", {
-    (_this select 0) params ["_target", "_shooter", "_projectile", "_position", "_velocity", "_selection", "_ammo"];
-    private _selectionName = _selection select 0;
-    private _radios = [_target] call acre_sys_core_fnc_getGear;
-    if !(_selectionName in ["spine", "spine1", "spine2", "spine3"]) exitWith {};
-    {
-        if (round(random 100) > missionNamespace getVariable [QGVAR(breakChance), 3]) then {
-            continue;
-        };
-        private _baseRadio = [_x] call acre_api_fnc_getBaseRadio;
-        private _damagedRadio = _baseRadio + "_destroyed";
-        if (toUpper _x in uniformItems _target) then {
-            _target removeItem _x;
-            _target addItemToUniform _damagedRadio;
-        };
-        if (toUpper _x in vestItems _target) then {
-            _target removeItem _x;
-            _target addItemToVest _damagedRadio;
-        };
-        if (toUpper _x in backpackItems _target) then {
-            _target removeItem _x;
-            _target addItemToBackpack _damagedRadio;
-        };
-        [_target, QGVAR(break), nil, true, true, true] call CBA_fnc_globalSay3D;
-    } forEach _radios;
-}] call CBA_fnc_addClassEventHandler;

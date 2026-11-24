@@ -8,10 +8,11 @@
  * Arguments:
  * 0: Keypad <OBJECT>
  * 1: Required Code <STRING>
- * 2: On Complete <CODE>
- * 3: On Fail <CODE>
- * 4: On Attempt <CODE>
- * 5: Maximum Failed Attempts <NUMBER> (default: 3)
+ * 2: Condition <CODE> (default: {true})
+ * 3: On Complete <CODE>
+ * 4: On Fail <CODE>
+ * 5: On Attempt <CODE>
+ * 6: Maximum Failed Attempts <NUMBER> (default: 3)
  *
  * Return Value:
  * None

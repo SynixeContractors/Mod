@@ -11,4 +11,6 @@ addMissionEventHandler ["Map", {
 }];
 
 private _index = ace_common_deviceKeyHandlingArray findIf {_x#0 == "DAGR"};
-ace_common_deviceKeyHandlingArray deleteAt _index;
+if (_index != -1) then {
+    ace_common_deviceKeyHandlingArray deleteAt _index;
+};

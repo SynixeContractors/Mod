@@ -21,7 +21,7 @@
 
 ["zen_curatorDisplayLoaded", {
     private _logic = getAssignedCuratorLogic player;
-    if (isNil "_logic") exitWith {
+    if (isNull _logic) exitWith {
         WARNING("No curator logic found when opening interface");
     };
     if (_logic getVariable [QGVAR(didInit), false]) exitWith {};

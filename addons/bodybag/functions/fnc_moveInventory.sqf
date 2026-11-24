@@ -20,6 +20,7 @@ params ["_unit", "_bodybag"];
 
 private _items = [];
 private _weapons = [];
+private _backpacks = [];
 
 _items pushBack (headgear _unit);
 _items pushBack (goggles _unit);
@@ -50,24 +51,23 @@ _holders append (_unit getVariable [QGVAR(holders), []]);
     private _bodyBagDistance = _bodybag distance _x;
     private _unitDistance = _unit distance _x;
     if ((_bodyBagDistance min _unitDistance) < 5) then {
-        private _cargo = getItemCargo _x;
-        _cargo append (getMagazineCargo _x);
-        _cargo append (getBackpackCargo _x);
-        for "_c" from 0 to (count (_cargo select 0)) - 1 do {
-            private _class = (_cargo select 0) select _c;
-            private _count = (_cargo select 1) select _c;
-            for "_i" from 0 to _count do {
-                _items pushBack _class;
-            };
-        };
         {
-            _weapons pushBack _x#0;
-            _items pushBack _x#1;
-            _items pushBack _x#2;
-            _items pushBack _x#3;
-            _items pushBack _x#4#0;
-            _items pushBack _x#5#0;
-            _items pushBack _x#6;
+            _x params ["_target", "_cargo"];
+            _cargo params ["_classes", "_counts"];
+            {
+                for "_i" from 1 to (_counts select _forEachIndex) do {
+                    _target pushBack _x;
+                };
+            } forEach _classes;
+        } forEach [
+            [_items, getItemCargo _x],
+            [_items, getMagazineCargo _x],
+            [_backpacks, getBackpackCargo _x]
+        ];
+        {
+            _x params ["_weapon", "_muzzle", "_pointer", "_optic", ["_primaryMag", []], ["_secondaryMag", []], ["_bipod", ""]];
+            _weapons pushBack _weapon;
+            _items append [_muzzle, _pointer, _optic, _primaryMag param [0, ""], _secondaryMag param [0, ""], _bipod];
         } forEach (weaponsItemsCargo _x);
         deleteVehicle _x;
     } else {
@@ -98,11 +98,12 @@ _holders append (_unit getVariable [QGVAR(holders), []]);
     };
 } forEach _holders;
 
-INFO_2("Body Inventory: %1 %2",_items,_weapons);
+INFO_3("Body Inventory: %1 %2 %3",_items,_weapons,_backpacks);
 
 // Clear empty names and destroy items with a random chance
 _items = _items select {_x != "" && {random 100 > GVAR(destroyChance)} };
 _weapons = _weapons select {_x != "" && {random 100 > GVAR(destroyChance)} };
+_backpacks = _backpacks select {_x != "" && {random 100 > GVAR(destroyChance)} };
 
 {
     _bodybag addItemCargoGlobal [_x, 1];
@@ -127,9 +128,14 @@ if (_backpack != "" && {random 100 > GVAR(destroyChance)}) then {
     _bodybag addBackpackCargoGlobal [_backpackNonPreset, 1];
 };
 
+// Backpacks that were lying in nearby weapon holders (their contents are not preserved)
+{
+    _bodybag addBackpackCargoGlobal [_x, 1];
+} forEach _backpacks;
+
 if !(isNil "GRAD_slingHelmet_fnc_weaponHolder") then {
     private _slungWH = [_unit] call GRAD_slingHelmet_fnc_weaponHolder;
-    if (_slungWH != objNull) then {
+    if (!isNull _slungWH) then {
         _bodybag addItemCargoGlobal [(itemCargo _slungWH) select 0, 1];
         deleteVehicle _slungWH;
     };

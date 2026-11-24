@@ -1,4 +1,7 @@
-use std::{sync::Mutex, time::SystemTime};
+use std::{
+    sync::{LazyLock, Mutex},
+    time::{SystemTime, UNIX_EPOCH},
+};
 
 use arma_rs::Group;
 use discord_presence::Client;
@@ -9,35 +12,44 @@ pub fn group() -> Group {
         .command("update", update)
 }
 
-lazy_static::lazy_static! {
-    static ref RPCM: Mutex<Client> =
-        Mutex::new(Client::new(411594868293500938));
+static RPCM: LazyLock<Mutex<Client>> = LazyLock::new(|| {
+    let mut client = Client::new(411594868293500938);
+    // Must be started before any activity can be set
+    client.start();
+    Mutex::new(client)
+});
+
+static TIMESTAMP: Mutex<Option<u64>> = Mutex::new(None);
+
+fn now() -> u64 {
+    SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .map(|d| d.as_secs())
+        .unwrap_or_default()
 }
 
-static mut TIMESTAMP: Option<SystemTime> = None;
-static mut PROFILE_NAME: String = String::new();
-
-pub fn setup(_steam_id: String, profile_name: String) {
-    unsafe {
-        TIMESTAMP = Some(SystemTime::now());
-        PROFILE_NAME = profile_name;
+pub fn setup(_steam_id: String, _profile_name: String) {
+    if let Ok(mut ts) = TIMESTAMP.lock() {
+        *ts = Some(now());
     }
+    // Start connecting to Discord now rather than on the first update
+    LazyLock::force(&RPCM);
 }
 
 pub fn update(details: String, state: String, image: String, text: String) {
-    if let Err(e) = RPCM.lock().unwrap().set_activity(|a| {
+    let start = TIMESTAMP
+        .lock()
+        .ok()
+        .map(|mut ts| *ts.get_or_insert_with(now))
+        .unwrap_or_else(now);
+    let Ok(mut client) = RPCM.lock() else {
+        return;
+    };
+    if let Err(e) = client.set_activity(|a| {
         a.state(state)
             .details(details)
             .assets(|a| a.large_image(image).large_text(text))
-            .timestamps(|a| {
-                a.start(unsafe {
-                    TIMESTAMP
-                        .unwrap()
-                        .duration_since(SystemTime::UNIX_EPOCH)
-                        .unwrap()
-                        .as_secs()
-                })
-            })
+            .timestamps(|a| a.start(start))
     }) {
         println!("Failed to update Discord presence: {e}");
     }

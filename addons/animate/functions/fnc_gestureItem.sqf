@@ -17,6 +17,7 @@ if !(isNull GVAR(object)) then {
 };
 
 GVAR(object) = createSimpleObject [_object, [0,0,0]];
+GVAR(object) setVariable [QGVAR(deleteWithUnit), true, true];
 GVAR(object) attachTo [_unit, _pos, "leftHand", true];
 [GVAR(object), _rot] call FUNC(attachedRotate);
 

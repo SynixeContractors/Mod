@@ -19,10 +19,11 @@
  * 7: Options: ARRAY of [<STRING>, <ANY>]
  *      - host <STRING> (default: localhost)
  *      - user <STRING> (default: root)
- *      - allowPause <BOOL> (default: true) - Allow pausing the upload by re-interacting with the laptop
+ *      - allowPause <BOOL> (default: true) - Pause the upload while an enemy is near the laptop
  *      - onPause <CODE> (default: {}) - Code to run when upload is paused
  *      - onResume <CODE> (default: {}) - Code to run when upload is resumed
  *      - showAtStart <BOOL> (default: true) - Show the upload terminal output on initialization
+ *      - enemySides <ARRAY> (default: [east]) - Sides that pause the upload when within 6 meters
  *
  * Return Value:
  * None
@@ -42,17 +43,17 @@ params [
     ["_options", []]
 ];
 
-// Legacy options
-if (typeName _condition == "STRING") then {
-    _options pushBack ["host", _condition];
+// Legacy positional options: [..., host <STRING>, user <STRING>]
+if (_condition isEqualType "") then {
+    private _legacy = [["host", _condition]];
+    if (_options isEqualType "") then {
+        _legacy pushBack ["user", _options];
+    };
     _condition = {true};
-};
-if (typeName _options == "STRING") then {
-    _options pushBack ["user", _options];
-    _options = [];
+    _options = _legacy;
 };
 
-private _options = createHashMapFromArray _options;
+_options = createHashMapFromArray _options;
 
 #define WEEKDAYS ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 #define MONTHS ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -174,7 +175,7 @@ if (isServer) then {
 
         // Prepare
         if (_stage < 0) exitWith {
-            // 2s tick rate
+            // 1s tick rate
             if (_lastTime + 1 > CBA_missionTime) exitWith {};
             _args set [0, CBA_missionTime];
 
@@ -207,12 +208,13 @@ if (isServer) then {
             [_object] call _onResume;
         };
 
-        // Pause if allowed, and if enemy is closer than 2 meters
+        // Pause if allowed, and if enemy is closer than 6 meters
         private _allowPause = _options getOrDefault ["allowPause", true];
         private _exit = false;
         if (_allowPause) then {
             private _units = (getPos _object) nearEntities ["Man", 6];
-            private _enemy = (_units findIf {side _x == east}) != -1;
+            private _enemySides = _options getOrDefault ["enemySides", [east]];
+            private _enemy = (_units findIf {alive _x && {side group _x in _enemySides}}) != -1;
             if (_enemy) then {
                 _object setVariable [QGVAR(computerUploadPaused), true, true];
                 _object setVariable [QGVAR(computerUploadWasPaused), true];
@@ -238,7 +240,7 @@ if (isServer) then {
 
         private _progressString = format ["     %1GB / %2GB  %3 (%4%5)\n", (_fileSizeGB min _uploaded) toFixed 2, _fileSizeGB, _progressBar, (100 min (_stage / _uploadTimeSeconds * 100)) toFixed 2, "%"];
         _terminal set [-1, _progressString];
-        _texture = format ['#(rgb,512,512,3)text(0,0,"EtelkaMonospacePro",0.03,"#1A1818","#00B200","%1")', _terminal joinString "\n"];
+        private _texture = format ['#(rgb,512,512,3)text(0,0,"EtelkaMonospacePro",0.03,"#1A1818","#00B200","%1")', _terminal joinString "\n"];
         _object setObjectTextureGlobal [_textureSource, _texture];
         _object setVariable [QGVAR(computerUploadStage), _stage + 2];
 

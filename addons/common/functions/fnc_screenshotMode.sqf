@@ -7,7 +7,7 @@ if (GVAR(screenshotMode)) then {
     // Restore UI
     ["hideHud", _ace] call ace_common_fnc_showHud;
     _staminaBar ctrlShow _stamina;
-    ace_nametags_show_playernames = _nametags;
+    ace_nametags_showPlayerNames = _nametags;
 
     GVAR(screenshotMode) = false;
 } else {
@@ -16,11 +16,11 @@ if (GVAR(screenshotMode)) then {
 
     private _staminaBar = uiNamespace getVariable ["ace_advanced_fatigue_staminaBarContainer", controlNull];
     private _stamina = ctrlShown _staminaBar;
-    private _nametags = ace_nametags_showplayernames;
+    private _nametags = ace_nametags_showPlayerNames;
 
     ["hideHud", [false, false, false, false, false, false, false, false]] call ace_common_fnc_showHud;
     _staminaBar ctrlShow false;
-    ace_nametags_show_playernames = 0;
+    ace_nametags_showPlayerNames = 0;
 
     GVAR(screenshotModeOldState) = [_ace, _staminaBar, _stamina, _nametags];
     GVAR(screenshotMode) = true;

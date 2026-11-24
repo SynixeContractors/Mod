@@ -24,7 +24,7 @@
 setCurrentChannel 0;            //Change to Global
 
 // Setup discord extension
-[{player isNotEqualTo objNull}, {
+[{!isNull player}, {
     EXT callExtension ["discord:setup", [getPlayerUID player, profileName]];
 
     [{
@@ -65,7 +65,6 @@ setCurrentChannel 0;            //Change to Global
     };
     _vehicle enableInfoPanelComponent ["left", "MinimapDisplayComponent", _driver];
     _vehicle enableInfoPanelComponent ["right", "MinimapDisplayComponent", _driver];
-    diag_log format ["vehicle gps: %1 = %2", _unit, _driver];
 }, true] call CBA_fnc_addPlayerEventHandler;
 
 player addEventHandler ["SeatSwitchedMan", {
@@ -74,7 +73,6 @@ player addEventHandler ["SeatSwitchedMan", {
     private _driver = driver _vehicle == _unit;
     _vehicle enableInfoPanelComponent ["left", "MinimapDisplayComponent", _driver];
     _vehicle enableInfoPanelComponent ["right", "MinimapDisplayComponent", _driver];
-    diag_log format ["seat switch gps: %1 = %2", _unit, _driver];
 }];
 
 // Disable map when handcuffed

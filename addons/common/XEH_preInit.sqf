@@ -35,7 +35,10 @@ GVAR(screenshotMode) = false;
 
 if (hasInterface) then {
     GVAR(playerMarkerIdx) = 0;
-    GVAR(clientId) = "";
+    // Don't overwrite the server's own clientId when hosting / in singleplayer
+    if (!isServer) then {
+        GVAR(clientId) = "";
+    };
 };
 
 ADDON = true;

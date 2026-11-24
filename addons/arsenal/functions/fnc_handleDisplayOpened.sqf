@@ -19,7 +19,7 @@ GVAR(arsenalDisplay) = [_display];
         _ctrl ctrlEnable false;
         _ctrl ctrlSetTooltip "";
         _ctrl ctrlCommit 0;
-    } forEach [IDC_iconBackgroundVoice, IDC_iconBackgroundVoice, IDC_buttonFace, IDC_buttonVoice];
+    } forEach [IDC_iconBackgroundFace, IDC_iconBackgroundVoice, IDC_buttonFace, IDC_buttonVoice];
 
     private _ctrl = (_display displayCtrl IDC_iconBackgroundInsigna);
     _ctrl ctrlSetPosition [

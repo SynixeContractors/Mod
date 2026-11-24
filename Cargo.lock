@@ -797,7 +797,6 @@ dependencies = [
  "arma-rs",
  "discord-presence",
  "enigo",
- "lazy_static",
  "webbrowser",
 ]
 

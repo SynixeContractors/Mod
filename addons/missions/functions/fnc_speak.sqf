@@ -53,7 +53,7 @@ if !(isClass (missionConfigFile >> "CfgSounds" >> _sound) || {isClass (configFil
     ERROR_MSG("speak _sound must be a valid sound in CfgSounds");
 };
 
-private _id = format ["%1Speak%2%3", ADDON, _title, _sound];
+private _id = format ["%1Speak%2%3", QUOTE(ADDON), _title, _sound];
 
 private _action = [
     _id,
@@ -64,8 +64,11 @@ private _action = [
         [QGVAR(speak), [_unit, _sound, _startCode, _stopCode, _id, _replayable]] call CBA_fnc_globalEvent;
     },
     {
-        _this#2 params ["", "_unit", "_sound"];
-        alive _target && !(_target getVariable [QGVAR(speaking), false]) && {[_sound] call _this#2#0}
+        _this#2 params ["", "_unit", "_sound", "", "", "_id", "_replayable"];
+        alive _target &&
+        {!(_target getVariable [QGVAR(speaking), false])} &&
+        {_replayable || {!(_target getVariable [_id, false])}} &&
+        {[_sound] call _this#2#0}
     },
     {},
     [

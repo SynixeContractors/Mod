@@ -1,7 +1,5 @@
 #include "script_component.hpp"
 
-if (!EGVAR(common,aceTagging)) exitWith {};
-
 if (hasInterface) then {
     ["ace_tagCreated", {
         params ["", "_texture", "_object", "_unit"];
